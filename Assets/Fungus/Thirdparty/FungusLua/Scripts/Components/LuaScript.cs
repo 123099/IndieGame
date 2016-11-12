@@ -139,6 +139,20 @@ namespace Fungus
             }
         }
 
+        /// <summary>
+        /// Sets the lua text file to the specified file.
+        /// This is useful if you want to swap lua scripts on the fly.
+        /// </summary>
+        /// <param name="luaFile"></param>
+        public virtual void SetLuaFile(TextAsset luaFile)
+        {
+            //Mark as not initialized so that the lua script is updated
+            initialised = false;
+
+            //Set the new lua script file
+            this.luaFile = luaFile;
+        }
+
         #endregion
     }
 }
