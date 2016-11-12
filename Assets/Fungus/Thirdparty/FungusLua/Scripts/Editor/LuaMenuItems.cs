@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Fungus
 {
-    public class MenuItems 
+    public class LuaMenuItems 
     {
         [MenuItem("Tools/Fungus/Create/Lua", false, 2000)]
         static void CreateLua()

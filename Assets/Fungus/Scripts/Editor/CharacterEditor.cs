@@ -32,6 +32,7 @@ namespace Fungus.EditorUtils
         public override void OnInspectorGUI() 
         {
             serializedObject.Update();
+            //serializedObject.targetObject.name = nameTextProp.stringValue;
 
             Character t = target as Character;
 

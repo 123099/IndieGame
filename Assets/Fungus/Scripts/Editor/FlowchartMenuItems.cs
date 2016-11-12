@@ -50,6 +50,13 @@ namespace Fungus.EditorUtils
             AssetDatabase.ExportPackage(folders, path, ExportPackageOptions.Recurse);
         }
             
+        /// <summary>
+        /// Spawns an instance of a prefab in the scene, without it being attached to the prefab (it's a standalone object).
+        /// The name is case-sensitive, and the prefab must be in a Prefabs folder inside Resources.
+        /// This function returns the newly create game object.
+        /// </summary>
+        /// <param name="prefabName"></param>
+        /// <returns></returns>
         public static GameObject SpawnPrefab(string prefabName)
         {
             GameObject prefab = Resources.Load<GameObject>("Prefabs/" + prefabName);

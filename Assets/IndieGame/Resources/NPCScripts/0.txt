@@ -1,7 +1,10 @@
 conversation [[
-npc apologetic <<< right: Hello there, friend! How can I help you?
+cube CiaraHead <<< middle: Hello there, friend! How can I help you?
 player annoyed >>> left: Just looking around.
-npc >>>: Okay, good luck!
-hide npc "Offscreen right":
+cube >>>: Okay, good luck!
+player <<<:
+hide cube "Offscreen right":
 hide player "Offscreen left":
 ]]
+
+say "Hi THomas!"
