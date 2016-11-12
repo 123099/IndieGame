@@ -1,0 +1,7 @@
+conversation [[
+npc apologetic <<< right: Hello there, friend! How can I help you?
+player annoyed >>> left: Just looking around.
+npc >>>: Okay, good luck!
+hide npc "Offscreen right":
+hide player "Offscreen left":
+]]
