@@ -10,6 +10,8 @@ public class NPC : MonoBehaviour
 
     protected LuaScript npcScript;
 
+    protected bool busy = false;
+
 	void Start () {
         LoadNPCScript();
 	}
@@ -40,7 +42,14 @@ public class NPC : MonoBehaviour
     {
         if (npcScript != null)
         {
-            npcScript.OnExecute();
+            if (busy)
+            {
+                return;
+            }
+
+            busy = true;
+
+            npcScript.OnExecute(delegate { busy = false; });
         }
     }
 

@@ -124,7 +124,7 @@ namespace Fungus
         /// Execute the Lua script.
         /// This is the function to call if you want to trigger execution from an external script.
         /// </summary>
-        public virtual void OnExecute()
+        public virtual void OnExecute(System.Action<DynValue> onComplete = null)
         {
             // Make sure the script and Lua environment are initialised before executing
             InitLuaScript();
@@ -135,7 +135,7 @@ namespace Fungus
             }
             else
             {
-                luaEnvironment.RunLuaFunction(luaFunction, runAsCoroutine);
+                luaEnvironment.RunLuaFunction(luaFunction, runAsCoroutine, onComplete);
             }
         }
 
