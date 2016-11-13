@@ -17,6 +17,8 @@ public class MuteAllEvents : Command
     public override void OnEnter ()
     {
         FMODUnity.RuntimeManager.MuteAllEvents(value);
+
+        Continue();
     }
 
     public override string GetSummary ()

@@ -26,6 +26,8 @@ public class PlayOneShot : Command
             FMODUnity.RuntimeManager.PlayOneShotAttached(eventPath, targetGameObject);
         else
             FMODUnity.RuntimeManager.PlayOneShot(eventPath, location);
+
+        Continue();
     }
 
     public override string GetSummary ()

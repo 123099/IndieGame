@@ -16,6 +16,8 @@ public class PauseAllEvents : Command
     public override void OnEnter ()
     {
         FMODUnity.RuntimeManager.PauseAllEvents(value);
+        
+        Continue();
     }
 
     public override string GetSummary ()
