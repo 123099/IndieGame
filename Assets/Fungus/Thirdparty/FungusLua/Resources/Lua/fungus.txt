@@ -153,7 +153,13 @@ end
 function M.getsaydialog()
     if (M.sayoptions.saydialog == nil) then
         local sd = M.luautils.spawn("Prefabs/SayDialog").GetComponent("SayDialog")
-        M.setsaydialog(sd)
+
+		if(sd.ActiveSayDialog != nil) then
+			M.setsaydialog(sd.ActiveSayDialog)
+			M.luautils.Destroy(sd.gameObject)
+		else
+			M.setsaydialog(sd)
+		end
     end
     return M.sayoptions.saydialog
 end
