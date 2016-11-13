@@ -153,7 +153,13 @@ end
 function M.getsaydialog()
     if (M.sayoptions.saydialog == nil) then
         local sd = M.luautils.spawn("Prefabs/SayDialog").GetComponent("SayDialog")
-        M.setsaydialog(sd)
+
+		if(sd.ActiveSayDialog != nil) then
+			M.setsaydialog(sd.ActiveSayDialog)
+			M.luautils.Destroy(sd.gameObject)
+		else
+			M.setsaydialog(sd)
+		end
     end
     return M.sayoptions.saydialog
 end
@@ -226,7 +232,14 @@ end
 function M.getmenudialog()
     if (M.menuoptions.menudialog == nil) then
         local md = M.luautils.spawn("Prefabs/MenuDialog").GetComponent("MenuDialog")
-        M.setmenudialog(md)
+
+		if(md.ActiveMenuDialog != nil) then
+			M.setmenudialog(md.ActiveMenuDialog)
+			M.luautils.Destroy(md.gameObject)
+		else
+			md.gameObject.SetActive(false)
+			M.setmenudialog(md)
+		end
     end
     return M.menuoptions.menudialog
 end
@@ -238,10 +251,14 @@ end
 function M.menu(text, callback, interactive)
     local md = M.getmenudialog()
 
+	if(md.IsActive() == false) then
+		md.gameObject.SetActive(true)
+	end
+
     -- Do variable substitution before displaying text
     local subbed = M.sub(text)
 
-    -- Default bool parameters are tricksy
+    -- Default bool parameters are tricky
     if (interactive == nil) then
         interactive = true
     end
@@ -271,6 +288,10 @@ function M.choosetimer(options, duration, defaultoption)
     end
 
     local md = M.getmenudialog()
+
+	if(md.IsActive() == false) then
+		md.gameObject.SetActive(true)
+	end
 
     local selection = 0
 
@@ -319,6 +340,13 @@ function M.menutimer(duration, callback)
 
     local e = md.ShowTimer(duration, M.luaenvironment, callback)
     M.runwait(e)
+end
+
+-- Set the title of the currently active Menu Dialog.
+-- title: The title to set
+function M.menutitle(title)
+	local md = M.getmenudialog()
+	md.SetTitle(title)
 end
 
 -- Clear all currently displayed menu options

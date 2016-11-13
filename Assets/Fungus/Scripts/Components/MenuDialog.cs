@@ -18,6 +18,8 @@ namespace Fungus
         [Tooltip("Automatically select the first interactable button when the menu is shown.")]
         [SerializeField] protected bool autoSelectFirstButton = false;
 
+        protected Title cachedTitle;
+
         protected Button[] cachedButtons;
 
         protected Slider cachedSlider;
@@ -29,6 +31,9 @@ namespace Fungus
 
             Slider timeoutSlider = GetComponentInChildren<Slider>();
             cachedSlider = timeoutSlider;
+
+            Title title = GetComponentInChildren<Title>();
+            cachedTitle = title;
 
             if (Application.isPlaying)
             {
@@ -175,6 +180,12 @@ namespace Fungus
             {
                 timeoutSlider.gameObject.SetActive(false);
             }
+
+            Title title = GetComponentInChildren<Title>();
+            if(title != null)
+            {
+                title.gameObject.SetActive(false);
+            }
         }
 
         /// <summary>
@@ -302,7 +313,12 @@ namespace Fungus
             if (cachedSlider != null)
             {
                 cachedSlider.gameObject.SetActive(true);
-                gameObject.SetActive(true);
+
+                if (!gameObject.activeSelf)
+                {
+                    gameObject.SetActive(true);
+                }
+
                 StopAllCoroutines();
                 StartCoroutine(WaitForTimeout(duration, targetBlock));
             }
@@ -345,6 +361,22 @@ namespace Fungus
             if (callBack != null)
             {
                 luaEnv.RunLuaFunction(callBack, true);
+            }
+        }
+
+        /// <summary>
+        /// Sets the title of this menu dialog.
+        /// This does not activate and show the menu dialog.
+        /// </summary>
+        /// <param name="title"></param>
+        public virtual void SetTitle(string title)
+        {
+            //Check if there is a Title game object in the menu dialog
+            if (cachedTitle != null)
+            {
+                //Enable the title, and set the text.
+                cachedTitle.gameObject.SetActive(true);
+                cachedTitle.SetTitle(title);
             }
         }
 

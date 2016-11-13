@@ -31,9 +31,18 @@ public class NPC : MonoBehaviour
 
 	void OnTriggerEnter ()
     {
-        if(npcScript != null)
+        ExecuteScript();
+    }
+
+    #region Public members
+
+    public virtual void ExecuteScript ()
+    {
+        if (npcScript != null)
         {
             npcScript.OnExecute();
         }
     }
+
+    #endregion
 }
