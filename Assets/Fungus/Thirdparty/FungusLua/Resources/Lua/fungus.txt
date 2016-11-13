@@ -145,23 +145,18 @@ M.sayoptions.stopvoiceover = true
 
 -- Set the active saydialog to use with the say and conversation functions
 function M.setsaydialog(saydialog)
-    M.sayoptions.saydialog = saydialog
+    --M.sayoptions.saydialog = saydialog
     luautils.SetSayDialog(saydialog)
 end
 
 -- Gets the active say dialog, or creates one if none exists yet
 function M.getsaydialog()
-    if (M.sayoptions.saydialog == nil) then
-        local sd = M.luautils.spawn("Prefabs/SayDialog").GetComponent("SayDialog")
+	return M.luautils.GetSayDialog()
+end
 
-		if(sd.ActiveSayDialog != nil) then
-			M.setsaydialog(sd.ActiveSayDialog)
-			M.luautils.Destroy(sd.gameObject)
-		else
-			M.setsaydialog(sd)
-		end
-    end
-    return M.sayoptions.saydialog
+--Clears the active say dialog
+function M.clearsaydialog()
+	M.getsaydialog().Clear()
 end
 
 -- Set the active character on the Say Dialog
@@ -216,6 +211,14 @@ function M.conversation(text)
     M.runwait(e)
 end
 
+-- Stops the currently active conversation
+-- Hides all the active characters in the stage
+-- Clears the currently active say dialog
+-- Clears the currently active menu dialog
+function M.stopconversation()
+	M.luautils.StopConversation()
+end
+
 --------------
 -- Menu Dialog
 --------------
@@ -225,23 +228,13 @@ M.menuoptions = {}
 
 -- Set the active menudialog to use with the menu function
 function M.setmenudialog(menudialog)
-    M.menuoptions.menudialog = menudialog
+    --M.menuoptions.menudialog = menudialog
+	M.luautils.SetMenuDialog(menudialog)
 end
 
 -- Gets the active menu dialog, or creates one if none exists yet
 function M.getmenudialog()
-    if (M.menuoptions.menudialog == nil) then
-        local md = M.luautils.spawn("Prefabs/MenuDialog").GetComponent("MenuDialog")
-
-		if(md.ActiveMenuDialog != nil) then
-			M.setmenudialog(md.ActiveMenuDialog)
-			M.luautils.Destroy(md.gameObject)
-		else
-			md.gameObject.SetActive(false)
-			M.setmenudialog(md)
-		end
-    end
-    return M.menuoptions.menudialog
+	return M.luautils.GetMenuDialog()
 end
 
 -- Display a menu button
@@ -352,7 +345,7 @@ end
 -- Clear all currently displayed menu options
 function M.clearmenu()
     assert(M.menuoptions.menudialog, "menudialog must not be nil")
-    M.menuoptions.menudialog.Clear()
+    M.getmenudialog().Clear()
 end
 
 ------------

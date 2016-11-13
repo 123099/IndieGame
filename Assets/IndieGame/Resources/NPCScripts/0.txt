@@ -6,5 +6,3 @@ player <<<:
 hide cube "Offscreen right":
 hide player "Offscreen left":
 ]]
-
-say "Hi THomas!"
