@@ -211,6 +211,14 @@ function M.conversation(text)
     M.runwait(e)
 end
 
+-- Stops the currently active conversation
+-- Hides all the active characters in the stage
+-- Clears the currently active say dialog
+-- Clears the currently active menu dialog
+function M.stopconversation()
+	M.luautils.StopConversation()
+end
+
 --------------
 -- Menu Dialog
 --------------

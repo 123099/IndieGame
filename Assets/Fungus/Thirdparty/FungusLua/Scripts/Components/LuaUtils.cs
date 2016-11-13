@@ -454,6 +454,14 @@ namespace Fungus
         }
 
         /// <summary>
+        /// Stops the currently active conversation
+        /// </summary>
+        public virtual void StopConversation()
+        {
+            conversationManager.StopConversation();
+        }
+
+        /// <summary>
         /// Sync the active say dialog with what Lua thinks the SayDialog should be
         /// </summary>
         public void SetSayDialog(SayDialog sayDialog)

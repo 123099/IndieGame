@@ -30,6 +30,11 @@ namespace Fungus
         protected bool exitSayWait;
 
         /// <summary>
+        /// Set to true to stop the conversation mid-way.
+        /// </summary>
+        protected bool stopConversation = false;
+
+        /// <summary>
         /// Splits the string passed in by the delimiters passed in.
         /// Quoted sections are not split, and all tokens have whitespace
         /// trimmed from the start and end.
@@ -280,6 +285,8 @@ namespace Fungus
         /// </summary>
         public virtual IEnumerator DoConversation(string conv)
         {
+            stopConversation = false;
+
             if (string.IsNullOrEmpty(conv))
             {
                 yield break;
@@ -301,6 +308,11 @@ namespace Fungus
             // Play the conversation
             for (int i = 0; i < conversationItems.Count; ++i)
             {
+                if(stopConversation)
+                {
+                    yield break;
+                }
+
                 ConversationItem item = conversationItems[i];
 
                 if (item.Character != null)
@@ -374,13 +386,27 @@ namespace Fungus
                         exitSayWait = true;
                     });
 
-                    while (!exitSayWait)
+                    while (!exitSayWait && !stopConversation)
                     {
                         yield return null;
                     }
                     exitSayWait = false;
                 }
             }
+        }
+
+        /// <summary>
+        /// Stops the currently active conversation and clears the stage menu dialog and the say dialog
+        /// </summary>
+        public virtual void StopConversation ()
+        {
+            stopConversation = true;
+            if(SayDialog.ActiveSayDialog != null) SayDialog.ActiveSayDialog.Clear();
+            if(MenuDialog.ActiveMenuDialog != null) MenuDialog.ActiveMenuDialog.Clear();
+
+            for (int i = 0; i < characters.Length; ++i)
+                if(Stage.GetActiveStage().CharactersOnStage.Contains(characters[i]))
+                    Stage.GetActiveStage().Hide(characters[i]);
         }
 
         #endregion
