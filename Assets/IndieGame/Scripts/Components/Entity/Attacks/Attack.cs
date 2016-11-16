@@ -11,6 +11,9 @@ public abstract class Attack : Command {
     [Tooltip("The target that this attack is directed at")]
     [SerializeField] protected TransformData target;
 
+    [Tooltip("The damage this attack applies")]
+    [SerializeField] protected FloatData damage;
+
     [Tooltip("Should the entity ignore the distance to the target. This means the entity can attack from any distance")]
     [SerializeField] protected BooleanData ignoreRange;
 
@@ -19,6 +22,8 @@ public abstract class Attack : Command {
 
     [Tooltip("The time it takes the entity to channel the attack")]
     [SerializeField] protected FloatData channelTime;
+
+    protected abstract IEnumerator DoLaunchAttack (System.Action onAttackComplete);
 
     #region Public members
 
@@ -34,7 +39,20 @@ public abstract class Attack : Command {
     /// <summary>
     /// Launch the attack.
     /// </summary>
-    public abstract void LaunchAttack (System.Action onAttackComplete = null);
+    public void LaunchAttack (System.Action onAttackComplete = null)
+    {
+        //Can't do anything if we have no one to execute the attack
+        if(attackExecuter.Value == null)
+        {
+            return;
+        }
+
+        //Stop all coroutines to prevent the entity from leaping twice, and conflicting
+        StopAllCoroutines();
+
+        //Start the leap attack coroutine
+        StartCoroutine(DoLaunchAttack(onAttackComplete));
+    }
 
     public override void OnEnter ()
     {

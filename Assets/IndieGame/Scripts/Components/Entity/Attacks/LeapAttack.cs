@@ -20,13 +20,17 @@ public class LeapAttack : Attack
 
     protected Rigidbody cachedRigidbody;
 
-    IEnumerator DoLaunchAttack (Action onAttackComplete)
+    protected override IEnumerator DoLaunchAttack (Action onAttackComplete)
     {
         //If there is no target, there is nothing we can do.
         if(target.Value == null)
         {
             yield break;
         }
+
+
+        //Get the rigid body from the executing game object
+        cachedRigidbody = attackExecuter.Value.GetComponent<Rigidbody>();
 
         //Store the target location. The leap acquires the location at the beginning, and will land onto that location.
         Vector3 targetLocation = target.Value.position;
@@ -91,20 +95,4 @@ public class LeapAttack : Attack
             onAttackComplete.Invoke();
         }
     }
-
-    #region Public members
-
-    public override void LaunchAttack (Action onAttackComplete = null)
-    {
-        //Stop all coroutines to prevent the entity from leaping twice, and conflicting
-        StopAllCoroutines();
-
-        //Get the rigid body from the executing game object
-        cachedRigidbody = attackExecuter.Value.GetComponent<Rigidbody>();
-
-        //Start the leap attack coroutine
-        StartCoroutine(DoLaunchAttack(onAttackComplete));
-    }
-
-    #endregion
 }
