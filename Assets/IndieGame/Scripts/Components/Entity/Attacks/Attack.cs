@@ -23,6 +23,9 @@ public abstract class Attack : Command {
     [Tooltip("The time it takes the entity to channel the attack")]
     [SerializeField] protected FloatData channelTime;
 
+    /// <summary>
+    /// The enumerator that defines the specific attack sequence.
+    /// </summary>
     protected abstract IEnumerator DoLaunchAttack (System.Action onAttackComplete);
 
     #region Public members
@@ -30,7 +33,6 @@ public abstract class Attack : Command {
     /// <summary>
     /// Sets the target this attack is directed at.
     /// </summary>
-    /// <param name="target"></param>
     public void SetTarget(Transform target)
     {
         this.target.Value = target;
@@ -41,12 +43,6 @@ public abstract class Attack : Command {
     /// </summary>
     public void LaunchAttack (System.Action onAttackComplete = null)
     {
-        //Can't do anything if we have no one to execute the attack
-        if(attackExecuter.Value == null)
-        {
-            return;
-        }
-
         //Stop all coroutines to prevent the entity from leaping twice, and conflicting
         StopAllCoroutines();
 
@@ -56,17 +52,30 @@ public abstract class Attack : Command {
 
     public override void OnEnter ()
     {
-        LaunchAttack(delegate { Continue(); });
+        //Can't do anything if we have no one to execute the attack
+        if (attackExecuter.Value == null)
+        {
+            Continue();
+        }
+        else
+        { 
+            LaunchAttack(delegate { Continue(); });
+        }
     }
 
     public override string GetSummary ()
     {
         if (attackExecuter.Value == null)
             return "Error: No attack executer set";
-        else if (target.Value == null)
-            return "Error: No target set";
+        
+        string summary = "Executer: " + attackExecuter.Value.name + ", Target: ";
 
-        return "Executer: " + attackExecuter.Value.name + ", Target: " + target.Value.name;
+        if (target.Value == null)
+            summary += "No Target";
+        else
+            summary += target.Value.name;
+
+        return summary;
     }
 
     public override Color GetButtonColor ()
