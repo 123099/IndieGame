@@ -2,40 +2,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
-//Should require an Entity or a NavMeshAgent, which can move
-[RequireComponent(typeof(Rigidbody))]
+[CommandInfo("Attacks",
+             "Leap Attack",
+             "Makes a game object leap onto a target.")]
 public class LeapAttack : Attack
 {
-    [Tooltip("The time this entity spends in the air")]
-    [SerializeField] protected float airborneTime;
+    [Tooltip("The height to which the entity will leap")]
+    [SerializeField] protected FloatData leapHeight;
+
+    [Tooltip("The time after the land that the entity cannot move for")]
+    [SerializeField] protected FloatData restingTime;
+
+    [Tooltip("The prefab of the leap land location indicator")]
+    [SerializeField] protected GameObjectData leapTargetIndicatorPrefab;
 
     protected Rigidbody cachedRigidbody;
 
-    protected virtual void Awake ()
-    {
-        cachedRigidbody = GetComponent<Rigidbody>();
-    }
-
-    IEnumerator DoLaunchAttack ()
+    IEnumerator DoLaunchAttack (Action onAttackComplete)
     {
         //If there is no target, there is nothing we can do.
-        if(target == null)
+        if(target.Value == null)
         {
             yield break;
         }
 
         //Store the target location. The leap acquires the location at the beginning, and will land onto that location.
-        Vector3 targetLocation = target.position;
+        Vector3 targetLocation = target.Value.position;
+
+        //Calculate the vector between ourselves and the target location
+        Vector3 deltaVector = targetLocation - attackExecuter.Value.transform.position;
+
+        //Cache the spawned target indicator object to destroy after motion is complete
+        GameObject leapTargetIndicator = null;
+
+        //Check if we have an indicator to display
+        if(leapTargetIndicatorPrefab.Value != null)
+        { 
+            //Spawn the indicator, and store it in the cache variable
+            leapTargetIndicator = Instantiate<GameObject>(leapTargetIndicatorPrefab.Value, targetLocation, Quaternion.identity);
+        }
 
         //Check range to target
-        if(ignoreRange == false)
+        if (ignoreRange == false)
         {
             //Store the range squared for calculation optimization
             float rangeSquared = range * range;
-
-            //Calculate the vector between ourselves and the target location
-            Vector3 deltaVector = targetLocation - transform.position;
 
             //As long as we are out of range, move towards target location
             while(deltaVector.sqrMagnitude > rangeSquared)
@@ -47,55 +60,50 @@ public class LeapAttack : Attack
         }
 
         //If we are here, we either don't care about the range, or we have reached the required distance
-        //Set gravity to off to be able to stay airborne
-        cachedRigidbody.useGravity = false;
+        //TODO: Start channeling the attack(animation)
+        //Wait for channel time
+        yield return new WaitForSeconds(channelTime);
 
-        //Cache our position to modify in the loop
-        Vector3 position = transform.position;
+        //Leap towards target location
+        float gravity = Physics.gravity.magnitude;
+        float verticalSpeed = Mathf.Sqrt(2 * gravity * leapHeight);
+        float motionTime = verticalSpeed / gravity * 2;
+        float horizontalSpeed = deltaVector.magnitude / motionTime;
 
-        //Jump into the air, out of the camera's view
-        while(true)
+        Vector3 velocity = horizontalSpeed * deltaVector.normalized + verticalSpeed * Vector3.up;
+        cachedRigidbody.velocity = velocity;
+
+        //Wait for motion to complete
+        yield return new WaitForSeconds(motionTime);
+
+        //Destroy the target indicator
+        if (leapTargetIndicator != null)
         {
-            //Test whether we are still in view of the main camera
-            Vector3 currentViewportPosition = Camera.main.WorldToViewportPoint(transform.position);
-            if (currentViewportPosition.z < 0 ||
-                currentViewportPosition.x < 0 ||
-                currentViewportPosition.x > 1 ||
-                currentViewportPosition.y < 0 ||
-                currentViewportPosition.y > 1)
-            {
-                //We have left the view of the camera, so we can break out of the loop
-                break;
-            }
-
-            //Increase height
-            position.y += Time.deltaTime * 15;
-
-            //Apply new position
-            transform.position = position;
-
-            yield return null;
+            Destroy(leapTargetIndicator);
         }
 
-        //Set our position to be above target location
-        transform.position = targetLocation + Vector3.up * 150;
+        //Wait for resting time
+        yield return new WaitForSeconds(restingTime);
 
-        //Wait for airborne time
-        yield return new WaitForSeconds(airborneTime);
-
-        //Set gravity back on to start dropping
-        cachedRigidbody.useGravity = true;
+        //Notify that the attack is complete
+        if(onAttackComplete != null)
+        {
+            onAttackComplete.Invoke();
+        }
     }
 
     #region Public members
 
-    public override void LaunchAttack ()
+    public override void LaunchAttack (Action onAttackComplete = null)
     {
         //Stop all coroutines to prevent the entity from leaping twice, and conflicting
         StopAllCoroutines();
 
+        //Get the rigid body from the executing game object
+        cachedRigidbody = attackExecuter.Value.GetComponent<Rigidbody>();
+
         //Start the leap attack coroutine
-        StartCoroutine(DoLaunchAttack());
+        StartCoroutine(DoLaunchAttack(onAttackComplete));
     }
 
     #endregion
