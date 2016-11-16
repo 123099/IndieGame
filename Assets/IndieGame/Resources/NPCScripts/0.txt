@@ -6,3 +6,27 @@ player <<<:
 hide cube "Offscreen right":
 hide player "Offscreen left":
 ]]
+
+function optionA()
+	say "Well, you see, I was born on this island long long ago..."
+end
+
+function optionB()
+	say "No one likes to talk to me :("
+end
+
+function optionC()
+	conversation[[
+	npc confused >>> left: Hello? Are you awake?
+	npc happy: Well, I will tell you my story anyways
+	]]
+end
+
+say "Hello friend, how may I help you?"
+
+menutitle "NPC Choice"
+
+menu("Talk", optionA)
+menu("Quit", optionB)
+
+menutimer(5, optionC)

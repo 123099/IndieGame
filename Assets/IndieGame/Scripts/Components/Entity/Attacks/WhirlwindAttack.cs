@@ -17,12 +17,15 @@ public class WhirlwindAttack : Attack
 
     protected override IEnumerator DoLaunchAttack (Action onAttackComplete)
     {
-        //Start attack animation (this spawns the particles onStateEnter)
+        //TODO: Start channeling the attack(animation)
+        //Wait for channel time
+        yield return new WaitForSeconds(channelTime);
+
         //Get all entities around the executer
         var collisions = Physics.OverlapSphere(attackExecuter.Value.transform.position, attackRadius);
 
-        //The damageable object that will be taking damage.
-        Damageable damageable = null;
+        //The health object that will be taking damage.
+        Health health = null;
 
         //Loop through all the hit colliders, and apply damage
         for (int i = 0; i < collisions.Length; ++i)
@@ -30,25 +33,23 @@ public class WhirlwindAttack : Attack
             //Test if the collider is not the attack executor
             if (collisions[i].gameObject != attackExecuter.Value)
             {
-                //Get the damageable component on the collider
-                damageable = collisions[i].GetComponent<Damageable>();
+                //Get the health component on the collider
+                health = collisions[i].GetComponent<Health>();
 
-                //Test if hit collider is Damageable
-                if (damageable != null)
+                //Test if hit collider is damageable
+                if (health != null)
                 {
                     //Damage the entity
-                    damageable.TakeDamage(damage);
+                    health.TakeDamage(damage);
 
                     //Wait for a few frames to give the illusion of spinning the weapon around
                     yield return new WaitForSeconds(damageRate.Value);
                 }
             }
         }
-        //Wait for animation to finish (this despawns particles onStateExit)
 
-
-        //Notify completion
-        if(onAttackComplete != null)
+        //Notify that the attack is complete
+        if (onAttackComplete != null)
         {
             onAttackComplete.Invoke();
         }

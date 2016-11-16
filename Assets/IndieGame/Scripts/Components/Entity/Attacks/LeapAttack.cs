@@ -25,9 +25,15 @@ public class LeapAttack : Attack
         //If there is no target, there is nothing we can do.
         if(target.Value == null)
         {
+            //Notify that the attack is complete
+            if (onAttackComplete != null)
+            {
+                onAttackComplete.Invoke();
+            }
+
+            //Stop the attack
             yield break;
         }
-
 
         //Get the rigid body from the executing game object
         cachedRigidbody = attackExecuter.Value.GetComponent<Rigidbody>();
