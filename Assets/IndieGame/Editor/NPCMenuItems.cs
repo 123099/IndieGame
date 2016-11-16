@@ -7,7 +7,7 @@ public class NPCMenuItems {
     [MenuItem("IndieGame/Create/NPC")]
 	public static void CreateNPC ()
     {
-        GameObject npc = FlowchartMenuItems.SpawnPrefab("NPC");
+        GameObject npc = EditorUtils.SpawnPrefab("NPC");
         string message = "";
 
         if (npc == null)

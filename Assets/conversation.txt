@@ -1,9 +1,0 @@
-john bored left: Oh, so that's how you use the Conversation command.
-sherlock eyeroll right: Yes, well done John.
-You catch on quickly don't you?
-sherlock >>>:
-hide john "offscreen left": I sure do.
-
--- This is a comment, it doesn't appear in the conversation
-
-john angry middle: Wait, what!
