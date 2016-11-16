@@ -15,6 +15,13 @@ public class GetStopwatchTime : Command
     [VariableProperty(typeof(FloatVariable), typeof(StringVariable))]
     [SerializeField] protected Variable variable;
 
+    protected virtual string FormatElapsedTime(float timeInSeconds)
+    {
+        int minutes = (int)( timeInSeconds / 60 );
+        int seconds = (int)( timeInSeconds % 60 );
+        return minutes.ToString("D2") + ":" + seconds.ToString("D2");
+    }
+
     #region Public members
 
     public override void OnEnter ()
@@ -27,7 +34,7 @@ public class GetStopwatchTime : Command
             //If the variable is a string, save the time as text, otherwise, save it as float
             if(variable is StringVariable)
             {
-                ( variable as StringVariable ).Value = elapsedSeconds.ToString();
+                ( variable as StringVariable ).Value = FormatElapsedTime(elapsedSeconds);
             }
             else if(variable is FloatVariable)
             {
