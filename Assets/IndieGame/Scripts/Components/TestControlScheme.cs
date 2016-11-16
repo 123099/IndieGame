@@ -14,9 +14,8 @@ public class TestControlScheme : MonoBehaviour {
 	void Update ()
     {
         LookAtMouse();
-        if (Input.GetMouseButton(1))
+        if (Input.GetButton("Move"))
             transform.localPosition += transform.forward * Time.deltaTime * 5;
-        //transform.localPosition += transform.right * Time.deltaTime * Input.GetAxis("Horizontal") * 5;
     }
 
     void LookAtMouse ()
