@@ -4,6 +4,6 @@ using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour
 {
-    [Tooltip("The range thr projectile can fly to. After this range, the projectile is destroyed.")]
+    //[Tooltip("The range thr projectile can fly to. After this range, the projectile is destroyed.")]
 
 }
