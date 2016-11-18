@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
+using System;
 
-public class NPC : MonoBehaviour
+public class NPC : MonoBehaviour, IInteractble
 {
     [Tooltip("The ID of this NPC. These should be unique numbers.")]
     [SerializeField] protected int ID;
@@ -31,11 +32,6 @@ public class NPC : MonoBehaviour
         }
     }
 
-	void OnTriggerEnter ()
-    {
-        ExecuteScript();
-    }
-
     #region Public members
 
     public virtual void ExecuteScript ()
@@ -51,6 +47,11 @@ public class NPC : MonoBehaviour
 
             npcScript.OnExecute(delegate { busy = false; });
         }
+    }
+
+    public void Interact ()
+    {
+        ExecuteScript();
     }
 
     #endregion
