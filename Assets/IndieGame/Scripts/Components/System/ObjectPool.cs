@@ -184,5 +184,25 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Returns whether the object pool has objects that contain the specified component.
+    /// This first checks for the component, it then checks whether the actual type of the object
+    /// is the specified type, which would return true for GameObject and Unity.Object.
+    /// </summary>
+    /// <typeparam name="T">The type to check</typeparam>
+    /// <returns></returns>
+    public virtual bool IsOfType<T> ()
+    {
+        //Check to see whether we contain a component of the specified type. If not, check the type of the GameObject itself
+        if(poolTargetPrefab.GetComponent<T>() != null)
+        {
+            return true;
+        }
+        else
+        {
+            return poolTargetPrefab is T;
+        }
+    }
+
     #endregion
 }
