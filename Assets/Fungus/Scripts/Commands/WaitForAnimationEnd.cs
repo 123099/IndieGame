@@ -5,27 +5,24 @@ using Fungus;
 
 [CommandInfo("Animation",
              "Wait For Animation End",
-             "Waits until the specified animation state is finished playing")]
+             "Waits until the currently active animation state is finished playing")]
 public class WaitForAnimationEnd : Command {
 
     [Tooltip("Reference to an Animator component in a game object")]
     [SerializeField]
     protected AnimatorData animator = new AnimatorData();
 
-    [Tooltip("Name of the state you want to wait for")]
-    [SerializeField]
-    protected StringData stateName = new StringData();
-
-    [Tooltip("Layer the animation state is on")]
+    [Tooltip("Layer on which to wait for the active animation state to finish")]
     [SerializeField]
     protected IntegerData layer = new IntegerData(0);
 
     protected virtual IEnumerator DoWaitForAnimationEnd (System.Action onComplete)
     {
-        //As long as the name of the active state in the animator does not match the name of the provided state, keep waiting
-        while(animator.Value.GetCurrentAnimatorStateInfo(layer.Value).IsName(stateName.Value) &&
-            animator.Value.GetCurrentAnimatorStateInfo(layer.Value).normalizedTime < 1 &&
-            !animator.Value.IsInTransition(layer.Value))
+        //Get the short name hash of the animator state active at the start of this command
+        int currentAnimatorStateShortNameHash = animator.Value.GetCurrentAnimatorStateInfo(layer.Value).shortNameHash;
+
+        //As long as the active state has the same short name hash as the one active at the start of this command, keep waiting
+        while(animator.Value.GetCurrentAnimatorStateInfo(layer.Value).shortNameHash == currentAnimatorStateShortNameHash)
         {
             yield return null;
         }
@@ -63,7 +60,7 @@ public class WaitForAnimationEnd : Command {
             return "Error: No animator selected";
         }
 
-        return animator.Value.name + " (" + stateName.Value + ")";
+        return animator.Value.name + " (Layer: " + layer.Value + ")";
     }
 
     public override Color GetButtonColor ()
