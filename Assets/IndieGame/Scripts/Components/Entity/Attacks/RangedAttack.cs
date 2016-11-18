@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedAttack : MonoBehaviour {
-
+public class RangedAttack : Attack
+{
 	// Use this for initialization
 	void Start () {
 		
