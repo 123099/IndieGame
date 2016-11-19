@@ -35,7 +35,7 @@ public class ObjectPool : MonoBehaviour
             //Create requested amount of instances
             SpawnObjects(poolObjectCount);
 
-            Debug.Log("Pool of " + poolTargetPrefab.name + " generated with " + poolObjectCount + " objects.");
+            Debug.Log("Pool of " + poolTargetPrefab.name + "s generated with " + poolObjectCount + " objects.");
         }
     }
 

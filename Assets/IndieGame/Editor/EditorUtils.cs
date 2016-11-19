@@ -43,4 +43,31 @@ public static class EditorUtils
 
         return go;
     }
+
+    /// <summary>
+    /// Displays a notification message in the scene window
+    /// </summary>
+    /// <param name="notification"></param>
+    public static void ShowNotificationInSceneWindow(string notification)
+    {
+        EditorWindow.GetWindow<SceneView>().ShowNotification(new GUIContent(notification));
+    }
+
+    /// <summary>
+    /// Displays a prefab creation failed message in the scene window.
+    /// This lets the user know to check whether the prefab exists or not.
+    /// </summary>
+    public static void ShowPrefabCreationFailedMessageInSceneWindow(string prefabName)
+    {
+        ShowNotificationInSceneWindow(prefabName + " creation failed. Does the prefab '" + prefabName + "' exist under Resources/Prefabs?");
+    }
+
+    /// <summary>
+    /// Displays a prefab creation succeeded message in the scene window.
+    /// You can specify additional information to be displayed right after the success message.
+    /// </summary>
+    public static void ShowPrefabCreationSucceededMessageInSceneWindow(string prefabName, string additionalInformation = "")
+    {
+        ShowNotificationInSceneWindow(prefabName + " created successfully! " + additionalInformation);
+    }
 }

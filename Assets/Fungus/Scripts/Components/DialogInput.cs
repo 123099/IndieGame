@@ -51,14 +51,6 @@ namespace Fungus
         protected virtual void Awake()
         {
             writer = GetComponent<Writer>();
-        }
-
-        protected virtual void Update()
-        {
-            if (EventSystem.current == null)
-            {
-                return;
-            }
 
             if (currentStandaloneInputModule == null)
             {
@@ -74,6 +66,15 @@ namespace Fungus
                 }
 
                 currentStandaloneInputModule = EventSystem.current.GetComponent<StandaloneInputModule>();
+            }
+
+        }
+
+        protected virtual void Update()
+        {
+            if (EventSystem.current == null)
+            {
+                return;
             }
 
             if (writer != null && writer.IsWriting)

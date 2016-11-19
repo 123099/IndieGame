@@ -2,19 +2,16 @@
 using UnityEditor;
 using UnityEngine;
 
-public class NPCMenuItems {
+public static class NPCMenuItems {
 
-    [MenuItem("IndieGame/Create/NPC")]
+    [MenuItem("IndieGame/Create/NPC/NPC")]
 	public static void CreateNPC ()
     {
         GameObject npc = EditorUtils.SpawnPrefab("NPC");
-        string message = "";
 
         if (npc == null)
-            message = "NPC Creation failed. Does the prefab 'NPC' exist under Resources/Prefabs?";
+            EditorUtils.ShowPrefabCreationFailedMessageInSceneWindow("NPC");
         else
-            message = "NPC Created successfully. Do not forget to update Character name and NPC ID!";
-
-        EditorWindow.GetWindow<SceneView>().ShowNotification(new GUIContent(message));
+            EditorUtils.ShowPrefabCreationSucceededMessageInSceneWindow("NPC", "Do not forget to update Character name and NPC ID!");
     }
 }
