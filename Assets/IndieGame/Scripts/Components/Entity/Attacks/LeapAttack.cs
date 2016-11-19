@@ -41,9 +41,6 @@ public class LeapAttack : Attack
         //Store the target location. The leap acquires the location at the beginning, and will land onto that location.
         Vector3 targetLocation = target.Value.position;
 
-        //Calculate the vector between ourselves and the target location
-        Vector3 deltaVector = targetLocation - attackExecuter.Value.transform.position;
-
         //Cache the spawned target indicator object to destroy after motion is complete
         GameObject leapTargetIndicator = null;
 
@@ -57,30 +54,86 @@ public class LeapAttack : Attack
         //Check range to target
         if (ignoreRange == false)
         {
-            //Store the range squared for calculation optimization
-            float rangeSquared = range * range;
+            //Make sure the entity has the ability to be controlled and move in range
+            IControllable controllable = attackExecuter.Value.GetComponent<IControllable>();
 
-            //As long as we are out of range, move towards target location
-            while(deltaVector.sqrMagnitude > rangeSquared)
+            if (controllable != null)
             {
-                //TODO: Replace with move from required component
-                transform.Translate(deltaVector.normalized * 5);
-                yield return null;
+                //Calculate the vector between ourselves and the target location
+                Vector3 deltaVector = targetLocation - attackExecuter.Value.transform.position;
+
+                //Store the range squared for calculation optimization
+                float rangeSquared = range * range;
+
+                //Check if the movement is controlled by an AI or a player
+                if(controllable is AIControls)
+                {
+                    //Convert the generic controllable type to AIControls
+                    AIControls aiControllable = controllable as AIControls;
+
+                    //Disable rigidbody, if one is present
+                    Rigidbody aiRigidbody = aiControllable.GetComponent<Rigidbody>();
+                    if (aiRigidbody != null)
+                    {
+                        aiRigidbody.isKinematic = true;
+                    }
+
+                    //Get the closest position within range
+                    Vector3 closestPoint = target.Value.position - deltaVector.normalized * range;
+
+                    //Tell the AI to move to that point
+                    aiControllable.SetDestination(closestPoint);
+                    
+                    //Wait for the AI to reach the destination
+                    while (aiControllable.IsAtDestination() == false)
+                    {
+                        yield return null;
+                    }
+
+                    //Stop the AI
+                    aiControllable.Stop();
+
+                    //Reenable rigidbody if one exists
+                    if(aiRigidbody != null)
+                    {
+                        aiRigidbody.isKinematic = false;
+                    }
+                }
+                else
+                {
+                    //Check if the entity is within range
+                    if(deltaVector.sqrMagnitude > rangeSquared)
+                    {
+                        //User controlled entity cannot move on its own, so we cannot perform the leap attack out of range.
+                        //Notify that the attack is complete
+                        if (onAttackComplete != null)
+                        {
+                            onAttackComplete.Invoke();
+                        }
+
+                        //Stop the attack
+                        yield break;
+                    }
+                }
             }
         }
 
         //If we are here, we either don't care about the range, or we have reached the required distance
+        //Calculate the vector between ourselves and the target location
+        Vector3 vectorToTarget = targetLocation - attackExecuter.Value.transform.position;
+
         //TODO: Start channeling the attack(animation)
         //Wait for channel time
         yield return new WaitForSeconds(channelTime);
+
 
         //Leap towards target location
         float gravity = Physics.gravity.magnitude;
         float verticalSpeed = Mathf.Sqrt(2 * gravity * leapHeight);
         float motionTime = verticalSpeed / gravity * 2;
-        float horizontalSpeed = deltaVector.magnitude / motionTime;
+        float horizontalSpeed = vectorToTarget.magnitude / motionTime;
 
-        Vector3 velocity = horizontalSpeed * deltaVector.normalized + verticalSpeed * Vector3.up;
+        Vector3 velocity = horizontalSpeed * vectorToTarget.normalized + verticalSpeed * Vector3.up;
         cachedRigidbody.velocity = velocity;
 
         //Wait for motion to complete
