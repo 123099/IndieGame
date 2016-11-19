@@ -119,12 +119,12 @@ public class Projectile : MonoBehaviour
     #region Public members
 
     /// <summary>
-    /// Shoots the projectile at the specified target.
+    /// Shoots the projectile at the specified target, or forward, if target is null.
     /// If range is not ignored, the projectile will automatically be destroyed once it goes past the range.
     /// If the projectile hits something on the way, it will be destroyed.
     /// </summary>
-    /// <param name="target">The target at which to shoot</param>
-    public virtual void Shoot(Transform target)
+    /// <param name="target">The target at which to shoot. If set to null, will simply shoot forward</param>
+    public virtual void Shoot(Transform target = null)
     {
         //Make sure the projectile is ready to be shot
         if(readyToFire == false)
@@ -136,8 +136,12 @@ public class Projectile : MonoBehaviour
         //Reset the projectile for the shot
         ResetProjectile();
 
-        //Aim the projectile at the target
-        transform.LookAt(target);
+        //Check if we have a target
+        if (target != null)
+        {
+            //Aim the projectile at the target
+            transform.LookAt(target);
+        }
 
         //Shoot the projectile
         cachedRigidbody.velocity = speed * transform.forward;

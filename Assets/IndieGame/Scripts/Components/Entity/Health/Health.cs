@@ -10,6 +10,9 @@ public class Health : MonoBehaviour {
 	[Tooltip("The amount of health the entity currently has")]
     [SerializeField] protected float currentHealth;
 
+    [Tooltip("Whether the entity is invulnerable to damage or not")]
+    [SerializeField] protected bool invulnerable;
+
     protected virtual void OnDestroy ()
     {
         //Clear the event invocation list
@@ -47,6 +50,13 @@ public class Health : MonoBehaviour {
             return;
         }
         
+        //Check if the entity is invulnerable
+        if(invulnerable)
+        {
+            //We cannot take any damage if we are invulnerable
+            return;
+        }
+
         //Apply damage
         currentHealth -= damage;
 
@@ -97,7 +107,14 @@ public class Health : MonoBehaviour {
         {
             NotifyOfDeath();
         }
+    }
 
+    /// <summary>
+    /// Sets whether the entity is invulnerable to damage or not
+    /// </summary>
+    public virtual void SetInvulnerable(bool invulnerable)
+    {
+        this.invulnerable = invulnerable;
     }
 
     /// <summary>
