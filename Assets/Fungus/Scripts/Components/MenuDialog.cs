@@ -26,6 +26,17 @@ namespace Fungus
 
         protected virtual void Awake()
         {
+            if (EventSystem.current == null)
+            {
+                // Auto spawn an Event System from the prefab
+                GameObject prefab = Resources.Load<GameObject>("Prefabs/EventSystem");
+                if (prefab != null)
+                {
+                    GameObject go = Instantiate(prefab) as GameObject;
+                    go.name = "EventSystem";
+                }
+            }
+
             Button[] optionButtons = GetComponentsInChildren<Button>();
             cachedButtons = optionButtons;
 
