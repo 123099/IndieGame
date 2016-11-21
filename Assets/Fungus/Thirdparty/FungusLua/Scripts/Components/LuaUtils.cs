@@ -192,6 +192,9 @@ namespace Fungus
             fungusTable["prefs"] = UserData.CreateStatic(typeof(FungusPrefs));
             fungusTable["factory"] = UserData.CreateStatic(typeof(PODTypeFactory));
 
+            //Static Gameplay Utils
+            fungusTable["game"] = UserData.CreateStatic(typeof(GameplayUtils));
+
             // Lua Environment and Lua Utils components
             fungusTable["luaenvironment"] = luaEnvironment;
             fungusTable["luautils"] = this;
@@ -521,6 +524,11 @@ namespace Fungus
         public override string PreprocessScript(string input)
         {
             return input;
+        }
+
+        public virtual int GetArraySize(object[] array)
+        {
+            return array.Length;
         }
 
         #endregion

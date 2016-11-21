@@ -121,6 +121,15 @@ namespace Fungus
         #region Public members
 
         /// <summary>
+        /// This is the same as OnExecute(System.Action = null).
+        /// This is for Unity's SendMessage to work properly.
+        /// </summary>
+        public virtual void OnExecute ()
+        {
+            OnExecute(null);
+        }
+
+        /// <summary>
         /// Execute the Lua script.
         /// This is the function to call if you want to trigger execution from an external script.
         /// </summary>

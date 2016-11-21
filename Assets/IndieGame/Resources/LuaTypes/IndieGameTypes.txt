@@ -1,0 +1,9 @@
+﻿{
+	"registerTypes" : [
+		"GameplayUtils",
+		"Enemy",
+		"Player"
+	],
+	"extensionTypes" : [
+	]
+}
