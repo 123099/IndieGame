@@ -25,6 +25,14 @@ public class UserControls : MonoBehaviour, IControllable
 
     protected virtual void Move ()
     {
-        cachedRigidbody.velocity = transform.forward * speed * Input.GetAxisRaw(movementButton);
+        //Add movement force to the entity
+        cachedRigidbody.AddRelativeForce(Vector3.forward * speed * Input.GetAxisRaw(movementButton), ForceMode.Impulse);
+
+        //Verify that the speed doesn't exceed our max speed
+        if(cachedRigidbody.velocity.magnitude > speed)
+        {
+            //Limit the speed
+            cachedRigidbody.velocity = cachedRigidbody.velocity.normalized * speed;
+        }
     }
 }
