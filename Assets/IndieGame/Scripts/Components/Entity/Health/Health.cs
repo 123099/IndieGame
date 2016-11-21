@@ -130,5 +130,21 @@ public class Health : MonoBehaviour {
         return currentHealth == 0;
     }
 
+    /// <summary>
+    /// Returns the current amount of health the entity has.
+    /// </summary>
+    public virtual float GetCurrentHealth ()
+    {
+        return currentHealth;
+    }
+
+    /// <summary>
+    /// Returns the maximum amount of health the entity can have.
+    /// </summary>
+    public virtual float GetMaxHealth ()
+    {
+        return maximumHealth;
+    }
+
     #endregion
 }
