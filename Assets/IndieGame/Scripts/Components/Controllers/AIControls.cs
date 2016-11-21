@@ -44,6 +44,7 @@ public class AIControls : MonoBehaviour, IControllable {
     public virtual void Resume ()
     {
         cachedAgent.Resume();
+        cachedAgent.enabled = true;
     }
 
     #endregion

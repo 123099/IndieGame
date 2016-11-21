@@ -13,6 +13,11 @@ public class Health : MonoBehaviour {
     [Tooltip("Whether the entity is invulnerable to damage or not")]
     [SerializeField] protected bool invulnerable;
 
+    protected virtual void Start ()
+    {
+        currentHealth = maximumHealth;
+    }
+
     protected virtual void OnDestroy ()
     {
         //Clear the event invocation list

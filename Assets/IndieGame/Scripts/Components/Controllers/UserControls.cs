@@ -2,15 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UserControls : MonoBehaviour, IControllable {
+[RequireComponent(typeof(Rigidbody))]
+public class UserControls : MonoBehaviour, IControllable
+{
+    [Tooltip("The speed with which the entity should move")]
+    [SerializeField] protected float speed;
 
-	// Use this for initialization
-	void Start () {
-		
+    protected const string movementButton = "Move";
+
+    protected Rigidbody cachedRigidbody;
+
+    protected virtual void Awake ()
+    {
+        cachedRigidbody = GetComponent<Rigidbody>();
+
+        cachedRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+    }
+
+	protected virtual void Update () {
+        Move();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    protected virtual void Move ()
+    {
+        cachedRigidbody.velocity = transform.forward * speed * Input.GetAxisRaw(movementButton);
+    }
 }
