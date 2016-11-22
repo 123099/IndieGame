@@ -1,0 +1,14 @@
+print(enemy)
+
+-- i'm setting the enemy to not be aggresive from the beginning
+enemy.SetAggro(false)
+-- if the player is in the aggrorange, the enemy will proceed to attack him and ask his friends to join in
+if Vector3.Distance(player.transform.position, enemy.transform.position)<=7 then
+	enemy.SetAggro(true)
+	local enemies = game.GetEnemiesInRange(enemy.transform.position, 7)
+	local enemyCount = luautils.GetArraySize(enemies)
+	for i = 1, enemyCount do
+		enemies[i].SetAggro(true)
+	end
+	print "whatever you want"
+end
