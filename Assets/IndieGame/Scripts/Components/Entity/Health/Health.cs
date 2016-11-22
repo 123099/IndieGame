@@ -13,8 +13,9 @@ public class Health : MonoBehaviour {
     [Tooltip("Whether the entity is invulnerable to damage or not")]
     [SerializeField] protected bool invulnerable;
 
-    protected virtual void Start ()
+    protected virtual void Awake ()
     {
+        print("set");
         currentHealth = maximumHealth;
     }
 
@@ -49,6 +50,7 @@ public class Health : MonoBehaviour {
     /// <param name="damage">The amount of damage to apply to the entity</param>
     public virtual void TakeDamage(float damage)
     {
+        print("take " + damage);
         if(damage < 0)
         {
             Debug.LogWarning("Cannot take negative damage. Use Heal instead");

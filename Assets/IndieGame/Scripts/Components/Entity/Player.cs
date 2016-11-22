@@ -14,12 +14,15 @@ public class Player : Entity
     protected const string rangedAttackBlock = "Ranged Attack";
 
     protected UserControls cachedUserControls;
+    protected Health cachedHealth;
 
     protected Flowchart attacksFlowchart;
 
-    protected override void Start ()
+    protected override void Awake ()
     {
         cachedUserControls = GetComponent<UserControls>();
+        cachedHealth = GetComponent<Health>();
+
         attacksFlowchart = GetComponent<Flowchart>();
     }
 
@@ -41,4 +44,13 @@ public class Player : Entity
             }
         }
     }
+
+    #region Public members
+
+    public virtual Health GetHealth ()
+    {
+        return cachedHealth;
+    }
+
+    #endregion
 }
