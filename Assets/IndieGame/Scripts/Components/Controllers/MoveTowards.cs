@@ -11,6 +11,9 @@ public class MoveTowards : MonoBehaviour
     [Tooltip("The target to move towards")]
     [SerializeField] protected Transform target;
 
+    [Tooltip("The distance to move. This is ignored if target is set")]
+    [SerializeField] protected float movementDistance;
+
     [Tooltip("The speed with which to move towards the target")]
     [SerializeField] protected float speed;
 
@@ -52,28 +55,35 @@ public class MoveTowards : MonoBehaviour
 
     protected virtual void Move ()
     {
-        //Check if we reached the target
-        if(Vector3.Distance(transform.position, target.position) <= thresholdDistance)
+        if (target != null)
         {
-            //Decide what to do
-            switch (goalAction)
+            //Check if we reached the target
+            if (Vector3.Distance(transform.position, target.position) <= thresholdDistance)
             {
-                case GoalAction.Stop:
-                    isStopped = true;
-                    break;
-                case GoalAction.SelfDestruct:
-                    Destroy(gameObject);
-                    break;
-                case GoalAction.DeactivateSelf:
-                    enabled = false;
-                    break;
-                case GoalAction.DeactivateSelfObject:
-                    gameObject.SetActive(false);
-                    break;
-            }
+                //Decide what to do
+                switch (goalAction)
+                {
+                    case GoalAction.Stop:
+                        isStopped = true;
+                        break;
+                    case GoalAction.SelfDestruct:
+                        Destroy(gameObject);
+                        break;
+                    case GoalAction.DeactivateSelf:
+                        enabled = false;
+                        break;
+                    case GoalAction.DeactivateSelfObject:
+                        gameObject.SetActive(false);
+                        break;
+                }
 
-            //Stop moving this iteration
-            return;
+                //Stop moving this iteration
+                return;
+            }
+        }
+        else
+        {
+
         }
 
         //Get direction vector between us and the target

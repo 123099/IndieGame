@@ -191,6 +191,7 @@ namespace Fungus
             fungusTable["playerprefs"] = UserData.CreateStatic(typeof(PlayerPrefs));
             fungusTable["prefs"] = UserData.CreateStatic(typeof(FungusPrefs));
             fungusTable["factory"] = UserData.CreateStatic(typeof(PODTypeFactory));
+            fungusTable["Vector3"] = UserData.CreateStatic(typeof(Vector3));
 
             //Static Gameplay Utils
             fungusTable["game"] = UserData.CreateStatic(typeof(GameplayUtils));
