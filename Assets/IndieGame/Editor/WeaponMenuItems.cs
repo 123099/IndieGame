@@ -8,7 +8,7 @@ public static class WeaponMenuItems
     [MenuItem("IndieGame/Create/Weapon/Weapon")]
     public static void CreateWeapon ()
     {
-        GameObject weapon = EditorUtils.SpawnPrefab("Weapon");
+        GameObject weapon = EditorUtils.SpawnPrefab("Weapon", false, false);
 
         if (weapon == null)
             EditorUtils.ShowPrefabCreationFailedMessageInSceneWindow("Weapon");

@@ -10,7 +10,7 @@ public static class EditorUtils
     /// If centerInScene is true then the object will be placed centered in the view window with z = 0.
     /// If centerInScene is false the the object will be placed at (0,0,0)
     /// </summary>
-    public static GameObject SpawnPrefab (string prefabName, bool centerInScene = false)
+    public static GameObject SpawnPrefab (string prefabName, bool centerInScene = false, bool disconnectPrefabInstance = true)
     {
         GameObject prefab = Resources.Load<GameObject>("Prefabs/" + prefabName);
         if (prefab == null)
@@ -19,7 +19,11 @@ public static class EditorUtils
         }
 
         GameObject go = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
-        PrefabUtility.DisconnectPrefabInstance(go);
+
+        if (disconnectPrefabInstance)
+        {
+            PrefabUtility.DisconnectPrefabInstance(go);
+        }
 
         if (centerInScene)
         {
