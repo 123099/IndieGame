@@ -7,7 +7,6 @@ using Fungus;
 [RequireComponent(typeof(UserControls))]
 [RequireComponent(typeof(Interactor))]
 [RequireComponent(typeof(Health))]
-[RequireComponent(typeof(Flowchart))]
 public class Player : Entity
 {
     protected const string rangedAttackButton = "Ranged Attack";
@@ -16,31 +15,37 @@ public class Player : Entity
     protected UserControls cachedUserControls;
     protected Health cachedHealth;
 
-    protected Flowchart attacksFlowchart;
-
     protected override void Awake ()
     {
         cachedUserControls = GetComponent<UserControls>();
         cachedHealth = GetComponent<Health>();
-
-        attacksFlowchart = GetComponent<Flowchart>();
     }
 
     protected virtual void Update ()
     {
-        //Make sure we are not busy with a certain attack
-        if (attacksFlowchart.HasExecutingBlocks() == false)
+        GetAttackInput();
+    }
+
+    protected void GetAttackInput ()
+    {
+        //Check if we have an attack flowchart
+        if (attacksFlowchart != null)
         {
-            if (Input.GetButton(rangedAttackButton))
+            //Make sure we are not busy with a certain attack
+            if (attacksFlowchart.HasExecutingBlocks() == false)
             {
-                //Disable user controls, to prevent air movement
-                cachedUserControls.enabled = false;
+                if (Input.GetButton(rangedAttackButton))
+                {
+                    //Disable user controls, to prevent air movement
+                    cachedUserControls.enabled = false;
 
-                //Acquire the ranged attack block
-                Block rangedBlock = attacksFlowchart.FindBlock(rangedAttackBlock);
+                    //Acquire the ranged attack block
+                    Block rangedBlock = attacksFlowchart.FindBlock(rangedAttackBlock);
 
-                //Execute the attack
-                attacksFlowchart.ExecuteBlock(rangedBlock, onComplete: delegate { cachedUserControls.enabled = true; });
+                    //Execute the attack
+                    attacksFlowchart.ExecuteBlock(rangedBlock, onComplete: delegate
+                    { cachedUserControls.enabled = true; });
+                }
             }
         }
     }

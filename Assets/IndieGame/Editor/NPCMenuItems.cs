@@ -7,7 +7,7 @@ public static class NPCMenuItems {
     [MenuItem("IndieGame/Create/NPC/NPC")]
 	public static void CreateNPC ()
     {
-        GameObject npc = EditorUtils.SpawnPrefab("NPC");
+        GameObject npc = EditorUtils.SpawnPrefab("NPC", false, false);
 
         if (npc == null)
             EditorUtils.ShowPrefabCreationFailedMessageInSceneWindow("NPC");

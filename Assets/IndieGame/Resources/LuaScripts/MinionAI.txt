@@ -1,7 +1,4 @@
--- i'm setting the enemy to not be aggresive from the beginning
-enemy.SetAggro(false)
-
--- if the player is in the aggrorange, the enemy will proceed to attack him and ask his friends to join in
+-- if the player is in the aggro range, the enemy will proceed to attack him and ask his friends to join in
 if Vector3.Distance(player.transform.position, enemy.transform.position) <= 7 then
 	-- Set the enemy as aggressive
 	enemy.SetAggro(true)

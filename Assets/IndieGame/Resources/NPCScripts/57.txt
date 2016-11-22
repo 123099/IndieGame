@@ -1,4 +1,4 @@
 conversation[[
 WindTablet TabletPic right : He who tresspasses into his  domain must be careful not to anger him.
-WindTablet :His rage cuts like the sharpest of blades.
+WindTablet : His rage cuts like the sharpest of blades.
 ]]
