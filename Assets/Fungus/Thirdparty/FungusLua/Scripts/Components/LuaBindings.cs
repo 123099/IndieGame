@@ -81,7 +81,7 @@ namespace Fungus
         public override void AddBindings(LuaEnvironment luaEnv)
         {
             if (!allEnvironments && 
-                (luaEnvironment != null && !luaEnvironment.Equals(luaEnv)))
+                (luaEnvironment != null && luaEnvironment != luaEnv))
             {
                 // Don't add bindings to this environment
                 return;
@@ -135,7 +135,6 @@ namespace Fungus
                 {
                     continue;
                 }
-
                 // Check for keys used multiple times
                 if (bindingsTable.Get(key).Type != DataType.Nil)
                 {

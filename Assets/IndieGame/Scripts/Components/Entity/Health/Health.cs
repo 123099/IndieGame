@@ -15,7 +15,6 @@ public class Health : MonoBehaviour {
 
     protected virtual void Awake ()
     {
-        print("set");
         currentHealth = maximumHealth;
     }
 
