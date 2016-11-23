@@ -75,7 +75,6 @@ public class Damager : MonoBehaviour
 
     protected virtual void DealDamage (Health targetHealth)
     {
-        print(targetHealth);
         //Verify that we actually have a target with a health component
         if(targetHealth != null)
         {

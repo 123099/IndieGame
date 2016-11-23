@@ -11,7 +11,24 @@ public class Enemy : Entity
 
     protected override void Awake ()
     {
+        base.Awake();
         cachedAIControls = GetComponent<AIControls>();
+    }
+
+    protected override void Start ()
+    {
+        base.Start();
+        cachedHealth.OnDeath += Die;
+    }
+
+    protected virtual void OnDestroy ()
+    {
+        cachedHealth.OnDeath -= Die;
+    }
+
+    protected virtual void Die (object sender, System.EventArgs e)
+    {
+        Destroy(gameObject);
     }
 
     #region Public members

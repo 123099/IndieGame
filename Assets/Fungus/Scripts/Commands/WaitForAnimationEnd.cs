@@ -9,22 +9,35 @@ using Fungus;
 public class WaitForAnimationEnd : Command {
 
     [Tooltip("Reference to an Animator component in a game object")]
-    [SerializeField]
-    protected AnimatorData animator = new AnimatorData();
+    [SerializeField] protected AnimatorData animator = new AnimatorData();
 
     [Tooltip("Layer on which to wait for the active animation state to finish")]
-    [SerializeField]
-    protected IntegerData layer = new IntegerData(0);
+    [SerializeField] protected IntegerData layer = new IntegerData(0);
+
+    [Tooltip("Optionally specify the name of the state to wait to finish playing")]
+    [SerializeField] protected StringData animationState = new StringData("");
 
     protected virtual IEnumerator DoWaitForAnimationEnd (System.Action onComplete)
     {
-        //Get the short name hash of the animator state active at the start of this command
-        int currentAnimatorStateShortNameHash = animator.Value.GetCurrentAnimatorStateInfo(layer.Value).shortNameHash;
-
-        //As long as the active state has the same short name hash as the one active at the start of this command, keep waiting
-        while(animator.Value.GetCurrentAnimatorStateInfo(layer.Value).shortNameHash == currentAnimatorStateShortNameHash)
+        //Decide whether to wait for currently activate animation or specified animation state
+        if (animationState.Value == "")
         {
-            yield return null;
+            //Get the short name hash of the animator state active at the start of this command
+            int currentAnimatorStateShortNameHash = animator.Value.GetCurrentAnimatorStateInfo(layer.Value).shortNameHash;
+
+            //As long as the active state has the same short name hash as the one active at the start of this command, keep waiting
+            while (animator.Value.GetCurrentAnimatorStateInfo(layer.Value).shortNameHash == currentAnimatorStateShortNameHash)
+            {
+                yield return null;
+            }
+        }
+        else
+        {
+            //As long as the active state has the same short name hash as the one active at the start of this command, keep waiting
+            while (animator.Value.GetCurrentAnimatorStateInfo(layer.Value).IsName(animationState))
+            {
+                yield return null;
+            }
         }
 
         //If we are here, the animation has finished.

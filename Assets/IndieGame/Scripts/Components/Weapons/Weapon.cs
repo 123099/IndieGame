@@ -36,11 +36,6 @@ public class Weapon : MonoBehaviour {
 
     #region Public members
 
-    void Update ()
-    {
-        Shoot();
-    }
-
     public virtual void Shoot ()
     {
         //Check the fire rate timer, if we are ready to fire

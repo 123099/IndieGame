@@ -9,9 +9,6 @@ using System;
              "Attacks all entities in a radius around the executer")]
 public class WhirlwindAttack : Attack
 {
-    [Tooltip("The attack radius.")]
-    [SerializeField] protected FloatData attackRadius;
-
     [Tooltip("The time between applying damage to every entity")]
     [SerializeField] protected FloatData damageRate;
 
@@ -22,7 +19,7 @@ public class WhirlwindAttack : Attack
         yield return new WaitForSeconds(channelTime);
 
         //Get all entities around the executer
-        var collisions = Physics.OverlapSphere(attackExecuter.Value.transform.position, attackRadius);
+        var collisions = Physics.OverlapSphere(attackExecuter.Value.transform.position, range);
 
         //The health object that will be taking damage.
         Health health = null;
@@ -30,19 +27,22 @@ public class WhirlwindAttack : Attack
         //Loop through all the hit colliders, and apply damage
         for (int i = 0; i < collisions.Length; ++i)
         {
-            //Test if the collider is not the attack executor
-            if (collisions[i].gameObject != attackExecuter.Value)
+            //Get the game object in charge of the hit collider
+            GameObject gameObjectInCharge;
+
+            if(collisions[i].attachedRigidbody != null)
             {
-                //Check if we have a rigidbody that accepts the collisions of the collider
-                if (collisions[i].attachedRigidbody != null)
-                {
-                    health = collisions[i].attachedRigidbody.GetComponent<Health>();
-                }
-                else
-                {
-                    //Get the health component on the collider
-                    health = collisions[i].GetComponent<Health>();
-                }
+                gameObjectInCharge = collisions[i].attachedRigidbody.gameObject;
+            }
+            else
+            {
+                gameObjectInCharge = collisions[i].gameObject;
+            }
+
+            //Test if the collider is not the attack executor
+            if (gameObjectInCharge != attackExecuter.Value)
+            {
+                health = gameObjectInCharge.GetComponent<Health>();
 
                 //Test if hit collider is damageable
                 if (health != null)
