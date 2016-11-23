@@ -30,6 +30,11 @@ end
 -- Coroutines
 -------------
 
+-- Waits for the next frame
+function M.waitframe()
+	coroutine.yield()
+end
+
 -- Waits for a number of seconds
 function M.wait(duration)
     local t = M.time.timeSinceLevelLoad
