@@ -337,7 +337,7 @@ namespace Fungus
 
                 return;
             }
-
+            
             // Execute the Lua script
             if (runAsCoroutine)
             {
