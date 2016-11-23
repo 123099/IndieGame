@@ -33,4 +33,18 @@ public class CircleTarget : MonoBehaviour
             transform.RotateAround(target.position, target.up, speed * Time.deltaTime);
         }
     }
+
+    #region Public members
+
+    public virtual void SetTarget(Transform target)
+    {
+        this.target = target;
+    }
+
+    public virtual void SetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
+
+    #endregion
 }

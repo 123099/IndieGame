@@ -10,3 +10,14 @@ if Vector3.Distance(player.transform.position, enemy.transform.position) <= 7 th
 		enemies[i].SetAggro(true)
 	end
 end
+
+if enemy.IsAggroed() then
+	if enemy.CanMove() then
+		enemy.GetMovementControls().SetDestination(player.transform.position)
+	end
+
+	if Vector3.Distance(player.transform.position, enemy.transform.position) <= 1.5 then
+		enemy.ExecuteAttack("BasicAttack")
+	end
+end
+	
