@@ -2,7 +2,8 @@
 	"registerTypes" : [
 		"GameplayUtils",
 		"Enemy",
-		"Player"
+		"Player",
+		"AIControls"
 	],
 	"extensionTypes" : [
 	]
