@@ -469,13 +469,13 @@ namespace Fungus
 
             if (block == null)
             {
-                Debug.LogError("Block " + blockName  + " does not exist");
+                Debug.LogError("Block " + blockName  + " does not exist in the flowchart " + name);
                 return;
             }
 
             if (!ExecuteBlock(block))
             {
-                Debug.LogWarning("Block " + blockName  + " failed to execute");
+                Debug.LogWarning("Block " + blockName  + " failed to execute in the flowchart " + name);
             }
         }
 
@@ -493,7 +493,7 @@ namespace Fungus
                 return false;
             }
 
-            if (((Block)block).gameObject != gameObject)
+            if (block.gameObject != gameObject)
             {
                 Debug.LogError("Block must belong to the same gameobject as this Flowchart");
                 return false;                
