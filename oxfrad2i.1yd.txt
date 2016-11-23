@@ -1,0 +1,41 @@
+﻿Merge branch 'the-talking'
+
+# Conflicts:
+#	Assets/IndieGame/Scenes/Disposables/Scripting tablet 1.unity
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	new file:   Assets/IndieGame/Resources/NPCScripts/18.txt
+#	new file:   Assets/IndieGame/Resources/NPCScripts/18.txt.meta
+#	new file:   Assets/IndieGame/Resources/NPCScripts/19.txt
+#	new file:   Assets/IndieGame/Resources/NPCScripts/19.txt.meta
+#	new file:   Assets/IndieGame/Resources/NPCScripts/20.txt
+#	new file:   Assets/IndieGame/Resources/NPCScripts/20.txt.meta
+#	new file:   Assets/IndieGame/Resources/Sprites/Kahuna.png
+#	new file:   Assets/IndieGame/Resources/Sprites/Kahuna.png.meta
+#	new file:   Assets/IndieGame/Resources/Sprites/Kamea.png
+#	new file:   Assets/IndieGame/Resources/Sprites/Kamea.png.meta
+#	new file:   Assets/IndieGame/Resources/Sprites/Moaalii.png
+#	new file:   Assets/IndieGame/Resources/Sprites/Moaalii.png.meta
+#	modified:   Assets/IndieGame/Scripts/Utils.meta
+#
+# Untracked files:
+#	Assets/Fungus/Integrations/Spine/Fungus-Spine.unitypackage.meta
+#	Assets/IndieGame/Scenes/Dungeons.meta
+#	Assets/IndieGame/Scenes/Story.meta
+#	Assets/IndieGame/Scenes/Village.meta
+#	Assets/IndieGame/Tests.meta
+#
+

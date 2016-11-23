@@ -1,0 +1,79 @@
+﻿Merge branch 'master' into Add-Greybox
+
+# Conflicts:
+#	Assets/FMODStudioCache.asset
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch Add-Greybox
+# Your branch is up-to-date with 'origin/Add-Greybox'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	deleted:    Assets/FMODStudioCache.asset
+#	modified:   Assets/Fungus/Scripts/Components/Flowchart.cs
+#	new file:   Assets/IndieGame/Editor/DamagerMenuItems.cs
+#	renamed:    Assets/IndieGame/Editor/WeaponMenuItems.cs.meta -> Assets/IndieGame/Editor/DamagerMenuItems.cs.meta
+#	deleted:    Assets/IndieGame/Editor/WeaponMenuItems.cs
+#	new file:   Assets/IndieGame/Resources/Dialogue.meta
+#	new file:   Assets/IndieGame/Resources/Dialogue/18.txt
+#	new file:   Assets/IndieGame/Resources/Dialogue/18.txt.meta
+#	new file:   Assets/IndieGame/Resources/Dialogue/19.txt
+#	new file:   Assets/IndieGame/Resources/Dialogue/19.txt.meta
+#	new file:   Assets/IndieGame/Resources/Dialogue/20.txt
+#	new file:   Assets/IndieGame/Resources/Dialogue/20.txt.meta
+#	modified:   Assets/IndieGame/Resources/LuaScripts/MinionAI.txt
+#	modified:   Assets/IndieGame/Resources/LuaTypes/IndieGameTypes.txt
+#	modified:   Assets/IndieGame/Resources/Prefabs/EarthMiniBoss.prefab
+#	modified:   Assets/IndieGame/Resources/Prefabs/FireMiniBoss.prefab
+#	new file:   Assets/IndieGame/Resources/Prefabs/LavaPool.prefab
+#	new file:   Assets/IndieGame/Resources/Prefabs/LavaPool.prefab.meta
+#	modified:   Assets/IndieGame/Resources/Prefabs/MainBoss.prefab
+#	modified:   Assets/IndieGame/Resources/Prefabs/Minion.prefab
+#	modified:   Assets/IndieGame/Resources/Prefabs/WaterMiniBoss.prefab
+#	modified:   Assets/IndieGame/Resources/Prefabs/WaterMiniBoss.prefab.meta
+#	new file:   Assets/IndieGame/Resources/Prefabs/WaterWave.prefab
+#	new file:   Assets/IndieGame/Resources/Prefabs/WaterWave.prefab.meta
+#	modified:   Assets/IndieGame/Resources/Prefabs/WindMiniBoss.prefab
+#	new file:   Assets/IndieGame/Resources/Sprites/Kahuna.png
+#	new file:   Assets/IndieGame/Resources/Sprites/Kahuna.png.meta
+#	new file:   Assets/IndieGame/Resources/Sprites/Kamea.png
+#	new file:   Assets/IndieGame/Resources/Sprites/Kamea.png.meta
+#	new file:   Assets/IndieGame/Resources/Sprites/Moaalii.png
+#	new file:   Assets/IndieGame/Resources/Sprites/Moaalii.png.meta
+#	new file:   Assets/IndieGame/Scenes/Disposables/Enemy Attacks.unity
+#	renamed:    Assets/IndieGame/Scenes/Disposables/Scripting tablet 1.unity.meta -> Assets/IndieGame/Scenes/Disposables/Enemy Attacks.unity.meta
+#	modified:   Assets/IndieGame/Scenes/Disposables/Prefabs.unity
+#	deleted:    Assets/IndieGame/Scenes/Disposables/Scripting tablet 1.unity
+#	new file:   Assets/IndieGame/Scenes/Disposables/Story.unity
+#	new file:   Assets/IndieGame/Scenes/Disposables/Story.unity.meta
+#	new file:   Assets/IndieGame/Scenes/Disposables/Test Flowchart.meta
+#	new file:   Assets/IndieGame/Scenes/Disposables/Test Flowchart.unity
+#	new file:   Assets/IndieGame/Scenes/Disposables/Test Flowchart.unity.meta
+#	new file:   Assets/IndieGame/Scenes/Disposables/Test Flowchart/NavMesh.asset
+#	new file:   Assets/IndieGame/Scenes/Disposables/Test Flowchart/NavMesh.asset.meta
+#	modified:   Assets/IndieGame/Scripts/Components/Controllers/CircleTarget.cs
+#	modified:   Assets/IndieGame/Scripts/Components/Controllers/MoveTowards.cs
+#	new file:   Assets/IndieGame/Scripts/Components/Entity/Attacks/LavaAttack.cs
+#	new file:   Assets/IndieGame/Scripts/Components/Entity/Attacks/LavaAttack.cs.meta
+#	modified:   Assets/IndieGame/Scripts/Components/Entity/Attacks/LeapAttack.cs
+#	new file:   Assets/IndieGame/Scripts/Components/Entity/Attacks/WaterAttack.cs
+#	new file:   Assets/IndieGame/Scripts/Components/Entity/Attacks/WaterAttack.cs.meta
+#	modified:   Assets/IndieGame/Scripts/Components/Entity/Attacks/WhirlwindAttack.cs
+#	modified:   Assets/IndieGame/Scripts/Components/Entity/Health/Damager.cs
+#	modified:   Assets/IndieGame/Scripts/Utils.meta
+#	new file:   Assets/New Terrain.asset
+#	new file:   Assets/New Terrain.asset.meta
+#	new file:   oxfrad2i.1yd.txt
+#
+# Changes not staged for commit:
+#	deleted:    Assets/FMODStudioCache.asset.meta
+#
+
