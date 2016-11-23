@@ -22,7 +22,11 @@ public static class GameplayUtils
             //Go through the colliders, and extract those that are enemies
             for(int i = 0; i < collidersInRange.Length; ++i)
             {
-                Enemy enemy = collidersInRange[i].GetComponent<Enemy>();
+                Enemy enemy;
+                if (collidersInRange[i].attachedRigidbody != null)
+                    enemy = collidersInRange[i].attachedRigidbody.GetComponent<Enemy>();
+                else
+                    enemy = collidersInRange[i].GetComponent<Enemy>();
                 
                 if(enemy != null)
                 {
