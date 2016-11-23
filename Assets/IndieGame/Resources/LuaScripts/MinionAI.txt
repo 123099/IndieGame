@@ -12,7 +12,6 @@ if player ~= nil then
 		end
 	end
 
-
 	if enemy.IsAggroed() then
 		if enemy.CanMove() then
 			enemy.GetMovementControls().SetDestination(player.transform.position)
