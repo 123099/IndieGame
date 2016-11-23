@@ -119,7 +119,7 @@ ModelImporter:
     4300002: R_Knife_Mesh
     4300004: Mask_Mesh
     4300006: Body_Mesh
-    7400000: Take 001
+    7400000: Idle
     9500000: //RootNode
     13700000: Body_Mesh
   materials:
@@ -142,7 +142,141 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body_Mesh
+        weight: 1
+      - path: CTRL_Master
+        weight: 1
+      - path: CTRL_Master/CTRL_Hip
+        weight: 1
+      - path: L_Knife_Mesh
+        weight: 1
+      - path: Mask_Mesh
+        weight: 1
+      - path: R_Knife_Mesh
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/L_Upperarm
+        weight: 1
+      - path: Root/L_Upperarm/L_Elbow
+        weight: 1
+      - path: Root/L_Upperarm/L_Elbow/L_Wrist
+        weight: 1
+      - path: Root/L_Upperarm/L_Elbow/L_Wrist/L_Hand
+        weight: 1
+      - path: Root/L_Upperarm/L_Elbow/L_Wrist/L_Hand/L_Index_1
+        weight: 1
+      - path: Root/L_Upperarm/L_Elbow/L_Wrist/L_Hand/L_Index_1/L_Index_2
+        weight: 1
+      - path: Root/L_Upperarm/L_Elbow/L_Wrist/L_Hand/L_Index_1/L_Index_2/L_Index_3
+        weight: 1
+      - path: Root/L_Upperarm/L_Elbow/L_Wrist/L_Hand/L_Middle_1
+        weight: 1
+      - path: Root/L_Upperarm/L_Elbow/L_Wrist/L_Hand/L_Middle_1/L_Middle_2
+        weight: 1
+      - path: Root/L_Upperarm/L_Elbow/L_Wrist/L_Hand/L_Middle_1/L_Middle_2/L_Middle_3
+        weight: 1
+      - path: Root/L_Upperarm/L_Elbow/L_Wrist/L_Hand/L_Pinky_1
+        weight: 1
+      - path: Root/L_Upperarm/L_Elbow/L_Wrist/L_Hand/L_Pinky_1/L_Middle_2 1
+        weight: 1
+      - path: Root/L_Upperarm/L_Elbow/L_Wrist/L_Hand/L_Pinky_1/L_Middle_2 1/L_Middle_3
+          1
+        weight: 1
+      - path: Root/L_Upperarm/L_Elbow/L_Wrist/L_Hand/L_Thumb_1
+        weight: 1
+      - path: Root/L_Upperarm/L_Elbow/L_Wrist/L_Hand/L_Thumb_1/L_Thumb_2
+        weight: 1
+      - path: Root/L_Upperarm/L_Elbow/L_Wrist/L_Hand/L_Thumb_1/L_Thumb_2/L_Thumb_3
+        weight: 1
+      - path: Root/L_Upperleg
+        weight: 1
+      - path: Root/L_Upperleg/L_Knee
+        weight: 1
+      - path: Root/L_Upperleg/L_Knee/L_Foot
+        weight: 1
+      - path: Root/L_Upperleg/L_Knee/L_Foot/L_Toes
+        weight: 1
+      - path: Root/L_Upperleg/L_Knee/L_Foot/L_Toes/L_ToeNub
+        weight: 1
+      - path: Root/Mask_Joint
+        weight: 1
+      - path: Root/R_Upperarm
+        weight: 1
+      - path: Root/R_Upperarm/R_Elbow
+        weight: 1
+      - path: Root/R_Upperarm/R_Elbow/R_Wrist
+        weight: 1
+      - path: Root/R_Upperarm/R_Elbow/R_Wrist/R_Hand
+        weight: 1
+      - path: Root/R_Upperarm/R_Elbow/R_Wrist/R_Hand/R_Index_1
+        weight: 1
+      - path: Root/R_Upperarm/R_Elbow/R_Wrist/R_Hand/R_Index_1/R_Index_2
+        weight: 1
+      - path: Root/R_Upperarm/R_Elbow/R_Wrist/R_Hand/R_Index_1/R_Index_2/R_Index_3
+        weight: 1
+      - path: Root/R_Upperarm/R_Elbow/R_Wrist/R_Hand/R_Middle_1
+        weight: 1
+      - path: Root/R_Upperarm/R_Elbow/R_Wrist/R_Hand/R_Middle_1/R_Middle_2
+        weight: 1
+      - path: Root/R_Upperarm/R_Elbow/R_Wrist/R_Hand/R_Middle_1/R_Middle_2/R_Middle_3
+        weight: 1
+      - path: Root/R_Upperarm/R_Elbow/R_Wrist/R_Hand/R_Pinky_1
+        weight: 1
+      - path: Root/R_Upperarm/R_Elbow/R_Wrist/R_Hand/R_Pinky_1/R_Middle_2 1
+        weight: 1
+      - path: Root/R_Upperarm/R_Elbow/R_Wrist/R_Hand/R_Pinky_1/R_Middle_2 1/R_Middle_3
+          1
+        weight: 1
+      - path: Root/R_Upperarm/R_Elbow/R_Wrist/R_Hand/R_Thumb_1
+        weight: 1
+      - path: Root/R_Upperarm/R_Elbow/R_Wrist/R_Hand/R_Thumb_1/R_Thumb_2
+        weight: 1
+      - path: Root/R_Upperarm/R_Elbow/R_Wrist/R_Hand/R_Thumb_1/R_Thumb_2/R_Thumb_3
+        weight: 1
+      - path: Root/transform1
+        weight: 1
+      - path: Root/transform1/R_Upperleg
+        weight: 1
+      - path: Root/transform1/R_Upperleg/R_Knee
+        weight: 1
+      - path: Root/transform1/R_Upperleg/R_Knee/R_Foot
+        weight: 1
+      - path: Root/transform1/R_Upperleg/R_Knee/R_Foot/R_Toes
+        weight: 1
+      - path: Root/transform1/R_Upperleg/R_Knee/R_Foot/R_Toes/R_ToeNub
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
