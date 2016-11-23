@@ -88,8 +88,6 @@ public class LeapAttack : Attack
         Vector3 velocity = horizontalSpeed * vectorToTarget.normalized + verticalSpeed * Vector3.up;
         cachedRigidbody.velocity = velocity;
 
-        print(velocity);
-
         //Wait for motion to complete
         yield return new WaitForSeconds(motionTime);
     }

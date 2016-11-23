@@ -35,8 +35,16 @@ public class Damager : MonoBehaviour
         //Make sure damageOverTime is disabled to prevent double damage hit on first collision
         if (damageOverTime == false)
         {
-            //Deal damage to the health component of the collider
-            DealDamage(collider.GetComponent<Health>());
+            //If we have an object with a rigidbody that accepts all collisions, use the rigidbody to find for the proper component
+            if (collider.attachedRigidbody != null)
+            {
+                DealDamage(collider.attachedRigidbody.GetComponent<Health>());
+            }
+            else
+            {
+                //Deal damage to the health component of the collider
+                DealDamage(collider.GetComponent<Health>());
+            }
         }
     }
 
@@ -51,14 +59,23 @@ public class Damager : MonoBehaviour
             //Check if we are ready to apply damage
             if (damageRateTimer.IsReady())
             {
-                //Deal damage to the health component of the collider
-                DealDamage(collider.GetComponent<Health>());
+                //If we have an object with a rigidbody that accepts all collisions, use the rigidbody to find for the proper component
+                if (collider.attachedRigidbody != null)
+                {
+                    DealDamage(collider.attachedRigidbody.GetComponent<Health>());
+                }
+                else
+                {
+                    //Deal damage to the health component of the collider
+                    DealDamage(collider.GetComponent<Health>());
+                }
             }
         }
     }
 
     protected virtual void DealDamage (Health targetHealth)
     {
+        print(targetHealth);
         //Verify that we actually have a target with a health component
         if(targetHealth != null)
         {

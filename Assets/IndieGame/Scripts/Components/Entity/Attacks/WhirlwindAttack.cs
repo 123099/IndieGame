@@ -33,8 +33,16 @@ public class WhirlwindAttack : Attack
             //Test if the collider is not the attack executor
             if (collisions[i].gameObject != attackExecuter.Value)
             {
-                //Get the health component on the collider
-                health = collisions[i].GetComponent<Health>();
+                //Check if we have a rigidbody that accepts the collisions of the collider
+                if (collisions[i].attachedRigidbody != null)
+                {
+                    health = collisions[i].attachedRigidbody.GetComponent<Health>();
+                }
+                else
+                {
+                    //Get the health component on the collider
+                    health = collisions[i].GetComponent<Health>();
+                }
 
                 //Test if hit collider is damageable
                 if (health != null)
