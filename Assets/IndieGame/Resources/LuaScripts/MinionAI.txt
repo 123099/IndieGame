@@ -16,10 +16,13 @@ if player ~= nil then
 	if enemy.IsAggroed() then
 		if enemy.CanMove() then
 			enemy.GetMovementControls().SetDestination(player.transform.position)
+			animator.SetFloat("Speed", 1.0)
 		end
 	
-		if Vector3.Distance(player.transform.position, enemy.transform.position) <= 1.5 then
+		if Vector3.Distance(player.transform.position, enemy.transform.position) <= 2 then
+			enemy.GetMovementControls().Stop()
 			enemy.ExecuteAttack("BasicAttack")
+			animator.SetFloat("Speed", 0)
 		end
 	end
 end
