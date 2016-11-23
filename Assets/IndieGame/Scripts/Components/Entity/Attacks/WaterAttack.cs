@@ -26,13 +26,50 @@ public class WaterAttack : Attack
     [SerializeField] protected Damager waterWavePrefab;
 
     [Tooltip("The orbital-wave information to spawn waves around the attack executer")]
-    [SerializeField] protected WaterWaveInfo[] waterWaveInfo;
+    [SerializeField] protected WaterWaveInfo[] waterWaveOrbitals;
 
     protected override IEnumerator DoLaunchAttack (Action onAttackComplete)
     {
-        for(int i = 0; i < waterWaveInfo.Length; ++i)
+        //The spread angle between pools should be the golden angle for maximum spread
+        const float angleBetweenWaves = 137.508f;
+
+        //Cache the transform of the executer for easier access
+        Transform attackExecuterTransform = attackExecuter.Value.transform;
+
+        for (int orbital = 0; orbital < waterWaveOrbitals.Length; ++orbital)
         {
-            yield return null;
+            for(int wave = 0; wave < waterWaveOrbitals[orbital].waveCount; ++wave)
+            {
+                //Spawn a wave
+                Damager waterWave = Instantiate(waterWavePrefab);
+
+                //Calculate vector to wave from the executer
+                Vector3 vectorToWave = Quaternion.AngleAxis(angleBetweenWaves * wave, attackExecuterTransform.up) * attackExecuterTransform.right;
+
+                //Position the wave in its orbital
+                waterWave.transform.position = attackExecuterTransform.position + vectorToWave * waterWaveOrbitals[orbital].orbitalDistance;
+
+                //Add the executer the exclusion list of the water wave
+                waterWave.ExcludeTarget(attackExecuter.Value.transform);
+
+                //Add circle target component to the wave
+                CircleTarget circleTargetComponent = waterWave.gameObject.AddComponent<CircleTarget>();
+
+                //Set the executer to be the target of the rotation
+                circleTargetComponent.SetTarget(attackExecuterTransform);
+
+                //Set the speed of the wave
+                circleTargetComponent.SetSpeed(waterWaveOrbitals[orbital].waveSpeed);
+                
+                //Wait for a few seconds
+                yield return new WaitForSeconds(0.03f);
+            }
+        }
+
+        //We are done with the attack
+        if (onAttackComplete != null)
+        {
+            onAttackComplete.Invoke();
         }
     }
 }

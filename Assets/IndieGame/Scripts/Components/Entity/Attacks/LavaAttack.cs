@@ -32,7 +32,7 @@ public class LavaAttack : Attack
             Damager lavaPool = Instantiate(lavaPoolPrefab);
 
             //Calculate rotated direction by the angle between the pools away from the executer
-            Vector3 vectorToPool = Quaternion.AngleAxis(angleBetweenPools * i, attackExecuterTransform.up) * attackExecuterTransform.right;
+            Vector3 vectorToPool = Quaternion.AngleAxis(angleBetweenPools * (i + 1) * UnityEngine.Random.Range(0, 15), attackExecuterTransform.up) * attackExecuterTransform.right;
 
             //Position the pool at the new position with range units away from the executer
             lavaPool.transform.position = attackExecuterTransform.position + vectorToPool * range;
