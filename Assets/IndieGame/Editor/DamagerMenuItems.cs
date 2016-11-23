@@ -25,5 +25,16 @@ public static class DamagerMenuItems
             EditorUtils.ShowPrefabCreationFailedMessageInSceneWindow("LavaPool");
         else
             EditorUtils.ShowPrefabCreationSucceededMessageInSceneWindow("LavaPool");
-    }	
+    }
+
+    [MenuItem("IndieGame/Create/Damage Dealer/Water Wave")]
+    public static void CreateWaterWave ()
+    {
+        GameObject prefab = EditorUtils.SpawnPrefab("WaterWave", false, false);
+
+        if (prefab == null)
+            EditorUtils.ShowPrefabCreationFailedMessageInSceneWindow("WaterWave");
+        else
+            EditorUtils.ShowPrefabCreationSucceededMessageInSceneWindow("WaterWave");
+    }
 }
