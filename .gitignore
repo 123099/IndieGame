@@ -5,7 +5,7 @@
 /[Bb]uilds/
 /Assets/AssetStoreTools*
 
-#FMOD
+#FMOD Ignore
 /Assets/FMODStudioCache.asset
 /Assets/FMODStudioCache.asset.meta
 /Assets/StreamingAssets/*.bank
