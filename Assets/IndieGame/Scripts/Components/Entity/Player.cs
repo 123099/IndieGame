@@ -65,7 +65,7 @@ public class Player : Entity
                 }
                 else if(Input.GetButtonDown(dashAttackButton)) //Dash attack
                 {
-                    ExecuteAttack(dashAttackBlock, true);
+                    ExecuteAttack(dashAttackBlock, false);
                 }
             }
         }

@@ -80,13 +80,27 @@ public class Projectile : MonoBehaviour
             for(int i = 0; i < targets.Length; ++i)
             {
                 //Damage the target
-                DamageTarget(targets[i].transform);
+                if (targets[i].attachedRigidbody != null)
+                {
+                    DamageTarget(targets[i].attachedRigidbody.transform);
+                }
+                else
+                {
+                    DamageTarget(targets[i].transform);
+                }
             }
         }
         else
         {
             //Damage the target
-            DamageTarget(collision.transform);
+            if (collision.collider.attachedRigidbody != null)
+            {
+                DamageTarget(collision.collider.attachedRigidbody.transform);
+            }
+            else
+            {
+                DamageTarget(collision.transform);
+            }
         }
 
         //Destroy or Deactivate the projectile

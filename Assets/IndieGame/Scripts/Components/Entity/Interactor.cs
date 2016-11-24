@@ -29,14 +29,24 @@ public class Interactor : MonoBehaviour
             RaycastHit hitInfo;
             if(Physics.Raycast(ray, out hitInfo))
             {
-                //Retrieve what we have hit
-                IInteractble interactbleObject = hitInfo.collider.GetComponent<IInteractble>();
+                GameObject gameObjectInCharge;
+                if (hitInfo.collider.attachedRigidbody != null)
+                {
+                    gameObjectInCharge = hitInfo.collider.attachedRigidbody.gameObject;
+                }
+                else
+                {
+                    gameObjectInCharge = hitInfo.collider.gameObject;
+                }
 
+                //Retrieve what we have hit
+                IInteractble interactbleObject = gameObjectInCharge.GetComponent<IInteractble>();
+                
                 //Make sure the object we hit is interactble
                 if(interactbleObject != null)
                 {
                     //Verify the range to the object we hit
-                    Vector3 vectorToTarget = hitInfo.transform.position - transform.position;
+                    Vector3 vectorToTarget = gameObjectInCharge.transform.position - transform.position;
                     if (vectorToTarget.sqrMagnitude <= rangeSquared)
                     {
                         //Interact with the object

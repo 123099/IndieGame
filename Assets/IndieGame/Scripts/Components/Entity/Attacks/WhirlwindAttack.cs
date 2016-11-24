@@ -27,6 +27,11 @@ public class WhirlwindAttack : Attack
         //Loop through all the hit colliders, and apply damage
         for (int i = 0; i < collisions.Length; ++i)
         {
+            if(collisions[i] == null)
+            {
+                continue;
+            }
+
             //Get the game object in charge of the hit collider
             GameObject gameObjectInCharge;
 

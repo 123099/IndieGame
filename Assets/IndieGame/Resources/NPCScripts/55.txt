@@ -11,5 +11,5 @@ end
 
 menutitle "Fire Dungeon"
 
-menu("Enter the dungeon", TeleportIn())
+menu("Enter the dungeon", TeleportIn)
 menu("Quit")

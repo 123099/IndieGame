@@ -21,7 +21,7 @@ public class DashAttack : Attack
         if(rigidbody != null)
         {
             rigidbody.velocity = attackExecuter.Value.transform.forward * dashSpeed;
-            yield return DoWaitForRange(attackExecuter.Value.transform.position);
+            yield return DoWaitForRange(attackExecuter.Value.transform.position);   
         }
         else
         {

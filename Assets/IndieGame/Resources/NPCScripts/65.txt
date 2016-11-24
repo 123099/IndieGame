@@ -7,4 +7,4 @@ function TeleportOut()
 	luautils.LoadScene("Village")
 end
 
-menu("Leave", TeleportOut())
+menu("Leave", TeleportOut)
