@@ -25,4 +25,3 @@ if player ~= nil then
 		end
 	end
 end
-	
