@@ -2,37 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(CharacterController))]
 public class UserControls : MonoBehaviour, IControllable
 {
     [Tooltip("The speed with which the entity should move")]
     [SerializeField] protected float speed;
 
-    protected const string movementButton = "Move";
-
-    protected Rigidbody cachedRigidbody;
+    protected CharacterController cachedCharacterController;
 
     protected virtual void Awake ()
     {
-        cachedRigidbody = GetComponent<Rigidbody>();
-
-        cachedRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        cachedCharacterController = GetComponent<CharacterController>();
+        cachedCharacterController.enableOverlapRecovery = true;
     }
 
-	protected virtual void FixedUpdate () {
-        Move();
-	}
-
-    protected virtual void Move ()
+    protected virtual void FixedUpdate ()
     {
-        //Add movement force to the entity
-        cachedRigidbody.AddRelativeForce(Vector3.forward * speed * Input.GetAxisRaw(movementButton), ForceMode.Impulse);
+        //Calculate motion vector
+        Vector3 motion = transform.forward * speed * Input.GetAxisRaw("Move") * Time.fixedDeltaTime;
 
-        //Verify that the speed doesn't exceed our max speed
-        if(cachedRigidbody.velocity.magnitude > speed)
-        {
-            //Limit the speed
-            cachedRigidbody.velocity = cachedRigidbody.velocity.normalized * speed;
-        }
+        //Move the character
+        cachedCharacterController.Move(motion);
     }
 }
