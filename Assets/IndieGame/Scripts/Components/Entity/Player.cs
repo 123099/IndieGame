@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(LookAtMouse))]
 [RequireComponent(typeof(UserControls))]
@@ -19,10 +20,23 @@ public class Player : Entity
 
     protected UserControls cachedUserControls;
 
+    private static Player playerInstance;
+
     protected override void Awake ()
     {
         base.Awake();
+
+        if(playerInstance != null)
+        {
+            DestroyImmediate(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+
         cachedUserControls = GetComponent<UserControls>();
+
+        SceneManager.activeSceneChanged += OnSceneChange;
     }
 
     protected override void Start ()
@@ -38,6 +52,7 @@ public class Player : Entity
 
     protected virtual void OnDestroy ()
     {
+        SceneManager.activeSceneChanged -= OnSceneChange;
         cachedHealth.OnDeath -= Die;
     }
 
@@ -85,5 +100,15 @@ public class Player : Entity
         //Execute the attack
         attacksFlowchart.ExecuteBlock(attackBlock, onComplete: delegate
         { cachedUserControls.enabled = true; });
+    }
+
+    protected virtual void OnSceneChange(Scene previous, Scene current)
+    {
+        GameObject spawnPoint = GameObject.FindGameObjectWithTag("PlayerSpawn");
+        if (spawnPoint != null)
+        {
+            transform.position = spawnPoint.transform.position;
+            transform.rotation = spawnPoint.transform.rotation;
+        }
     }
 }

@@ -13,15 +13,15 @@ public class UserControls : MonoBehaviour, IControllable
     protected virtual void Awake ()
     {
         cachedCharacterController = GetComponent<CharacterController>();
-        cachedCharacterController.enableOverlapRecovery = true;
+        cachedCharacterController.enableOverlapRecovery = false;
     }
 
     protected virtual void FixedUpdate ()
     {
         //Calculate motion vector
-        Vector3 motion = transform.forward * speed * Input.GetAxisRaw("Move") * Time.fixedDeltaTime;
+        Vector3 motion = transform.forward * speed * Input.GetAxisRaw("Move");
 
         //Move the character
-        cachedCharacterController.Move(motion);
+        cachedCharacterController.SimpleMove(motion);
     }
 }
