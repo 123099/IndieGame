@@ -11,5 +11,8 @@ end
 
 menutitle "Fire Dungeon"
 
-menu("Enter the dungeon", TeleportIn)
-menu("Quit")
+local choice = choose {"Enter the Dungeon", "Quit"}
+
+if choice == 1 then
+	TeleportIn()
+end

@@ -16,17 +16,6 @@ public static class SystemMenuItems
             EditorUtils.ShowPrefabCreationSucceededMessageInSceneWindow("PlayerCamera");
     }
 
-    [MenuItem("IndieGame/Create/System/Player Spawn")]
-    public static void CreatePlayerSpawn ()
-    {
-        GameObject prefab = EditorUtils.SpawnPrefab("PlayerSpawn", false, false);
-
-        if (prefab == null)
-            EditorUtils.ShowPrefabCreationFailedMessageInSceneWindow("PlayerSpawn");
-        else
-            EditorUtils.ShowPrefabCreationSucceededMessageInSceneWindow("PlayerSpawn");
-    }
-
     [MenuItem("IndieGame/Create/System/Object Pool")]
     public static void CreateObjectPool ()
     {

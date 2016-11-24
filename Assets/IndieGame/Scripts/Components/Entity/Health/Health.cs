@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour {
 
@@ -12,6 +13,9 @@ public class Health : MonoBehaviour {
 
     [Tooltip("Whether the entity is invulnerable to damage or not")]
     [SerializeField] protected bool invulnerable;
+
+    [Tooltip("An event that is called when the entity dies (current health hits zero)")]
+    [SerializeField] protected UnityEvent OnDeath;
 
     protected virtual void Awake ()
     {
@@ -29,18 +33,10 @@ public class Health : MonoBehaviour {
     /// </summary>
     protected virtual void NotifyOfDeath ()
     {
-        if (OnDeath != null)
-        {
-            OnDeath.Invoke(this, System.EventArgs.Empty);
-        }
+        OnDeath.Invoke();
     }
 
     #region Public members
-
-    /// <summary>
-    /// An event that is called when the entity dies (current health hits zero).
-    /// </summary>
-    public event System.EventHandler OnDeath;
 
     /// <summary>
     /// Apply damage to the entity and reduce its health by @damage.

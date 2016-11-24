@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Fungus;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(LookAtMouse))]
 [RequireComponent(typeof(UserControls))]
@@ -20,45 +17,32 @@ public class Player : Entity
 
     protected UserControls cachedUserControls;
 
-    private static Player playerInstance;
-
     protected override void Awake ()
     {
         base.Awake();
-
-        if(playerInstance != null)
-        {
-            DestroyImmediate(gameObject);
-            return;
-        }
-
-        DontDestroyOnLoad(gameObject);
-
         cachedUserControls = GetComponent<UserControls>();
-
-        SceneManager.activeSceneChanged += OnSceneChange;
     }
 
     protected override void Start ()
     {
         base.Start();
-        cachedHealth.OnDeath += Die;
+
+        //Retrieve the health stored in player prefs for this player
+        float remainingHealth = PlayerPrefs.GetFloat(name, cachedHealth.GetMaxHealth());
+
+        //Apply this health to the player
+        cachedHealth.SetHealth(remainingHealth);
+    }
+
+    protected virtual void OnDestroy ()
+    {
+        //Store the current health of the player
+        PlayerPrefs.SetFloat(name, cachedHealth.GetCurrentHealth());
     }
 
     protected virtual void Update ()
     {
         GetAttackInput();
-    }
-
-    protected virtual void OnDestroy ()
-    {
-        SceneManager.activeSceneChanged -= OnSceneChange;
-        cachedHealth.OnDeath -= Die;
-    }
-
-    protected virtual void Die (object sender, System.EventArgs e)
-    {
-        Destroy(gameObject);
     }
 
     protected virtual void GetAttackInput ()
@@ -100,15 +84,5 @@ public class Player : Entity
         //Execute the attack
         attacksFlowchart.ExecuteBlock(attackBlock, onComplete: delegate
         { cachedUserControls.enabled = true; });
-    }
-
-    protected virtual void OnSceneChange(Scene previous, Scene current)
-    {
-        GameObject spawnPoint = GameObject.FindGameObjectWithTag("PlayerSpawn");
-        if (spawnPoint != null)
-        {
-            transform.position = spawnPoint.transform.position;
-            transform.rotation = spawnPoint.transform.rotation;
-        }
     }
 }
