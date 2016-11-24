@@ -19,7 +19,7 @@ public class UserControls : MonoBehaviour, IControllable
         cachedRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
-	protected virtual void Update () {
+	protected virtual void FixedUpdate () {
         Move();
 	}
 
