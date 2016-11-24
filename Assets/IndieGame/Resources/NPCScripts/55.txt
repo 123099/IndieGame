@@ -5,7 +5,11 @@ FireTablet : His rage burns like of a thousand suns.
 
 say "Do you want to go to the fire elemental's dungeon??"
 
+function TeleportIn()
+	luautils.LoadScene("FireDungeon")
+end
+
 menutitle "Fire Dungeon"
 
-menu("Enter the dungeon")
+menu("Enter the dungeon", TeleportIn())
 menu("Quit")
