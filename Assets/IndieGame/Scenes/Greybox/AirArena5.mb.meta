@@ -1,0 +1,160 @@
+fileFormatVersion: 2
+guid: 93751abbc7516bf479c63d0244632e95
+timeCreated: 1479988312
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Base
+    100004: Bridge_1
+    100006: Bridge_2
+    100008: Bridge_3
+    100010: Bridge_4
+    100012: Disc
+    100014: Pillar_1
+    100016: Pillar_2
+    100018: Pillar_3
+    100020: Pillar_4
+    100022: Pillar_5
+    100024: Pillar_6
+    100026: Player_Reference
+    100028: Reference
+    100030: Reference_Disc
+    100032: Tiki_Man
+    100034: Totem_Reference
+    400000: //RootNode
+    400002: Base
+    400004: Bridge_1
+    400006: Bridge_2
+    400008: Bridge_3
+    400010: Bridge_4
+    400012: Disc
+    400014: Pillar_1
+    400016: Pillar_2
+    400018: Pillar_3
+    400020: Pillar_4
+    400022: Pillar_5
+    400024: Pillar_6
+    400026: Player_Reference
+    400028: Reference
+    400030: Reference_Disc
+    400032: Tiki_Man
+    400034: Totem_Reference
+    2300000: Base
+    2300002: Bridge_1
+    2300004: Bridge_2
+    2300006: Bridge_3
+    2300008: Bridge_4
+    2300010: Disc
+    2300012: Pillar_1
+    2300014: Pillar_2
+    2300016: Pillar_3
+    2300018: Pillar_4
+    2300020: Pillar_5
+    2300022: Pillar_6
+    2300024: Player_Reference
+    2300026: Reference_Disc
+    2300028: Tiki_Man
+    2300030: Totem_Reference
+    3300000: Base
+    3300002: Bridge_1
+    3300004: Bridge_2
+    3300006: Bridge_3
+    3300008: Bridge_4
+    3300010: Disc
+    3300012: Pillar_1
+    3300014: Pillar_2
+    3300016: Pillar_3
+    3300018: Pillar_4
+    3300020: Pillar_5
+    3300022: Pillar_6
+    3300024: Player_Reference
+    3300026: Reference_Disc
+    3300028: Tiki_Man
+    3300030: Totem_Reference
+    4300000: Reference_Disc
+    4300002: Player_Reference
+    4300004: Tiki_Man
+    4300006: Totem_Reference
+    4300008: Pillar_1
+    4300010: Pillar_2
+    4300012: Pillar_3
+    4300014: Pillar_4
+    4300016: Pillar_5
+    4300018: Pillar_6
+    4300020: Bridge_4
+    4300022: Bridge_3
+    4300024: Bridge_2
+    4300026: Bridge_1
+    4300028: Base
+    4300030: Disc
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
