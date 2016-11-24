@@ -11,7 +11,7 @@ using Fungus;
 public abstract class Entity : MonoBehaviour
 {
     [Tooltip("The Fungus flowchart that contains all the attacks this enemy can perform.")]
-    [SerializeField] protected Flowchart attacksFlowchart;
+    [SerializeField] protected Flowchart behaviourFlowchart;
 
     protected Health cachedHealth;
 

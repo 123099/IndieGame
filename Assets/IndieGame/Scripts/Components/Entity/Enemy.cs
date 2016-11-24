@@ -40,13 +40,13 @@ public class Enemy : Entity
     public virtual void ExecuteAttack(string attackName)
     {
         //Check that we actually have an attacks flowchart
-        if(attacksFlowchart != null)
+        if(behaviourFlowchart != null)
         {
             //Make sure we are not busy with another attack
-            if(attacksFlowchart.HasExecutingBlocks() == false)
+            if(behaviourFlowchart.HasExecutingBlocks() == false)
             {
                 //Execute the attack block
-                attacksFlowchart.ExecuteBlock(attackName);
+                behaviourFlowchart.ExecuteBlock(attackName);
             }
         }
     }

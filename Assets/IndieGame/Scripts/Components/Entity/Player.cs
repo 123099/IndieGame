@@ -36,8 +36,16 @@ public class Player : Entity
 
     protected virtual void OnDestroy ()
     {
-        //Store the current health of the player
-        PlayerPrefs.SetFloat(name, cachedHealth.GetCurrentHealth());
+        if (cachedHealth.IsDead())
+        {
+            //Store the max health of the player to reset the game
+            PlayerPrefs.SetFloat(name, cachedHealth.GetMaxHealth());
+        }
+        else
+        {
+            //Store the current health of the player
+            PlayerPrefs.SetFloat(name, cachedHealth.GetCurrentHealth());
+        }
     }
 
     protected virtual void Update ()
@@ -48,10 +56,10 @@ public class Player : Entity
     protected virtual void GetAttackInput ()
     {
         //Check if we have an attack flowchart
-        if (attacksFlowchart != null)
+        if (behaviourFlowchart != null)
         {
             //Make sure we are not busy with a certain attack
-            if (attacksFlowchart.HasExecutingBlocks() == false)
+            if (behaviourFlowchart.HasExecutingBlocks() == false)
             {
                 //Select which attack to execute based on the input and execute it
                 if(Input.GetButton(basicAttackButton)) //Basic Attack
@@ -79,10 +87,10 @@ public class Player : Entity
         }
 
         //Acquire the ranged attack block
-        Block attackBlock = attacksFlowchart.FindBlock(attackName);
+        Block attackBlock = behaviourFlowchart.FindBlock(attackName);
 
         //Execute the attack
-        attacksFlowchart.ExecuteBlock(attackBlock, onComplete: delegate
+        behaviourFlowchart.ExecuteBlock(attackBlock, onComplete: delegate
         { cachedUserControls.enabled = true; });
     }
 }
