@@ -14,6 +14,9 @@ public class Player : Entity
     protected const string basicAttackButton = "Basic Attack";
     protected const string basicAttackBlock = "Basic Attack";
 
+    protected const string dashAttackButton = "Dash Attack";
+    protected const string dashAttackBlock = "Dash";
+
     protected UserControls cachedUserControls;
 
     protected override void Awake ()
@@ -51,24 +54,36 @@ public class Player : Entity
             //Make sure we are not busy with a certain attack
             if (attacksFlowchart.HasExecutingBlocks() == false)
             {
-                if(Input.GetButton(basicAttackButton))
+                //Select which attack to execute based on the input and execute it
+                if(Input.GetButton(basicAttackButton)) //Basic Attack
                 {
-                    //Execute the attack
-                    attacksFlowchart.ExecuteBlock(basicAttackBlock);
+                    ExecuteAttack(basicAttackBlock, false);
                 }
-                else if (Input.GetButton(rangedAttackButton))
+                else if (Input.GetButton(rangedAttackButton)) //Ranged Attack
                 {
-                    //Disable user controls, to prevent movement while firing
-                    cachedUserControls.enabled = false;
-
-                    //Acquire the ranged attack block
-                    Block rangedBlock = attacksFlowchart.FindBlock(rangedAttackBlock);
-
-                    //Execute the attack
-                    attacksFlowchart.ExecuteBlock(rangedBlock, onComplete: delegate
-                    { cachedUserControls.enabled = true; });
+                    ExecuteAttack(rangedAttackBlock, true);
+                }
+                else if(Input.GetButtonDown(dashAttackButton)) //Dash attack
+                {
+                    ExecuteAttack(dashAttackBlock, true);
                 }
             }
         }
+    }
+
+    protected virtual void ExecuteAttack(string attackName, bool disableMovement)
+    {
+        if (disableMovement)
+        {
+            //Disable user controls, to prevent movement while firing
+            cachedUserControls.enabled = false;
+        }
+
+        //Acquire the ranged attack block
+        Block attackBlock = attacksFlowchart.FindBlock(attackName);
+
+        //Execute the attack
+        attacksFlowchart.ExecuteBlock(attackBlock, onComplete: delegate
+        { cachedUserControls.enabled = true; });
     }
 }
