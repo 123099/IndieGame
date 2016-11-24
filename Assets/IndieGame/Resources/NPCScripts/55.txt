@@ -3,7 +3,7 @@ FireTablet TabletPic right : He who tresspasses into his  domain must be careful
 FireTablet : His rage burns like of a thousand suns.
 ]]
 
-say "Do you want to go to the fire elemental's dungeon??"
+say "Do you want to go to the fire elemental's dungeon?"
 
 function TeleportIn()
 	luautils.LoadScene("FireDungeon")
@@ -11,8 +11,11 @@ end
 
 menutitle "Fire Dungeon"
 
-local choice = choose {"Enter the Dungeon", "Quit"}
+local choice = choosetimer ({"Enter the Dungeon", "Leave"}, 5, 2)
 
 if choice == 1 then
+	say "Good Luck!"
 	TeleportIn()
+else
+	say "No one ever does..."
 end

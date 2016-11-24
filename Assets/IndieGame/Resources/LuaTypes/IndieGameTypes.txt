@@ -3,7 +3,8 @@
 		"GameplayUtils",
 		"Enemy",
 		"Player",
-		"AIControls"
+		"AIControls",
+		"Health"
 	],
 	"extensionTypes" : [
 	]

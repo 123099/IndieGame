@@ -25,7 +25,7 @@ public class Health : MonoBehaviour {
     protected virtual void OnDestroy ()
     {
         //Clear the event invocation list
-        OnDeath = null;
+        OnDeath.RemoveAllListeners();
     }
 
     /// <summary>
