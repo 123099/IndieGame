@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Fungus;
 
 [RequireComponent(typeof(LookAtMouse))]
@@ -28,22 +26,23 @@ public class Player : Entity
     protected override void Start ()
     {
         base.Start();
-        cachedHealth.OnDeath += Die;
+
+        //Retrieve the health stored in player prefs for this player
+        float remainingHealth = PlayerPrefs.GetFloat(name, cachedHealth.GetMaxHealth());
+
+        //Apply this health to the player
+        cachedHealth.SetHealth(remainingHealth);
+    }
+
+    protected virtual void OnDestroy ()
+    {
+        //Store the current health of the player
+        PlayerPrefs.SetFloat(name, cachedHealth.GetCurrentHealth());
     }
 
     protected virtual void Update ()
     {
         GetAttackInput();
-    }
-
-    protected virtual void OnDestroy ()
-    {
-        cachedHealth.OnDeath -= Die;
-    }
-
-    protected virtual void Die (object sender, System.EventArgs e)
-    {
-        Destroy(gameObject);
     }
 
     protected virtual void GetAttackInput ()
