@@ -450,6 +450,15 @@ namespace Fungus
         }
 
         /// <summary>
+        /// Loads the specified scene
+        /// </summary>
+        /// <param name="scene"></param>
+        public virtual void LoadScene(string scene)
+        {
+            SceneLoader.LoadScene(scene, null);
+        }
+
+        /// <summary>
         /// Use the conversation manager to play out a conversation
         /// </summary>
         public virtual IEnumerator DoConversation(string conv)
