@@ -1,0 +1,6 @@
+conversation[[
+FireElemental FireElemantalPic right : Thank you for freeing me!
+FireElemental : You may continue your quest now
+]]
+
+menu("Leave")
