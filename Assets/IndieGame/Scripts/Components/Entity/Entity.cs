@@ -13,12 +13,7 @@ public abstract class Entity : MonoBehaviour
     [Tooltip("The Fungus flowchart that contains all the attacks this enemy can perform.")]
     [SerializeField] protected Flowchart behaviourFlowchart;
 
-    protected Health cachedHealth;
-
-    protected virtual void Awake ()
-    {
-        cachedHealth = GetComponent<Health>();
-    }
+    private Health cachedHealth;
 
     protected virtual void Start () { }
 
@@ -26,6 +21,11 @@ public abstract class Entity : MonoBehaviour
 
     public virtual Health GetHealth ()
     {
+        if (cachedHealth == null)
+        {
+            cachedHealth = GetComponent<Health>();
+        }
+
         return cachedHealth;
     }
 

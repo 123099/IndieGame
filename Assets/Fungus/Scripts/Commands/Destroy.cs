@@ -16,16 +16,16 @@ namespace Fungus
     [ExecuteInEditMode]
     public class Destroy : Command
     {   
-        [Tooltip("Reference to game object to destroy")]
-        [SerializeField] protected GameObjectData _targetGameObject;
+        [Tooltip("Reference to game object or component to destroy")]
+        [SerializeField] protected ObjectData _targetObject;
 
         #region Public members
 
         public override void OnEnter()
         {
-            if (_targetGameObject.Value != null)
+            if (_targetObject.Value != null)
             {
-                Destroy(_targetGameObject.Value);
+                Destroy(_targetObject.Value);
             }
 
             Continue();
@@ -33,12 +33,12 @@ namespace Fungus
 
         public override string GetSummary()
         {
-            if (_targetGameObject.Value == null)
+            if (_targetObject.Value == null)
             {
-                return "Error: No game object selected";
+                return "Error: No object selected";
             }
 
-            return _targetGameObject.Value.name;
+            return _targetObject.Value.name;
         }
 
         public override Color GetButtonColor()
@@ -56,7 +56,7 @@ namespace Fungus
         {
             if (targetGameObjectOLD != null)
             {
-                _targetGameObject.Value = targetGameObjectOLD;
+                _targetObject.Value = targetGameObjectOLD;
                 targetGameObjectOLD = null;
             }
         }
