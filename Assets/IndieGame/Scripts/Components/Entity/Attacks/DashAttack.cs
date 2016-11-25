@@ -20,10 +20,13 @@ public class DashAttack : Attack
         //Cache the character controller of the executer
         CharacterController characterController = attackExecuter.Value.GetComponent<CharacterController>();
 
+        //The velocity at which the entity would dash
+        Vector3 velocity = attackExecuter.Value.transform.forward * dashSpeed;
+
         //If the executer has a rigidbody, use physics to make him dash, otherwise, use transform
-        if(rigidbody != null && rigidbody.isKinematic == false)
+        if (rigidbody != null && rigidbody.isKinematic == false)
         {
-            rigidbody.velocity = attackExecuter.Value.transform.forward * dashSpeed;
+            rigidbody.velocity = velocity;
             yield return DoWaitForRange(attackExecuter.Value.transform.position);   
         }
         else if(characterController != null)
@@ -32,17 +35,16 @@ public class DashAttack : Attack
                 attackExecuter.Value.transform.position,
                 delegate
                 {
-                    characterController.SimpleMove(attackExecuter.Value.transform.forward * dashSpeed);
+                    characterController.SimpleMove(velocity);
                 }
             );
         }
         else
         {
-            Vector3 velocity = attackExecuter.Value.transform.forward * dashSpeed * Time.deltaTime;
             yield return DoWaitForRange(
                 attackExecuter.Value.transform.position,
                 delegate {
-                    attackExecuter.Value.transform.Translate(velocity, Space.World);
+                    attackExecuter.Value.transform.Translate(velocity * Time.deltaTime, Space.World);
                 }
             );
         }
@@ -72,7 +74,7 @@ public class DashAttack : Attack
                 actionWhileWaiting.Invoke();
             }
 
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
     }
 }

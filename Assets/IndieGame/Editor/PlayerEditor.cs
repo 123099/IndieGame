@@ -6,7 +6,7 @@ using UnityEditor;
 [CustomEditor(typeof(Player))]
 public class PlayerEditor : Editor
 {
-    protected Color HPColor = new Color(0, 0.78f, 0);
+    protected Color HPColor = new Color(0, 0.5f, 0);
 
     public override void OnInspectorGUI ()
     {
