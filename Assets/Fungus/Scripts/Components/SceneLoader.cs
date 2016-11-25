@@ -24,6 +24,16 @@ namespace Fungus
 
         protected virtual void Start()
         {
+            //If the loading texture is not set, provide a default black screen texture
+            if(loadingTexture == null)
+            {
+                loadingTexture = new Texture2D(16, 9);
+                for (int y = 0; y < loadingTexture.height; ++y)
+                    for (int x = 0; x < loadingTexture.width; ++x)
+                        loadingTexture.SetPixel(x, y, Color.black);
+                loadingTexture.Apply();
+            }
+
             StartCoroutine(DoLoadBlock());
         }
 
