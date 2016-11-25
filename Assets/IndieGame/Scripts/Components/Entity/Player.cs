@@ -17,9 +17,8 @@ public class Player : Entity
 
     protected UserControls cachedUserControls;
 
-    protected override void Awake ()
+    protected virtual void Awake ()
     {
-        base.Awake();
         cachedUserControls = GetComponent<UserControls>();
     }
 
@@ -28,23 +27,22 @@ public class Player : Entity
         base.Start();
 
         //Retrieve the health stored in player prefs for this player
-        float remainingHealth = PlayerPrefs.GetFloat(name, cachedHealth.GetMaxHealth());
+        float remainingHealth = GetCurrentlyStoredHealth();
 
         //Apply this health to the player
-        cachedHealth.SetHealth(remainingHealth);
+        GetHealth().SetHealth(remainingHealth);
     }
 
     protected virtual void OnDestroy ()
     {
-        if (cachedHealth.IsDead())
+        if (GetHealth().IsDead())
         {
-            //Store the max health of the player to reset the game
-            PlayerPrefs.SetFloat(name, cachedHealth.GetMaxHealth());
+            ResetStoredHealth();
         }
         else
         {
             //Store the current health of the player
-            PlayerPrefs.SetFloat(name, cachedHealth.GetCurrentHealth());
+            PlayerPrefs.SetFloat(name, GetHealth().GetCurrentHealth());
         }
     }
 
@@ -93,4 +91,26 @@ public class Player : Entity
         behaviourFlowchart.ExecuteBlock(attackBlock, onComplete: delegate
         { cachedUserControls.enabled = true; });
     }
+
+    #region Public members
+
+    /// <summary>
+    /// Stores the maximum amount of health the player can have.
+    /// The player will have this amount of health when he respawns
+    /// </summary>
+    public virtual void ResetStoredHealth ()
+    {
+        PlayerPrefs.SetFloat(name, GetHealth().GetMaxHealth());
+    }
+
+    /// <summary>
+    /// Returns the current amount of health the player has stored for his next scene change
+    /// </summary>
+    /// <returns></returns>
+    public virtual float GetCurrentlyStoredHealth ()
+    {
+        return PlayerPrefs.GetFloat(name, GetHealth().GetMaxHealth());
+    }
+
+    #endregion
 }

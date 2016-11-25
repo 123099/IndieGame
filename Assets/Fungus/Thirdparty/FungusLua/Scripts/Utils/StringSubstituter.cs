@@ -95,7 +95,8 @@ namespace Fungus
                 bool modified = false;
                 foreach (ISubstitutionHandler handler in substitutionHandlers)
                 {
-                    if (handler.SubstituteStrings(input))
+                    //Make sure the handler has not been destroyed in the game, for example, an Entity with a LuaUtils has died.
+                    if ((handler as MonoBehaviour) != null && handler.SubstituteStrings(input))
                     {
                         modified = true;
                         result = true;
@@ -109,7 +110,7 @@ namespace Fungus
 
                 loopCount++;
             }
-
+            
             return result;
         }
 

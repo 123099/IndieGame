@@ -102,7 +102,7 @@ end
 -- Substitutes variables and localisation strings into a piece of text
 -- e.g. v = 10, "Subbed value is [$v]" => "Subbed value is 10"
 function M.sub(text)
-    return M.luautils.substitute(text)
+    return M.luautils.Substitute(text)
 end
 
 --------------------------------------------------------------

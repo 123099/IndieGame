@@ -9,9 +9,8 @@ public class Enemy : Entity
 
     protected AIControls cachedAIControls; //The cached ai controls. This will be null if none exist, meaning we cannot move
 
-    protected override void Awake ()
+    protected virtual void Awake ()
     {
-        base.Awake();
         cachedAIControls = GetComponent<AIControls>();
     }
 

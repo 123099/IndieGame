@@ -341,7 +341,7 @@ namespace Fungus
             }
                 
             MoonSharp.Interpreter.Script interpreter = luaEnvironment.Interpreter;
-
+            
             // Instantiate the regular expression object.
             Regex r = new Regex("\\{\\$.*?\\}");
 
