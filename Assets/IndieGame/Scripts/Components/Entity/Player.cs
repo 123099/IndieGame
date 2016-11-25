@@ -6,14 +6,21 @@ using Fungus;
 [RequireComponent(typeof(Interactor))]
 public class Player : Entity
 {
-    protected const string rangedAttackButton = "Ranged Attack";
-    protected const string rangedAttackBlock = "Ranged Attack";
+    [System.Serializable]
+    protected struct PlayerAttack
+    {
+        [Tooltip("The name of the Input axis that is used to activate this attack")]
+        public string attackInputButton;
+        [Tooltip("The name of the block in the player's behaviour flowchart that executes this attack")]
+        public string attackBlockName;
+        [Tooltip("The cooldown for this attack.")]
+        public Timer attackCooldown;
+        [Tooltip("Whether the attack should prevent player from moving while executing it")]
+        public bool stopMovement;
+    }
 
-    protected const string basicAttackButton = "Basic Attack";
-    protected const string basicAttackBlock = "Basic Attack";
-
-    protected const string dashAttackButton = "Dash Attack";
-    protected const string dashAttackBlock = "Dash";
+    [Tooltip("The attacks the player can perform")]
+    [SerializeField] protected PlayerAttack[] attacks;
 
     protected UserControls cachedUserControls;
 
@@ -59,18 +66,24 @@ public class Player : Entity
             //Make sure we are not busy with a certain attack
             if (behaviourFlowchart.HasExecutingBlocks() == false)
             {
-                //Select which attack to execute based on the input and execute it
-                if(Input.GetButton(basicAttackButton)) //Basic Attack
+                //Go over the attacks we can potentially execute
+                for(int i = 0; i < attacks.Length; ++i)
                 {
-                    ExecuteAttack(basicAttackBlock, false);
-                }
-                else if (Input.GetButton(rangedAttackButton)) //Ranged Attack
-                {
-                    ExecuteAttack(rangedAttackBlock, true);
-                }
-                else if(Input.GetButtonDown(dashAttackButton)) //Dash attack
-                {
-                    ExecuteAttack(dashAttackBlock, false);
+                    PlayerAttack attack = attacks[i];
+
+                    //Check if the player is trying to execute the attack
+                    if (Input.GetButton(attack.attackInputButton))
+                    {
+                        //Check if the attack is off cooldown
+                        if (attack.attackCooldown.IsReady())
+                        {
+                            //Execute the attack
+                            ExecuteAttack(attack.attackBlockName, attack.stopMovement);
+
+                            //Stop looking further
+                            break;
+                        }
+                    }
                 }
             }
         }
