@@ -37,7 +37,7 @@ public class Timer
     }
 
     /// <summary>
-    /// Sets the value this timer behaves upon
+    /// Sets the value this timer behaves upon.
     /// </summary>
     public virtual void SetValue (float value)
     {
@@ -51,6 +51,15 @@ public class Timer
         {
             Debug.LogWarning("Timer value cannot be non-positive. Make sure that all timer intances have a value larger than zero.");
         }
+    }
+
+    /// <summary>
+    /// Returns the value this timer behaves upon.
+    /// </summary>
+    /// <returns></returns>
+    public virtual float GetValue ()
+    {
+        return value;
     }
 
     /// <summary>

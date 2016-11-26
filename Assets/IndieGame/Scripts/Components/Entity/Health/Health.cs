@@ -156,5 +156,18 @@ public class Health : MonoBehaviour {
         return maximumHealth;
     }
 
+    public virtual float GetCurrentHealthNormalized ()
+    {
+        //Cannot divide by 0, so return 0%
+        if(GetMaxHealth() == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            return GetCurrentHealth() / GetMaxHealth();
+        }
+    }
+
     #endregion
 }
