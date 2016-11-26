@@ -17,6 +17,9 @@ public class Health : MonoBehaviour {
     [Tooltip("An event that is called when the entity dies (current health hits zero)")]
     [SerializeField] protected UnityEvent OnDeath;
 
+    [Tooltip("An event that is called when the entity is hit")]
+    [SerializeField] protected UnityEvent OnHit;
+
     protected virtual void Awake ()
     {
         currentHealth = maximumHealth;
@@ -34,6 +37,14 @@ public class Health : MonoBehaviour {
     protected virtual void NotifyOfDeath ()
     {
         OnDeath.Invoke();
+    }
+
+    /// <summary>
+    /// Invoked the OnHit event.
+    /// </summary>
+    protected virtual void NotifyOfHit ()
+    {
+        OnHit.Invoke();
     }
 
     #region Public members
@@ -63,6 +74,9 @@ public class Health : MonoBehaviour {
 
         //Make sure health doesn't go below zero
         currentHealth = Mathf.Clamp(currentHealth, 0, currentHealth);
+
+        //Notify of getting hit
+        NotifyOfHit();
 
         //Check to see if we are dead
         if (IsDead())
