@@ -25,6 +25,12 @@ public class HealthUI : MonoBehaviour
 
     protected float previousHealth; //Store the last health. Update the UI only when health changes
 
+    protected bool isVisible; //Tracks whether the UI is currently faded in or out
+
+    protected Image[] cachedUIImages; //A list of images to fade
+    protected Text[] cachedUITexts; //A list of texts to fade
+    protected List<LTDescr> currentlyFadingTasks; //A list of the currently fading UI components
+
     protected virtual void Awake ()
     {
         if (healthComponent == null)
@@ -37,13 +43,23 @@ public class HealthUI : MonoBehaviour
             Debug.LogWarning("Fade Out Timer on Health UI " + name + " cannot be run every 0 seconds. Settings the timer value to 1");
         }
 
+        //Cache all the UI elements that can fade
+        cachedUIImages = GetComponentsInChildren<Image>();
+        cachedUITexts = GetComponentsInChildren<Text>();
+
+        //Initialize fading task list
+        currentlyFadingTasks = new List<LTDescr>(cachedUIImages.Length + cachedUITexts.Length);
+
         //Fade the UI out so that it can fade in on enable
         FadeUI(0, 0);
+
+        //Set visibility to false
+        isVisible = false;
     }
 
     protected virtual void OnEnable ()
     {
-        FadeUI(1, fadeInTime);
+        FadeUIIn();
     }
 
     protected virtual void Update ()
@@ -57,10 +73,11 @@ public class HealthUI : MonoBehaviour
                 UpdateHealthImage();
                 UpdateHealthText();
                 UpdatePreviousHealth();
+                FadeUIIn();
             }
             else if(fadeOutTimer.IsReady())
             {
-                FadeUI(0f, fadeOutTime);
+                FadeUIOut();
             }
         }
     }
@@ -96,12 +113,6 @@ public class HealthUI : MonoBehaviour
     {
         //Store the current health as previous
         previousHealth = healthComponent.GetCurrentHealth();
-
-        //Fade the UI in very fast
-        FadeUI(1f, fadeInTime);
-
-        //Reset the fade timer
-        fadeOutTimer.Reset();
     }
 
     protected virtual bool HasHealthChanged ()
@@ -109,24 +120,52 @@ public class HealthUI : MonoBehaviour
         return previousHealth != healthComponent.GetCurrentHealth();
     }
 
+    protected virtual void FadeUIIn()
+    {
+        //Fade In
+        FadeUI(1f, fadeInTime);
+
+        //Mark as visible
+        isVisible = true;
+
+        //Reset the fade out timer to start from the moment this UI became visible
+        fadeOutTimer.Reset();
+    }
+
+    protected virtual void FadeUIOut ()
+    {
+        //Only fade out when the UI is visible
+        if (isVisible == true)
+        {
+            //Fade Out
+            FadeUI(0f, fadeOutTime);
+
+            //Mark as invisible
+            isVisible = false;
+        }
+    }
+
     protected virtual void FadeUI(float targetAlpha, float time)
     {
-        //Get all fadeable images
-        var images = GetComponentsInChildren<Image>();
-
-        //Fade the images
-        for (int i = 0; i < images.Length; ++i)
+        //Cancel the previously fading UI tasks
+        for(int i = 0; i < currentlyFadingTasks.Count; ++i)
         {
-            LeanTween.alpha(images[i].rectTransform, targetAlpha, time).setEase(LeanTweenType.easeInOutCubic);
+            LeanTween.cancel(currentlyFadingTasks[i].uniqueId);
         }
 
-        //Get all fadeable texts
-        var texts = GetComponentsInChildren<Text>();
+        //Clear task list
+        currentlyFadingTasks.Clear();
 
-        //Fade the texts
-        for (int i = 0; i < texts.Length; ++i)
+        //Fade all the images
+        for(int i = 0; i < cachedUIImages.Length; ++i)
         {
-            LeanTween.textAlpha(texts[i].rectTransform, targetAlpha, time).setEase(LeanTweenType.easeInOutCubic);
+            currentlyFadingTasks.Add(LeanTween.alpha(cachedUIImages[i].rectTransform, targetAlpha, time));
+        }
+
+        //Fade all the texts
+        for(int i = 0; i < cachedUITexts.Length; ++i)
+        {
+            currentlyFadingTasks.Add(LeanTween.textAlpha(cachedUITexts[i].rectTransform, targetAlpha, time));
         }
     }
 }
