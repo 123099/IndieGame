@@ -2,17 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WhirlwindAnimation : StateMachineBehaviour {
-
+public class WhirlwindAnimation : StateMachineBehaviour
+{
     [Tooltip("The particle effect associated with the whirlwind animation")]
     [SerializeField] protected GameObject whirlwindParticlesPrefab;
+
+    [Tooltip("The name of the object that is a child of this animator to which to attach the particles")]
+    [SerializeField] protected string parentObjectName;
 
     #region Public members
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //Spawn the particles
         GameObject whirlwindParticles = Instantiate(whirlwindParticlesPrefab, animator.transform.position, Quaternion.identity);
+
+        Transform parent = animator.transform.FindDescendentTransform(parentObjectName);
+
+        if(parent == null)
+        {
+            parent = animator.transform;
+        }
+
+        //Make the particles follow the animated target
+        whirlwindParticles.transform.SetParent(parent);
+
+        //Destroy the particles at the end of the animation
         Destroy(whirlwindParticles, stateInfo.length);
     }
 
