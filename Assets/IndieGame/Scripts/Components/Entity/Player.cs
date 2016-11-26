@@ -27,6 +27,12 @@ public class Player : Entity
     protected virtual void Awake ()
     {
         cachedUserControls = GetComponent<UserControls>();
+
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if(rb != null && rb.isKinematic)
+        {
+            rb.detectCollisions = true;
+        }
     }
 
     protected override void Start ()

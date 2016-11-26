@@ -16,7 +16,7 @@ public class NPC : Entity, IInteractble
 	protected override void Start () {
         LoadNPCScript();
 	}
-	
+
     protected virtual void LoadNPCScript ()
     {
         //Get the lua script component, that will execute the npc script
