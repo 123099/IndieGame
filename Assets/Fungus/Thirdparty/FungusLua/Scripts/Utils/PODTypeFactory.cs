@@ -80,5 +80,17 @@ namespace Fungus
         {
             return new Rect(x,y,width, height);
         }
+
+        /// <summary>
+        /// Returns a new Timer object.
+        /// </summary>
+        /// <param name="targetTime">The amount of time between every ready mark</param>
+        /// <returns></returns>
+        public static Timer timer(float targetTime)
+        {
+            Timer timer = new Timer();
+            timer.SetValue(targetTime);
+            return timer;
+        }
     }
 }
