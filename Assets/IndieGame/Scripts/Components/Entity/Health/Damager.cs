@@ -38,7 +38,6 @@ public class Damager : MonoBehaviour
             //If we have an object with a rigidbody that accepts all collisions, use the rigidbody to find for the proper component
             if (collider.attachedRigidbody != null)
             {
-                print("enter");
                 DealDamage(collider.attachedRigidbody.GetComponent<Health>());
             }
             else
@@ -63,7 +62,6 @@ public class Damager : MonoBehaviour
                 //If we have an object with a rigidbody that accepts all collisions, use the rigidbody to find for the proper component
                 if (collider.attachedRigidbody != null)
                 {
-                    print("stay");
                     DealDamage(collider.attachedRigidbody.GetComponent<Health>());
                 }
                 else
