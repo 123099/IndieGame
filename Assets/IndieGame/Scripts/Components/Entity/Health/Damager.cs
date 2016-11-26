@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
 public class Damager : MonoBehaviour
 {
     [Tooltip("The amount of damage this damager deals to the victim")]
@@ -19,13 +18,6 @@ public class Damager : MonoBehaviour
 
     [Tooltip("A list of targets that the damager will not damage")]
     [SerializeField] protected List<Transform> excludeList;
-
-    protected virtual void Start ()
-    {
-        //There is no reason to have more than 1 collider on a damager, therefore, assume there is 1 collider
-        //Get the 1 collider on the damager, and make sure it is set to a trigger
-        GetComponent<Collider>().isTrigger = true;
-    }
 
     /// <summary>
     /// This is a one-shot damage dealer. This deals damage if damageOverTime is disabled

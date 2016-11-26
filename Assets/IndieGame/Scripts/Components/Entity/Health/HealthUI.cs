@@ -36,6 +36,14 @@ public class HealthUI : MonoBehaviour
             fadeOutTimer.SetValue(1);
             Debug.LogWarning("Fade Out Timer on Health UI " + name + " cannot be run every 0 seconds. Settings the timer value to 1");
         }
+
+        //Fade the UI out so that it can fade in on enable
+        FadeUI(0, 0);
+    }
+
+    protected virtual void OnEnable ()
+    {
+        FadeUI(1, fadeInTime);
     }
 
     protected virtual void Update ()

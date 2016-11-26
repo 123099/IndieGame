@@ -101,7 +101,7 @@ public class MoveTowards : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(direction, transform.up);
 
         //Select our method of transportation
-        if(cachedRigidbody != null)
+        if(cachedRigidbody != null && cachedRigidbody.isKinematic == false)
         {
             cachedRigidbody.velocity = transform.forward * speed;
         }
