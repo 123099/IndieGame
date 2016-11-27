@@ -1,21 +1,27 @@
-conversation[[
-FireTablet TabletPic right : He who tresspasses into his  domain must be careful not to anger him.
-FireTablet : His rage burns like of a thousand suns.
-]]
-
-say "Do you want to go to the fire elemental's dungeon?"
-
-function TeleportIn()
-	luautils.LoadScene("FireDungeon")
-end
-
-menutitle "Fire Dungeon"
-
-local choice = choosetimer ({"Enter the Dungeon", "Leave"}, 5, 2)
-
-if choice == 1 then
-	say "Good Luck!"
-	TeleportIn()
+if playerprefs.GetInt("FireBoss") == 1 then
+	conversation[[
+	FireTablet TabletPic right : Thank you for freeing the spirit of the Fire Elemental!
+	]]
 else
-	say "No one ever does..."
+	conversation[[
+	FireTablet TabletPic right : He who tresspasses into his  domain must be careful not to anger him.
+	FireTablet : His rage burns like of a thousand suns.
+	]]
+
+	say "Do you want to go to the fire elemental's dungeon?"
+
+	function TeleportIn()
+		luautils.LoadScene("FireDungeon")
+	end
+
+	menutitle "Fire Dungeon"
+
+	local choice = choosetimer ({"Enter the Dungeon", "Leave"}, 5, 2)
+
+	if choice == 1 then
+		say "Good Luck!"
+		TeleportIn()
+	else
+		say "No one ever does..."
+	end
 end

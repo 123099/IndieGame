@@ -3,6 +3,9 @@ FireElemental FireElementalPic right : Thank you for freeing me!
 FireElemental : You may continue your quest now
 ]]
 
+--mark this boss as dead in player prefs to be used by the Main Boss AI
+playerprefs.SetInt("FireBoss", 1)
+
 function TeleportOut()
 	luautils.LoadScene("Village")
 end

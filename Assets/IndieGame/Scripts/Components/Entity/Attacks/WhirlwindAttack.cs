@@ -9,8 +9,6 @@ using System;
              "Attacks all entities in a radius around the executer")]
 public class WhirlwindAttack : Attack
 {
-    [Tooltip("The time between applying damage to every entity")]
-    [SerializeField] protected FloatData damageRate;
 
     protected override IEnumerator DoLaunchAttack (Action onAttackComplete)
     {
@@ -53,9 +51,6 @@ public class WhirlwindAttack : Attack
                 {
                     //Damage the entity
                     health.TakeDamage(damage);
-
-                    //Wait for a few frames to give the illusion of spinning the weapon around
-                    yield return new WaitForSeconds(damageRate.Value);
                 }
             }
         }

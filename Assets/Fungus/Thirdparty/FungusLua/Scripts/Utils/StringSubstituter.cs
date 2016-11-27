@@ -71,6 +71,7 @@ namespace Fungus
 
         public virtual string SubstituteStrings(string input)
         {
+            input = input.Trim(new char[] { ' ', '\t' });
             stringBuilder.Length = 0;
             stringBuilder.Append(input);
 
