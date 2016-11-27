@@ -40,8 +40,8 @@ public class WaterAttack : Attack
         {
             for(int wave = 0; wave < waterWaveOrbitals[orbital].waveCount; ++wave)
             {
-                //Spawn a wave
-                Damager waterWave = Instantiate(waterWavePrefab);
+                //Spawn a wave with the executer as the parent
+                Damager waterWave = Instantiate(waterWavePrefab, attackExecuter.Value.transform);
 
                 //Calculate vector to wave from the executer
                 Vector3 vectorToWave = Quaternion.AngleAxis(angleBetweenWaves * wave, attackExecuterTransform.up) * attackExecuterTransform.right;

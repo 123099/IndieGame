@@ -153,5 +153,10 @@ public class MoveTowards : MonoBehaviour
         this.goalAction = goalAction;
     }
 
+    public virtual void SetMovementDistance(float movementDistance)
+    {
+        this.movementDistance = movementDistance;
+    }
+
     #endregion
 }

@@ -28,8 +28,8 @@ public class LavaAttack : Attack
 
         for(int i = 0; i < lavaPoolCountPerSpawn; ++i)
         {
-            //Spawn a lava pool
-            Damager lavaPool = Instantiate(lavaPoolPrefab);
+            //Spawn a lava pool with the executer as the parent
+            Damager lavaPool = Instantiate(lavaPoolPrefab, attackExecuter.Value.transform);
 
             //Calculate rotated direction by the angle between the pools away from the executer
             Vector3 vectorToPool = Quaternion.AngleAxis(angleBetweenPools * (i + 1) * UnityEngine.Random.Range(0, 15), attackExecuterTransform.up) * attackExecuterTransform.right;
