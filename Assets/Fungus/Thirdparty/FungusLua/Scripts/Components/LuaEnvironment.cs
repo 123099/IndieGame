@@ -347,8 +347,8 @@ namespace Fungus
             {
                 DynValue returnValue = null;
                 try
-                {                
-                    returnValue = fn.Call();                
+                {
+                    returnValue = fn.Call();
                 }
                 catch (InterpreterException ex)
                 {

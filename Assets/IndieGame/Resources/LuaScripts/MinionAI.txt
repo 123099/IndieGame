@@ -1,27 +1,27 @@
 -- if the player is in the aggro range, the enemy will proceed to attack him and ask his friends to join in
 if player ~= nil then
-	if Vector3.Distance(player.transform.position, enemy.transform.position) <= 13 then
-		-- Set the enemy as aggressive
-		enemy.SetAggro(true)
+	if not enemy.IsAggroed() then
+		if Vector3.Distance(player.transform.position, enemy.transform.position) <= 13 then
+			-- Set the enemy as aggressive
+			enemy.SetAggro(true)
 	
-		-- Set my friends as aggressive
-		local enemies = game.GetEnemiesInRadius(enemy.transform.position, 13)
-		local enemyCount = luautils.GetArraySize(enemies)
-		for i = 1, enemyCount do
-			enemies[i].SetAggro(true)
+			-- Set my friends as aggressive
+			local enemies = game.GetEnemiesInRadius(enemy.transform.position, 13)
+			local enemyCount = luautils.GetArraySize(enemies)
+			for i = 1, enemyCount do
+				enemies[i].SetAggro(true)
+			end
 		end
-	end
-
-	if enemy.IsAggroed() then
-		if enemy.CanMove() then
-			enemy.GetMovementControls().SetDestination(player.transform.position)
-			animator.SetFloat("Speed", 1.0)
-		end
-	
+	else
 		if Vector3.Distance(player.transform.position, enemy.transform.position) <= 2 then
 			enemy.GetMovementControls().Stop()
 			enemy.ExecuteAttack("BasicAttack")
 			animator.SetFloat("Speed", 0)
+		else
+			if enemy.CanMove() then
+				enemy.GetMovementControls().SetDestination(player.transform.position)
+				animator.SetFloat("Speed", 1.0)
+			end
 		end
 	end
 end
