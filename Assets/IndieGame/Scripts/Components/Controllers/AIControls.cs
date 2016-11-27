@@ -20,8 +20,15 @@ public class AIControls : MonoBehaviour, IControllable {
     /// <param name="target"></param>
     public virtual void SetDestination(Vector3 target)
     {
-        cachedAgent.enabled = true;
-        cachedAgent.SetDestination(target);
+        if (cachedAgent.enabled == false)
+        {
+            cachedAgent.enabled = true;
+        }
+
+        if (cachedAgent.destination != target)
+        {
+            cachedAgent.SetDestination(target);
+        }
     }
 
     /// <summary>
@@ -29,8 +36,11 @@ public class AIControls : MonoBehaviour, IControllable {
     /// </summary>
     public virtual void Stop ()
     {
-        cachedAgent.Stop();
-        cachedAgent.enabled = false;
+        if (cachedAgent.enabled && cachedAgent.isOnNavMesh)
+        {
+            cachedAgent.Stop();
+            cachedAgent.enabled = false;
+        }
     }
 
     public virtual bool IsAtDestination ()
@@ -43,8 +53,11 @@ public class AIControls : MonoBehaviour, IControllable {
     /// </summary>
     public virtual void Resume ()
     {
-        cachedAgent.Resume();
-        cachedAgent.enabled = true;
+        if (cachedAgent.enabled == false && cachedAgent.isOnNavMesh)
+        {
+            cachedAgent.Resume();
+            cachedAgent.enabled = true;
+        }
     }
 
     #endregion
