@@ -36,6 +36,9 @@ public class WaterAttack : Attack
         //Cache the transform of the executer for easier access
         Transform attackExecuterTransform = attackExecuter.Value.transform;
 
+        //Wait for channel time
+        yield return new WaitForSeconds(channelTime);
+
         for (int orbital = 0; orbital < waterWaveOrbitals.Length; ++orbital)
         {
             for(int wave = 0; wave < waterWaveOrbitals[orbital].waveCount; ++wave)
@@ -51,6 +54,9 @@ public class WaterAttack : Attack
 
                 //Add the executer the exclusion list of the water wave
                 waterWave.ExcludeTarget(attackExecuter.Value.transform);
+
+                //Set the damage of the wave
+                waterWave.SetDamage(damage);
 
                 //Add circle target component to the wave
                 CircleTarget circleTargetComponent = waterWave.gameObject.AddComponent<CircleTarget>();

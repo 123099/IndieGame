@@ -14,7 +14,6 @@ public class WhirlwindAttack : Attack
 
     protected override IEnumerator DoLaunchAttack (Action onAttackComplete)
     {
-        //TODO: Start channeling the attack(animation)
         //Wait for channel time
         yield return new WaitForSeconds(channelTime);
 

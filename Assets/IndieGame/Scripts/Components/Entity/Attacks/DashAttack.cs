@@ -23,6 +23,9 @@ public class DashAttack : Attack
         //The velocity at which the entity would dash
         Vector3 velocity = attackExecuter.Value.transform.forward * dashSpeed;
 
+        //Wait for channel time
+        yield return new WaitForSeconds(channelTime);
+
         //If the executer has a rigidbody, use physics to make him dash, otherwise, use transform
         if (rigidbody != null && rigidbody.isKinematic == false)
         {

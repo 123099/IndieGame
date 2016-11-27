@@ -26,6 +26,9 @@ public class LavaAttack : Attack
         //Cache the transform of the executer for easier access
         Transform attackExecuterTransform = attackExecuter.Value.transform;
 
+        //Wait for channel time
+        yield return new WaitForSeconds(channelTime);
+
         for(int i = 0; i < lavaPoolCountPerSpawn; ++i)
         {
             //Spawn a lava pool with the executer as the parent
@@ -39,6 +42,9 @@ public class LavaAttack : Attack
 
             //Add the executer to the exclusion list of the lava pool
             lavaPool.ExcludeTarget(attackExecuterTransform);
+
+            //Set damage to laval pool
+            lavaPool.SetDamage(damage);
 
             //Add a move towards component to the lava 
             MoveTowards moveTowardsComponent = lavaPool.gameObject.AddComponent<MoveTowards>();
