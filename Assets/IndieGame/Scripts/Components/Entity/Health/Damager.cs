@@ -103,10 +103,49 @@ public class Damager : MonoBehaviour
     /// <param name="target"></param>
     public virtual void ExcludeTarget(Transform target)
     {
-        if(excludeList.Contains(target) == false)
+        if (target != null)
         {
-            excludeList.Add(target);
+            if (excludeList.Contains(target) == false)
+            {
+                excludeList.Add(target);
+            }
         }
+    }
+
+    /// <summary>
+    /// Adds all targets of a certain type to the exclusion list of the damager.
+    /// </summary>
+    public virtual void ExcludeType(System.Type type)
+    {
+        var targets = FindObjectsOfType(type);
+        for (int i = 0; i < targets.Length; ++i)
+        {
+            if (targets[i] is GameObject)
+            {
+                ExcludeTarget(( targets[i] as GameObject ).transform);
+            }
+            else if (targets[i] is MonoBehaviour)
+            {
+                ExcludeTarget(( targets[i] as MonoBehaviour ).transform);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Adds all targets of a certain type to the exclusion list of the damager.
+    /// </summary>
+    public virtual void ExcludeType<T> () where T : Object
+    {
+        ExcludeType(typeof(T));
+    }
+
+    /// <summary>
+    /// Adds all targets of a certain type to the exclusion list of the damager.
+    /// </summary>
+    public virtual void ExcludeType(string typeName)
+    {
+        System.Type type = System.Type.GetType(typeName);
+        ExcludeType(type);
     }
 
     public virtual void SetDamage(float damage)
