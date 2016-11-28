@@ -1,6 +1,6 @@
 conversation[[
-EarthElemental FireElementalPic right : Thank you for freeing me!
-EarthElemental : You may continue your quest now
+"Spirit of Earth" : Thank you for freeing me!
+ : You may continue your quest now
 ]]
 
 --mark this boss as dead in player prefs to be used by the Main Boss AI

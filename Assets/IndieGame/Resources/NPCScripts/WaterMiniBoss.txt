@@ -1,6 +1,6 @@
 conversation[[
-WaterElemental FireElementalPic right : Thank you for freeing me!
-WaterElemental : You may continue your quest now
+"Spirit of Water" : Thank you for freeing me!
+ : You may continue your quest now
 ]]
 
 --mark this boss as dead in player prefs to be used by the Main Boss AI
