@@ -15,6 +15,12 @@ public class WindAttack : Attack
     [Tooltip("The life span of the beams")]
     [SerializeField] protected FloatData beamLifetime;
 
+    [Tooltip("The minimum angle by which the next beam will increase")]
+    [SerializeField] protected IntegerData minAngleIncrease;
+
+    [Tooltip("The maximum angle by which the next beam will increase")]
+    [SerializeField] protected IntegerData maxAngleIncrease;
+
     protected int currentBeamAngle;
 
     protected override IEnumerator DoLaunchAttack (Action onAttackComplete)
@@ -51,7 +57,7 @@ public class WindAttack : Attack
         //yield return new WaitForSeconds(beamLifetime.Value);
 
         //Update the angle to the next in the sequence
-        currentBeamAngle += 45;
+        currentBeamAngle += UnityEngine.Random.Range(minAngleIncrease.Value, maxAngleIncrease.Value);
 
         //Notify the attack is complete
         if(onAttackComplete != null)
