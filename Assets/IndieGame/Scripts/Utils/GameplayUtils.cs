@@ -64,4 +64,36 @@ public static class GameplayUtils
     {
         Time.timeScale = paused ? 0 : 1;
     }
+
+    /// <summary>
+    /// Returns the closest respawn point to the target
+    /// </summary>
+    /// <returns></returns>
+    public static RespawnPoint GetClosestRespawnPointTo(Transform target)
+    {
+        //Get all the respawn points in the scene
+        var respawnPoints = GameObject.FindObjectsOfType<RespawnPoint>();
+
+        //Store the closest distance and the closest point
+        float minDistance = float.MaxValue;
+        RespawnPoint closestPoint = null;
+
+        for(int i = 0; i < respawnPoints.Length; ++i)
+        {
+            float distance = float.MaxValue;
+            if (closestPoint != null)
+            {
+                //Get distance between point and target
+                distance = Vector3.Distance(target.position, respawnPoints[i].transform.position);
+            }
+
+            if(closestPoint == null || distance < minDistance)
+            {
+                closestPoint = respawnPoints[i];
+                minDistance = distance;
+            }
+        }
+
+        return closestPoint;
+    }
 }

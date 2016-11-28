@@ -5,7 +5,9 @@ using UnityEditor;
 
 public static class EntityMenuItems
 {
-    [MenuItem("IndieGame/Create/Entity/Player")]
+    #region Player
+
+    [MenuItem("IndieGame/Create/Entity/Player/Player")]
     public static void CreatePlayer ()
     {
         GameObject prefab = EditorUtils.SpawnPrefab("Player", false, false);
@@ -15,6 +17,30 @@ public static class EntityMenuItems
         else
             EditorUtils.ShowPrefabCreationFailedMessageInSceneWindow("Player");
     }
+
+    [MenuItem("IndieGame/Create/Entity/Player/Player Camera")]
+    public static void CreatePlayerCamera ()
+    {
+        GameObject prefab = EditorUtils.SpawnPrefab("PlayerCamera", false, false);
+
+        if (prefab == null)
+            EditorUtils.ShowPrefabCreationFailedMessageInSceneWindow("PlayerCamera");
+        else
+            EditorUtils.ShowPrefabCreationSucceededMessageInSceneWindow("PlayerCamera");
+    }
+
+    [MenuItem("IndieGame/Create/Entity/Player/Respawn Point")]
+    public static void CreateRespawnPoint ()
+    {
+        GameObject prefab = EditorUtils.SpawnPrefab("RespawnPoint", false, false);
+
+        if (prefab == null)
+            EditorUtils.ShowPrefabCreationFailedMessageInSceneWindow("RespawnPoint");
+        else
+            EditorUtils.ShowPrefabCreationSucceededMessageInSceneWindow("RespawnPoint");
+    }
+
+    #endregion
 
     [MenuItem("IndieGame/Create/Entity/Enemy/Minion")]
     public static void CreateMinion ()

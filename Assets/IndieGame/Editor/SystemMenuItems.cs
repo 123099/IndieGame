@@ -5,17 +5,6 @@ using UnityEngine;
 
 public static class SystemMenuItems
 {
-    [MenuItem("IndieGame/Create/System/Player Camera")]
-    public static void CreatePlayerCamera ()
-    {
-        GameObject prefab = EditorUtils.SpawnPrefab("PlayerCamera", false, false);
-
-        if(prefab == null)
-            EditorUtils.ShowPrefabCreationFailedMessageInSceneWindow("PlayerCamera");
-        else
-            EditorUtils.ShowPrefabCreationSucceededMessageInSceneWindow("PlayerCamera");
-    }
-
     [MenuItem("IndieGame/Create/System/Object Pool")]
     public static void CreateObjectPool ()
     {
