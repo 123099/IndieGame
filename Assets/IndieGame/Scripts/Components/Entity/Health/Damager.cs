@@ -66,7 +66,6 @@ public class Damager : MonoBehaviour
     /// </summary>
     protected virtual void OnTriggerStay (Collider collider)
     {
-        print(damageOverTime + "," + isDamageOverTimeReady);
         //Make sure damageOverTime is enabled
         if (damageOverTime && isDamageOverTimeReady)
         {
