@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class UserControls : MonoBehaviour, IControllable
 {
+    [Tooltip("The animator that this controller controls")]
+    [SerializeField] protected Animator characterController;
+
     [Tooltip("The speed with which the entity should move")]
     [SerializeField] protected float speed;
 
@@ -23,5 +26,14 @@ public class UserControls : MonoBehaviour, IControllable
 
         //Move the character
         cachedCharacterController.SimpleMove(motion);
+    }
+
+    protected virtual void Update ()
+    {
+        print(Input.GetAxis("Move"));
+        if(characterController != null)
+        {
+            characterController.SetFloat("Speed", Input.GetAxis("Move"));
+        }
     }
 }
