@@ -46,4 +46,22 @@ public static class GameplayUtils
     {
         PlayerPrefs.DeleteAll();
     }
+
+    /// <summary>
+    /// Returns true if the game is currently paused
+    /// </summary>
+    /// <returns></returns>
+    public static bool IsPaused ()
+    {
+        return Time.timeScale == 0;
+    }
+
+    /// <summary>
+    /// Sets the game as either paused or not
+    /// </summary>
+    /// <param name="paused"></param>
+    public static void SetPaused(bool paused)
+    {
+        Time.timeScale = paused ? 0 : 1;
+    }
 }

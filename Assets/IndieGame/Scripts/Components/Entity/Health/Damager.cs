@@ -19,6 +19,27 @@ public class Damager : MonoBehaviour
     [Tooltip("A list of targets that the damager will not damage")]
     [SerializeField] protected List<Transform> excludeList;
 
+    protected bool isDamageOverTimeReady; //Tracks whether the rate timer is ready to apply damage over time this frame
+
+    protected virtual void Update ()
+    {
+        if (isDamageOverTimeReady == true)
+        {
+            isDamageOverTimeReady = false;
+        }
+    }
+
+    protected virtual void FixedUpdate ()
+    {
+        if(damageOverTime)
+        {
+            if(damageRateTimer.IsReady())
+            {
+                isDamageOverTimeReady = true;
+            }
+        }
+    }
+
     /// <summary>
     /// This is a one-shot damage dealer. This deals damage if damageOverTime is disabled
     /// </summary>
@@ -45,22 +66,25 @@ public class Damager : MonoBehaviour
     /// </summary>
     protected virtual void OnTriggerStay (Collider collider)
     {
+        print(damageOverTime + "," + isDamageOverTimeReady);
         //Make sure damageOverTime is enabled
-        if (damageOverTime)
+        if (damageOverTime && isDamageOverTimeReady)
         {
-            //Check if we are ready to apply damage
-            if (damageRateTimer.IsReady())
+            Health targetHealth = null;
+
+            //If we have an object with a rigidbody that accepts all collisions, use the rigidbody to find for the proper component
+            if (collider.attachedRigidbody != null)
             {
-                //If we have an object with a rigidbody that accepts all collisions, use the rigidbody to find for the proper component
-                if (collider.attachedRigidbody != null)
-                {
-                    DealDamage(collider.attachedRigidbody.GetComponent<Health>());
-                }
-                else
-                {
-                    //Deal damage to the health component of the collider
-                    DealDamage(collider.GetComponent<Health>());
-                }
+                targetHealth = collider.attachedRigidbody.GetComponent<Health>();
+            }
+            else
+            {
+                targetHealth = collider.GetComponent<Health>();
+            }
+
+            if (targetHealth != null)
+            {
+                DealDamage(targetHealth);
             }
         }
     }

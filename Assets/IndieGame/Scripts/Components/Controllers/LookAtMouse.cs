@@ -25,6 +25,12 @@ public class LookAtMouse : MonoBehaviour
 
     protected virtual void Update ()
     {
+        //If the game is paused, do not do anyting
+        if(GameplayUtils.IsPaused())
+        {
+            return;
+        }
+
         //Update the position of the plane to our latest position
         raycastTargetPlane.SetNormalAndPosition(Vector3.up, transform.localPosition);
 

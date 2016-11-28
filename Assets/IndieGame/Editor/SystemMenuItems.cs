@@ -37,4 +37,10 @@ public static class SystemMenuItems
         else
             EditorUtils.ShowPrefabCreationSucceededMessageInSceneWindow("Stopwatch");
     }
+
+    [MenuItem("IndieGame/Game/Reset Progress")]
+    public static void ResetGameProgress ()
+    {
+        GameplayUtils.ResetProgress();
+    }
 }
