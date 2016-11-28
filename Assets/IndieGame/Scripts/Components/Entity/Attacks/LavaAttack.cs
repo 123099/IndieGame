@@ -13,7 +13,7 @@ public class LavaAttack : Attack
     [SerializeField] protected Damager lavaPoolPrefab;
 
     [Tooltip("The amount of lava pools to spawn around the attack executer")]
-    [Range(0, 10)] [SerializeField] protected int lavaPoolCountPerSpawn;
+    [Range(0, 40)] [SerializeField] protected int lavaPoolCountPerSpawn;
 
     [Tooltip("The movement speed of the lava pools towards the attack executer")]
     [SerializeField] protected float lavaPoolSpeed;
