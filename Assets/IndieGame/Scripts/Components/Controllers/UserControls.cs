@@ -30,7 +30,6 @@ public class UserControls : MonoBehaviour, IControllable
 
     protected virtual void Update ()
     {
-        print(Input.GetAxis("Move"));
         if(characterController != null)
         {
             characterController.SetFloat("Speed", Input.GetAxis("Move"));

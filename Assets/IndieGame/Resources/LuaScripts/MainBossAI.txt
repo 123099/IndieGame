@@ -1,0 +1,32 @@
+--declare a global variable to keep track whether the water attack has been activated already or not
+if usedWater == nil then
+	usedWater = false
+end
+
+--random seed to choose combo
+math.randomseed( os.time() )
+
+local fireBossDead = playerprefs.GetInt("FireBoss") == 1
+local waterBossDead = playerprefs.GetInt("WaterBoss") == 1
+local earthBossDead = playerprefs.GetInt("EarthBoss") == 1
+local windBossDead = playerprefs.GetInt("WindBoss") == 1
+
+--Choose an attack by getting a random number between 1 and 4
+local attack = math.random(4)
+
+if attack == 1 then
+	--Launch a fire attack if the fire boss has not been defeated
+	if not fireBossDead then
+		enemy.ExecuteAttack("FireAttack")
+	end
+elseif attack == 2 then
+	--Launch a water attack if the water boss isn't dead and we haven't used a water attack yet
+	if not waterBossDead and not usedWater then
+		enemy.ExecuteAttack("WaterAttack")
+		usedWater = true
+	end
+elseif attack == 3 then
+	print "att3"
+elseif attack == 4 then
+	print "att4"
+end
