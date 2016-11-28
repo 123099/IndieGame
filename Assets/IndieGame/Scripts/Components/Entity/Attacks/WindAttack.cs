@@ -48,7 +48,7 @@ public class WindAttack : Attack
         }
 
         //Wait for beam lifetime
-        yield return new WaitForSeconds(beamLifetime.Value);
+        //yield return new WaitForSeconds(beamLifetime.Value);
 
         //Update the angle to the next in the sequence
         currentBeamAngle += 45;
