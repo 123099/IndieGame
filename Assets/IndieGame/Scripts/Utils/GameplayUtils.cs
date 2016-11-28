@@ -66,6 +66,14 @@ public static class GameplayUtils
     }
 
     /// <summary>
+    /// Quits the game.
+    /// </summary>
+    public static void QuitGame ()
+    {
+        Application.Quit();
+    }
+
+    /// <summary>
     /// Returns the closest respawn point to the target
     /// </summary>
     /// <returns></returns>
