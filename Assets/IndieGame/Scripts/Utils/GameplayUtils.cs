@@ -38,4 +38,12 @@ public static class GameplayUtils
         //Return the list of enemies
         return enemies.ToArray();
     }
+
+    /// <summary>
+    /// Resets the progress of the player, including mini bosses defeated and stored health
+    /// </summary>
+    public static void ResetProgress ()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }
