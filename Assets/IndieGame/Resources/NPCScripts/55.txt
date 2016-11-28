@@ -1,6 +1,6 @@
 if playerprefs.GetInt("FireBoss") == 1 then
 	conversation[[
-	FireTablet TabletPic right : Thank you for freeing the spirit of the Fire Elemental!
+	FireTablet TabletPic right : Thank you for freeing the Spirit of Fire!
 	]]
 else
 	conversation[[
@@ -22,6 +22,6 @@ else
 		say "Good Luck!"
 		TeleportIn()
 	else
-		say "No one ever does..."
+		say "That is probably wise..."
 	end
 end

@@ -1,4 +1,27 @@
-conversation[[
-EarthTablet TabletPic right : He who tresspasses into his  domain must be careful not to anger him.
-EarthTablet :His rage is as heavy as the world.
-]]
+if playerprefs.GetInt("EarthBoss") == 1 then
+	conversation[[
+	EarthTablet TabletPic right : Thank you for freeing the Spirit of Earth!
+	]]
+else
+	conversation[[
+	EarthTablet TabletPic right : He who tresspasses into his  domain must be careful not to anger him.
+	EarthTablet : His rage burns like of a thousand suns.
+	]]
+
+	say "Do you want to go to the earth elemental's dungeon?"
+
+	function TeleportIn()
+		luautils.LoadScene("EarthDungeon")
+	end
+
+	menutitle "Earth Dungeon"
+
+	local choice = choosetimer ({"Enter the Dungeon", "Leave"}, 5, 2)
+
+	if choice == 1 then
+		say "Good Luck!"
+		TeleportIn()
+	else
+		say "That is probably wise..."
+	end
+end

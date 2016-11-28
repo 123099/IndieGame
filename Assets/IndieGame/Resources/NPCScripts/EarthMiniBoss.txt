@@ -1,0 +1,17 @@
+conversation[[
+EarthElemental FireElementalPic right : Thank you for freeing me!
+EarthElemental : You may continue your quest now
+]]
+
+--mark this boss as dead in player prefs to be used by the Main Boss AI
+playerprefs.SetInt("EarthBoss", 1)
+
+function TeleportOut()
+	luautils.LoadScene("Village")
+end
+
+local choice = choose {"Leave Dungeon"}
+
+if choice == 1 then
+	TeleportOut()
+end

@@ -1,4 +1,27 @@
-conversation[[
-WaterTablet TabletPic right : He who tresspasses into his  domain must be careful not to anger him.
-WaterTablet :His rage could drown a thousand gods in seconds.
-]]
+if playerprefs.GetInt("WaterBoss") == 1 then
+	conversation[[
+	WaterTablet TabletPic right : Thank you for freeing the Spirit of Water!
+	]]
+else
+	conversation[[
+	WaterTablet TabletPic right : He who tresspasses into his  domain must be careful not to anger him.
+	WaterTablet : His rage could drown a thousand gods in seconds.
+	]]
+
+	say "Do you want to go to the water elemental's dungeon?"
+
+	function TeleportIn()
+		luautils.LoadScene("WaterDungeon")
+	end
+
+	menutitle "Water Dungeon"
+
+	local choice = choosetimer ({"Enter the Dungeon", "Leave"}, 5, 2)
+
+	if choice == 1 then
+		say "Good Luck!"
+		TeleportIn()
+	else
+		say "That is probably wise..."
+	end
+end
