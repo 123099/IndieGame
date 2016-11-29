@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Director;
 
 public class AnimationParticles : StateMachineBehaviour
 {
@@ -10,32 +11,57 @@ public class AnimationParticles : StateMachineBehaviour
     [Tooltip("The name of the object that is a child of this animator to which to attach the particles")]
     [SerializeField] protected string parentObjectName;
 
+    [Tooltip("Attach to parent")]
+    [SerializeField] protected bool attachToParent;
+
+    [Tooltip("Particle offset spawn point")]
+    [SerializeField] protected Vector3 particleOffset;
+
+    protected GameObject spawnedParticles;
+
     #region Public members
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     public override void OnStateEnter (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //Spawn the particles
-        GameObject particles = Instantiate(particlesPrefab);
+        if (spawnedParticles != null)
+            return;
 
-        //Locate the parent transform by name
-        Transform parent = animator.transform.FindDescendentTransform(parentObjectName);
-        Debug.Log(parentObjectName + "," + parent);
+        //Spawn the particles
+        spawnedParticles = Instantiate(particlesPrefab);
+
+        Transform parent = null;
+
+        if (attachToParent == false)
+        {
+            //Locate the parent transform by name
+            parent = animator.transform.FindDescendentTransform(parentObjectName);
+        }
+
         //If no parent found, use the animator as a parent
         if(parent == null)
         {
-            parent = animator.transform;
+            if (attachToParent)
+                parent = animator.transform.parent;
+            else
+                parent = animator.transform;
         }
 
         //Make the particles follow the animated target
-        particles.transform.SetParent(parent);
+        spawnedParticles.transform.SetParent(parent);
 
         //Set the position and rotations of the particles to coincide with the parent
-        particles.transform.localPosition = Vector3.zero;
-        particles.transform.localRotation = Quaternion.identity;
+        spawnedParticles.transform.localPosition = particleOffset;
+        spawnedParticles.transform.localRotation = Quaternion.identity;
+    }
 
-        //Destroy the particles at the end of the animation
-        Destroy(particles, stateInfo.length);
+    public override void OnStateExit (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        Debug.Log("Exit");
+        if (spawnedParticles != null)
+        {
+            Destroy(spawnedParticles);
+        }
     }
 
     #endregion
