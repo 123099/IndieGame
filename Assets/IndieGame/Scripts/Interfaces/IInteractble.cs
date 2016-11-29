@@ -5,7 +5,7 @@ using UnityEngine;
 public interface IInteractble {
 
     /// <summary>
-    /// Defines what the interactble entity does when interacted with
+    /// Defines what the interactable entity does when interacted with
     /// </summary>
     void Interact ();
 }
