@@ -26,7 +26,13 @@ elseif attack == 2 then
 		usedWater = true
 	end
 elseif attack == 3 then
-	print "att3"
+	--Launch a earth attack if the earth boss isn't dead and we haven't used a earth attack yet
+	if not earthBossDead and not usedEarth then
+		enemy.ExecuteAttack("EarthAttack")
+	end
 elseif attack == 4 then
-	print "att4"
+	--Launch a wind attack if the wind boss isn't dead and we haven't used a wind attack yet
+	if not windBossDead and not usedWind then
+		enemy.ExecuteAttack("WindAttack")
+	end
 end
