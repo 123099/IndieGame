@@ -6,7 +6,6 @@ public class PlayerRespawner : MonoBehaviour
 {
     protected virtual void OnTriggerEnter(Collider collider)
     {
-        print(collider.attachedRigidbody);
         Player player = null;
         if(collider.attachedRigidbody != null)
         {
@@ -26,7 +25,6 @@ public class PlayerRespawner : MonoBehaviour
 
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        print("col");
         OnTriggerEnter(collision.collider);
     }
 

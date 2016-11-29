@@ -131,5 +131,10 @@ public class Player : Entity
         return PlayerPrefs.GetFloat(name, GetHealth().GetMaxHealth());
     }
 
+    public virtual void ResetProgress ()
+    {
+        GameplayUtils.ResetProgress();
+    }
+
     #endregion
 }
