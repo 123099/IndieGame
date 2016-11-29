@@ -20,7 +20,7 @@ public class AnimationParticles : StateMachineBehaviour
 
         //Locate the parent transform by name
         Transform parent = animator.transform.FindDescendentTransform(parentObjectName);
-
+        Debug.Log(parentObjectName + "," + parent);
         //If no parent found, use the animator as a parent
         if(parent == null)
         {
