@@ -99,6 +99,7 @@ public class Player : Entity
     {
         if (disableMovement)
         {
+            print("distable");
             //Disable user controls, to prevent movement while firing
             cachedUserControls.enabled = false;
         }
@@ -108,7 +109,7 @@ public class Player : Entity
 
         //Execute the attack
         behaviourFlowchart.ExecuteBlock(attackBlock, onComplete: delegate
-        { cachedUserControls.enabled = true; });
+        { cachedUserControls.enabled = true; print("enable"); });
     }
 
     #region Public members
