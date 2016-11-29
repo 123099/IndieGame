@@ -524,7 +524,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Player_Idle
       takeName: Take 001
-      firstFrame: 2
+      firstFrame: 3
       lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
