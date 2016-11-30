@@ -6,6 +6,12 @@ conversation[[
 --mark this boss as dead in player prefs to be used by the Main Boss AI
 playerprefs.SetInt("EarthBoss", 1)
 
+if playerprefs.GetString("FirstDead", "") == "" then
+	playerprefs.SetString("FirstDead", "Earth")
+elseif playerprefs.GetString("SecondDead", "") == "" then
+	playerprefs.SetString("SecondDead", "Earth")
+end
+
 function TeleportOut()
 	luautils.LoadScene("Village")
 end
