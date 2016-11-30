@@ -45,5 +45,10 @@ public class StopwatchController : MonoBehaviour {
         return systemStopwatch.Elapsed;
     }
 
+    public virtual void Save ()
+    {
+        PlayerPrefs.SetFloat("Time", GetElapsed().Milliseconds);
+    }
+
     #endregion
 }
