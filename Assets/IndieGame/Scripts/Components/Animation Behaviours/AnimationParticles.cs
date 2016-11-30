@@ -57,7 +57,6 @@ public class AnimationParticles : StateMachineBehaviour
 
     public override void OnStateExit (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("Exit");
         if (spawnedParticles != null)
         {
             Destroy(spawnedParticles);
