@@ -136,5 +136,10 @@ public class Player : Entity
         GameplayUtils.ResetProgress();
     }
 
+    public virtual UserControls GetUserControls ()
+    {
+        return cachedUserControls;
+    }
+
     #endregion
 }

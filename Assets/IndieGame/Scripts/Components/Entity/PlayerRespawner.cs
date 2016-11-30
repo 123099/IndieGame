@@ -18,7 +18,6 @@ public class PlayerRespawner : MonoBehaviour
 
         if(player != null)
         {
-            print(player);
             Respawn(player.transform);
         }
     }
@@ -33,7 +32,6 @@ public class PlayerRespawner : MonoBehaviour
     public virtual void Respawn (Transform target)
     {
         RespawnPoint respawnPoint = GameplayUtils.GetClosestRespawnPointTo(target);
-        print(respawnPoint);
         if(respawnPoint != null)
         {
             respawnPoint.Respawn(target);
