@@ -61,6 +61,10 @@ public class OptionsMenu : MonoBehaviour
         {
             StartCoroutine(DoSelectButton());
         }
+        else
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
     }
 
     public virtual void ResetProgress ()
