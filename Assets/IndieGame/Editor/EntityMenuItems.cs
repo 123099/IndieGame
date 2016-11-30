@@ -42,6 +42,17 @@ public static class EntityMenuItems
 
     #endregion
 
+    [MenuItem("IndieGame/Create/Entity/NPC")]
+    public static void CreateNPC ()
+    {
+        GameObject npc = EditorUtils.SpawnPrefab("NPC", false, false);
+
+        if (npc == null)
+            EditorUtils.ShowPrefabCreationFailedMessageInSceneWindow("NPC");
+        else
+            EditorUtils.ShowPrefabCreationSucceededMessageInSceneWindow("NPC", "Do not forget to update Character name and NPC ID!");
+    }
+
     [MenuItem("IndieGame/Create/Entity/Enemy/Minion")]
     public static void CreateMinion ()
     {
