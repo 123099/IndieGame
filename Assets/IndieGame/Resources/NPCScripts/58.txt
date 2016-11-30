@@ -5,7 +5,7 @@ if playerprefs.GetInt("EarthBoss") == 1 then
 else
 	conversation[[
 	Earth TabletPic right : He who tresspasses into his  domain must be careful not to anger him.
-	Earth : His rage burns like of a thousand suns.
+	Earth : His rage could crush the mightiest of warriors.
 	]]
 
 	say "Do you want to go to the earth elemental's dungeon?"
