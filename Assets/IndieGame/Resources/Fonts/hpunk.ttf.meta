@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 83b0d6a3c06bee34bb6f4271e63ff838
+timeCreated: 1480515315
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Hawaiian Punk
+  fontNames:
+  - Hawaiian Punk
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
