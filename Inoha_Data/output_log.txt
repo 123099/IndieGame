@@ -17,110 +17,14 @@ Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.Ne
 Loading D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.050 seconds
+- Completed reload, in  0.024 seconds
 Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at -1920,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.682064 ms
+UnloadTime: 1.650088 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1cc4 -> priority: 1 
-  Thread -> id: 3404 -> priority: 1 
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-
-Unloading 44 unused Assets to reduce memory usage. Loaded Objects now: 1047.
-Total: 0.656877 ms (FindLiveObjects: 0.074609 ms CreateObjectMapping: 0.061977 ms MarkObjects: 0.464235 ms  DeleteObjects: 0.056055 ms)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.238673 ms
-Pool of Projectiles generated with 20 objects.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-FMOD Studio: Creating runtime system instance
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2920.
-Total: 1.669826 ms (FindLiveObjects: 0.170140 ms CreateObjectMapping: 0.054476 ms MarkObjects: 0.948998 ms  DeleteObjects: 0.495026 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-
-Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 2920.
-Total: 1.318886 ms (FindLiveObjects: 0.170140 ms CreateObjectMapping: 0.071056 ms MarkObjects: 1.011370 ms  DeleteObjects: 0.065135 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 3105.
-Total: 11.014540 ms (FindLiveObjects: 0.152771 ms CreateObjectMapping: 0.077372 ms MarkObjects: 10.680969 ms  DeleteObjects: 0.102637 ms)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.127351 ms
-Pool of Projectiles generated with 20 objects.
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-
-Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 7116.
-Total: 14.145366 ms (FindLiveObjects: 0.361993 ms CreateObjectMapping: 0.135007 ms MarkObjects: 11.010986 ms  DeleteObjects: 2.636589 ms)
-
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-
-Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 7116.
-Total: 11.038620 ms (FindLiveObjects: 0.630428 ms CreateObjectMapping: 0.084478 ms MarkObjects: 10.228182 ms  DeleteObjects: 0.094741 ms)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-FMOD Studio: Destroying runtime system instance
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
+  Thread -> id: 508 -> priority: 1 
+  Thread -> id: 1524 -> priority: 1 

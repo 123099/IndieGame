@@ -1,5 +1,5 @@
 conversation[[
-"The Curse of Moaalii" right: "Do you want to go to the Throne Room?"
+"The Curse of Moaalii" right: Do you want to go to the Throne Room?
 ]]
 
 function TeleportIn()
