@@ -4,6 +4,9 @@ if player ~= nil then
 		if Vector3.Distance(player.transform.position, enemy.transform.position) <= 13 then
 			-- Set the enemy as aggressive
 			enemy.SetAggro(true)
+
+			--Yell at the player for being rude
+			enemy.ExecuteAttack("Yell")
 	
 			-- Set my friends as aggressive
 			local enemies = game.GetEnemiesInRadius(enemy.transform.position, 13)
