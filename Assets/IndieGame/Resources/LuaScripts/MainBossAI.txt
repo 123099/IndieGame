@@ -20,10 +20,10 @@ if doOnce == nil then
 	doOnce = 1
 	local deathCount = fireBossDead + waterBossDead + earthBossDead + windBossDead
 	if deathCount == 3 then
-		enemy.GetHealth().TakeDamage(300)
+		enemy.GetHealth().TakeDamage(250)
 	end
 	if deathCount == 4 then
-		enemy.GetHealth().TakeDamage(1000)
+		enemy.GetHealth().TakeDamage(600)
 	end
 end
 
@@ -48,6 +48,8 @@ if attack == 1 then
 	if first ~= "Fire" and second ~= "Fire" then
 		enemy.ExecuteAttack("FireAttack")
 		castCount = castCount + 1
+	else
+		castCount = 10
 	end
 elseif attack == 2 then
 	--Launch a water attack if the water boss isn't dead and we haven't used a water attack yet
@@ -60,11 +62,15 @@ elseif attack == 3 then
 	if first ~= "Earth" and second ~= "Earth" then
 		enemy.ExecuteAttack("EarthAttack")
 		castCount = castCount + 1
+	else
+		castCount = 10
 	end
 elseif attack == 4 then
 	--Launch a wind attack if the wind boss isn't dead and we haven't used a wind attack yet
 	if first ~= "Wind" and second ~= "Wind" then
 		enemy.ExecuteAttack("WindAttack")
 		castCount = castCount + 1
+	else
+		castCount = 10
 	end
 end
