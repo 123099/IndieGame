@@ -17,25 +17,14 @@ Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.Ne
 Loading D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.061 seconds
+- Completed reload, in  0.024 seconds
 Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at -1920,0
 <RI> Initializing input.
 <RI> Input initialized.
-desktop: 1920x1080 60Hz; virtual: 3840x1080 at -1920,0
 <RI> Initialized touch support.
-UnloadTime: 1.248616 ms
-Setting up 2 worker threads for Enlighten.
-  Thread -> id: 40a4 -> priority: 1 
-  Thread -> id: 3ad0 -> priority: 1 
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1049.
-Total: 1.397045 ms (FindLiveObjects: 0.102242 ms CreateObjectMapping: 0.032764 ms MarkObjects: 1.252563 ms  DeleteObjects: 0.008684 ms)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.971335 ms
+UnloadTime: 1.258485 ms
 Pool of Projectiles generated with 20 objects.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -44,58 +33,20 @@ FMOD Studio: Creating runtime system instance
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1748.
-Total: 0.729905 ms (FindLiveObjects: 0.095531 ms CreateObjectMapping: 0.060792 ms MarkObjects: 0.561739 ms  DeleteObjects: 0.011447 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-
-Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 1748.
-Total: 0.618189 ms (FindLiveObjects: 0.082898 ms CreateObjectMapping: 0.044607 ms MarkObjects: 0.487524 ms  DeleteObjects: 0.002763 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 1926.
-Total: 11.816261 ms (FindLiveObjects: 0.132638 ms CreateObjectMapping: 0.077372 ms MarkObjects: 11.528877 ms  DeleteObjects: 0.076977 ms)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.121818 ms
-Pool of Projectiles generated with 20 objects.
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 23d0 -> priority: 1 
+  Thread -> id: 400c -> priority: 1 
+Exit
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 5424.
-Total: 10.050907 ms (FindLiveObjects: 0.239617 ms CreateObjectMapping: 0.074609 ms MarkObjects: 9.667204 ms  DeleteObjects: 0.068687 ms)
-
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-
-Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 5424.
-Total: 9.747734 ms (FindLiveObjects: 0.316200 ms CreateObjectMapping: 0.083688 ms MarkObjects: 9.339555 ms  DeleteObjects: 0.007105 ms)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
+Exit
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-
-Unloading 147 unused Assets to reduce memory usage. Loaded Objects now: 3952.
-Total: 35.095081 ms (FindLiveObjects: 0.382124 ms CreateObjectMapping: 0.140138 ms MarkObjects: 34.440178 ms  DeleteObjects: 0.131454 ms)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.044841 ms
-Pool of Projectiles generated with 20 objects.
+Exit
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-
-Unloading 57 unused Assets to reduce memory usage. Loaded Objects now: 1773.
-Total: 33.825939 ms (FindLiveObjects: 0.122769 ms CreateObjectMapping: 0.046581 ms MarkObjects: 33.357754 ms  DeleteObjects: 0.298041 ms)
-
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-
-Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 1773.
-Total: 31.687538 ms (FindLiveObjects: 0.152770 ms CreateObjectMapping: 0.045791 ms MarkObjects: 31.484240 ms  DeleteObjects: 0.004342 ms)
 
 FMOD Studio: Destroying runtime system instance
  
