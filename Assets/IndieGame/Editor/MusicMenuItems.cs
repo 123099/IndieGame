@@ -19,4 +19,19 @@ public static class MusicMenuItems
             EditorUtils.ShowPrefabCreationFailedMessageInSceneWindow("BGM_Village");
         }
     }
+
+    [MenuItem("IndieGame/Create/Music/BGM/Fire")]
+    public static void CreateFireBGM ()
+    {
+        GameObject prefab = EditorUtils.SpawnPrefab("BGM_Fire", false, false);
+
+        if (prefab != null)
+        {
+            EditorUtils.ShowPrefabCreationSucceededMessageInSceneWindow("BGM_Fire");
+        }
+        else
+        {
+            EditorUtils.ShowPrefabCreationFailedMessageInSceneWindow("BGM_Fire");
+        }
+    }
 }

@@ -17,24 +17,24 @@ Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.Ne
 Loading D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.053 seconds
+- Completed reload, in  0.048 seconds
 Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at -1920,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.320388 ms
+UnloadTime: 1.341387 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 4604 -> priority: 1 
-  Thread -> id: 4880 -> priority: 1 
+  Thread -> id: 3878 -> priority: 1 
+  Thread -> id: 2ed8 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
 
 Unloading 44 unused Assets to reduce memory usage. Loaded Objects now: 1047.
-Total: 0.567662 ms (FindLiveObjects: 0.076583 ms CreateObjectMapping: 0.043818 ms MarkObjects: 0.412522 ms  DeleteObjects: 0.034738 ms)
+Total: 0.544766 ms (FindLiveObjects: 0.055266 ms CreateObjectMapping: 0.043028 ms MarkObjects: 0.421206 ms  DeleteObjects: 0.024869 ms)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.284465 ms
+UnloadTime: 2.423419 ms
 Pool of Projectiles generated with 20 objects.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -44,77 +44,33 @@ FMOD Studio: Creating runtime system instance
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2917.
-Total: 1.560478 ms (FindLiveObjects: 0.145665 ms CreateObjectMapping: 0.059608 ms MarkObjects: 0.889389 ms  DeleteObjects: 0.465814 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2920.
+Total: 1.747988 ms (FindLiveObjects: 0.120795 ms CreateObjectMapping: 0.076188 ms MarkObjects: 1.001896 ms  DeleteObjects: 0.548713 ms)
 
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
 
-Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 2917.
-Total: 1.494948 ms (FindLiveObjects: 0.198168 ms CreateObjectMapping: 0.094347 ms MarkObjects: 1.140850 ms  DeleteObjects: 0.060792 ms)
+Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 2920.
+Total: 1.230066 ms (FindLiveObjects: 0.134612 ms CreateObjectMapping: 0.058818 ms MarkObjects: 0.974657 ms  DeleteObjects: 0.061582 ms)
 
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
 
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 3102.
-Total: 11.629967 ms (FindLiveObjects: 0.165798 ms CreateObjectMapping: 0.114874 ms MarkObjects: 11.263237 ms  DeleteObjects: 0.085662 ms)
+Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 3105.
+Total: 9.765921 ms (FindLiveObjects: 0.177246 ms CreateObjectMapping: 0.079346 ms MarkObjects: 9.403927 ms  DeleteObjects: 0.105005 ms)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.647247 ms
+UnloadTime: 2.337757 ms
 Pool of Projectiles generated with 20 objects.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 
-Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 7110.
-Total: 14.977515 ms (FindLiveObjects: 0.370283 ms CreateObjectMapping: 0.131454 ms MarkObjects: 11.860111 ms  DeleteObjects: 2.615272 ms)
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 7113.
+Total: 12.642918 ms (FindLiveObjects: 0.388047 ms CreateObjectMapping: 0.095531 ms MarkObjects: 10.124755 ms  DeleteObjects: 2.033793 ms)
 
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
 
-Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 7110.
-Total: 11.806030 ms (FindLiveObjects: 0.881100 ms CreateObjectMapping: 0.175667 ms MarkObjects: 10.725971 ms  DeleteObjects: 0.021711 ms)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Block Die failed to execute in the flowchart BehaviourFlowchart
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 7113.
+Total: 10.858215 ms (FindLiveObjects: 0.581873 ms CreateObjectMapping: 0.090794 ms MarkObjects: 10.110544 ms  DeleteObjects: 0.073819 ms)
 
 Block Die failed to execute in the flowchart BehaviourFlowchart
  
