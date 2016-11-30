@@ -1,0 +1,16 @@
+say "Would you like to go back to the village?"
+
+	function TeleportIn()
+		luautils.LoadScene("Village")
+	end
+
+	menutitle "Boss Arena"
+
+	local choice = choosetimer ({"Leave the Arena", "Stay"}, 5, 2)
+
+	if choice == 1 then
+		say "You made the right choice"
+		TeleportIn()
+	else
+		say "Okay"
+	end
