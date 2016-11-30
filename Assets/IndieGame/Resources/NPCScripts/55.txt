@@ -1,11 +1,11 @@
 if playerprefs.GetInt("FireBoss") == 1 then
 	conversation[[
-	FireTablet TabletPic right : Thank you for freeing the Spirit of Fire!
+	Fire TabletPic right : Thank you for freeing the Spirit of Fire!
 	]]
 else
 	conversation[[
-	FireTablet TabletPic right : He who tresspasses into his  domain must be careful not to anger him.
-	FireTablet : His rage burns like of a thousand suns.
+	Fire TabletPic right : He who tresspasses into his  domain must be careful not to anger him.
+	Fire : His rage burns like of a thousand suns.
 	]]
 
 	say "Do you want to go to the fire elemental's dungeon?"
@@ -14,7 +14,7 @@ else
 		luautils.LoadScene("FireDungeon")
 	end
 
-	menutitle "Fire Dungeon"
+	menutitle "Free the Fire Spirit"
 
 	local choice = choosetimer ({"Enter the Dungeon", "Leave"}, 5, 2)
 

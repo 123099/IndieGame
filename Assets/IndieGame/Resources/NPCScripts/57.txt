@@ -1,11 +1,11 @@
 if playerprefs.GetInt("WindBoss") == 1 then
 	conversation[[
-	WindTablet TabletPic right : Thank you for freeing the Spirit of Wind!
+	Wind TabletPic right : Thank you for freeing the Spirit of Wind!
 	]]
 else
 	conversation[[
-	WindTablet TabletPic right : He who tresspasses into his  domain must be careful not to anger him.
-	WindTablet : His rage cuts like the sharpest of blades.
+	Wind TabletPic right : He who tresspasses into his  domain must be careful not to anger him.
+	Wind : His rage cuts like the sharpest of blades.
 	]]
 
 	say "Do you want to go to the wind elemental's dungeon?"
@@ -14,7 +14,7 @@ else
 		luautils.LoadScene("WindDungeon")
 	end
 
-	menutitle "Wind Dungeon"
+	menutitle "Free the Wind Spirit"
 
 	local choice = choosetimer ({"Enter the Dungeon", "Leave"}, 5, 2)
 

@@ -1,16 +1,18 @@
-say "Would you like to go back to the village?"
+conversation[[
+"Exit Sign" right: "Would you like to go back to the village?"
+]]
 
-	function TeleportIn()
-		luautils.LoadScene("Village")
-	end
+function TeleportIn()
+	luautils.LoadScene("Village")
+end
 
-	menutitle "Boss Arena"
+menutitle "Back to Village"
 
-	local choice = choosetimer ({"Leave the Arena", "Stay"}, 5, 2)
+local choice = choosetimer ({"Leave the Arena", "Stay"}, 5, 2)
 
-	if choice == 1 then
-		say "You made the right choice"
-		TeleportIn()
-	else
-		say "Okay"
-	end
+if choice == 1 then
+	say "You made the right choice"
+	TeleportIn()
+else
+	say "Okay"
+end

@@ -1,11 +1,11 @@
 if playerprefs.GetInt("WaterBoss") == 1 then
 	conversation[[
-	WaterTablet TabletPic right : Thank you for freeing the Spirit of Water!
+	Water TabletPic right : Thank you for freeing the Spirit of Water!
 	]]
 else
 	conversation[[
-	WaterTablet TabletPic right : He who tresspasses into his  domain must be careful not to anger him.
-	WaterTablet : His rage could drown a thousand gods in seconds.
+	Water TabletPic right : He who tresspasses into his  domain must be careful not to anger him.
+	Water : His rage could drown a thousand gods in seconds.
 	]]
 
 	say "Do you want to go to the water elemental's dungeon?"
@@ -14,7 +14,7 @@ else
 		luautils.LoadScene("WaterDungeon")
 	end
 
-	menutitle "Water Dungeon"
+	menutitle "Free the Water Spirit"
 
 	local choice = choosetimer ({"Enter the Dungeon", "Leave"}, 5, 2)
 
