@@ -9,6 +9,8 @@ using System;
              "Attacks all entities in a radius around the executer")]
 public class WhirlwindAttack : Attack
 {
+    [Tooltip("The offset from the main damage to randomize")]
+    [SerializeField] protected FloatData damageOffset;
 
     protected override IEnumerator DoLaunchAttack (Action onAttackComplete)
     {
@@ -20,6 +22,9 @@ public class WhirlwindAttack : Attack
 
         //The health object that will be taking damage.
         Health health = null;
+
+        //Calculate random damager
+        float damageToDeal = UnityEngine.Random.Range(damage - damageOffset.Value, damage + damageOffset.Value);
 
         //Loop through all the hit colliders, and apply damage
         for (int i = 0; i < collisions.Length; ++i)
@@ -50,7 +55,7 @@ public class WhirlwindAttack : Attack
                 if (health != null)
                 {
                     //Damage the entity
-                    health.TakeDamage(damage);
+                    health.TakeDamage(damageToDeal);
                 }
             }
         }
