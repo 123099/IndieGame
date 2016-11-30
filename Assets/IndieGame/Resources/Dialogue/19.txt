@@ -1,2 +1,3 @@
 "The Kahuna" Kahuna left : A chill went down my spine, something is wrong.
-"The Kahuna" Kahuna left : Kamea stay behind, if i don’t return by sundown go back to the village, tell them what happened and guide them as their new Kahuna.
+:Kamea, stay behind! If I don’t return by sundown, go back to the village, tell the peopler what happened and guide them as their
+:New Kahuna.
