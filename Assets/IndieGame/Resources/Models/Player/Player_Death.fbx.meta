@@ -1,0 +1,1036 @@
+fileFormatVersion: 2
+guid: e05d0812c59567647ae63d1155def91b
+timeCreated: 1480513744
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Amulet_Joint_L
+    100002: Amulet_Joint_Middle
+    100004: Amulet_Joint_R
+    100006: AssCloth_Joint_1
+    100008: AssCloth_Joint_2
+    100010: AssCloth_Joint_3
+    100012: AssCloth_Joint_4
+    100014: AssCloth_Joint_5
+    100016: group
+    100018: Head
+    100020: L_Clavicle
+    100022: L_ClavicleNub
+    100024: L_Elbow
+    100026: L_Elbow_2
+    100028: L_EyeAim_1
+    100030: L_EyeAim_2
+    100032: L_EyelidLower_1
+    100034: L_EyelidLower_2
+    100036: L_EyelidUpper_1
+    100038: L_EyelidUpper_2
+    100040: L_Foot
+    100042: L_Hand
+    100044: L_IndexFinger_1
+    100046: L_IndexFinger_2
+    100048: L_IndexFinger_3
+    100050: L_IndexFinger_4
+    100052: L_Knee
+    100054: L_LatissimusDorsi_1
+    100056: L_LatissimusDorsi_2
+    100058: L_LowerArmTwist_1
+    100060: L_LowerArmTwist_2
+    100062: L_LowerArmTwist_3
+    100064: L_MiddleFinger_1
+    100066: L_MiddleFinger_2
+    100068: L_MiddleFinger_3
+    100070: L_MiddleFinger_4
+    100072: L_Pectoralis_1
+    100074: L_Pectoralis_2
+    100076: L_Pinky_1
+    100078: L_Pinky_2
+    100080: L_Pinky_3
+    100082: L_Pinky_4
+    100084: L_RingFinger_1
+    100086: L_RingFinger_2
+    100088: L_RingFinger_3
+    100090: L_RingFinger_4
+    100092: L_Sternocleidomastoid_1
+    100094: L_Thumb_1
+    100096: L_Thumb_2
+    100098: L_Thumb_3
+    100100: L_Thumb_4
+    100102: L_Toe
+    100104: L_ToeNub
+    100106: L_UpperArm
+    100108: L_UpperLeg1
+    100110: LoinCloth_Joint_1
+    100112: LoinCloth_Joint_2
+    100114: LoinCloth_Joint_3
+    100116: LoinCloth_Joint_4
+    100118: LoinCloth_Joint_5
+    100120: LoinCloth_Joint_6
+    100122: LoinCloth_Joint_7
+    100124: Neck_1
+    100126: Neck_2
+    100128: Neck_3
+    100130: pasted__pasted__polySurface18
+    100132: pasted__pasted__polySurface19
+    100134: pasted__polySurface1
+    100136: pasted__polySurface10
+    100138: pasted__polySurface11
+    100140: pasted__polySurface12
+    100142: pasted__polySurface13
+    100144: pasted__polySurface14
+    100146: pasted__polySurface15
+    100148: pasted__polySurface16
+    100150: pasted__polySurface17
+    100152: pasted__polySurface18
+    100154: pasted__polySurface19
+    100156: pasted__polySurface2
+    100158: pasted__polySurface20
+    100160: pasted__polySurface21
+    100162: pasted__polySurface22
+    100164: pasted__polySurface23
+    100166: pasted__polySurface24
+    100168: pasted__polySurface25
+    100170: pasted__polySurface26
+    100172: pasted__polySurface27
+    100174: pasted__polySurface28
+    100176: pasted__polySurface29
+    100178: pasted__polySurface3
+    100180: pasted__polySurface30
+    100182: pasted__polySurface31
+    100184: pasted__polySurface32
+    100186: pasted__polySurface33
+    100188: pasted__polySurface34
+    100190: pasted__polySurface35
+    100192: pasted__polySurface36
+    100194: pasted__polySurface37
+    100196: pasted__polySurface38
+    100198: pasted__polySurface39
+    100200: pasted__polySurface4
+    100202: pasted__polySurface40
+    100204: pasted__polySurface41
+    100206: pasted__polySurface42
+    100208: pasted__polySurface43
+    100210: pasted__polySurface44
+    100212: pasted__polySurface45
+    100214: pasted__polySurface46
+    100216: pasted__polySurface47
+    100218: pasted__polySurface48
+    100220: pasted__polySurface49
+    100222: pasted__polySurface5
+    100224: pasted__polySurface50
+    100226: pasted__polySurface51
+    100228: pasted__polySurface52
+    100230: pasted__polySurface53
+    100232: pasted__polySurface54
+    100234: pasted__polySurface55
+    100236: pasted__polySurface6
+    100238: pasted__polySurface7
+    100240: pasted__polySurface8
+    100242: pasted__polySurface9
+    100244: pasted__transform1
+    100246: pasted__transform10
+    100248: pasted__transform11
+    100250: pasted__transform12
+    100252: pasted__transform13
+    100254: pasted__transform14
+    100256: pasted__transform15
+    100258: pasted__transform16
+    100260: pasted__transform17
+    100262: pasted__transform18
+    100264: pasted__transform19
+    100266: pasted__transform2
+    100268: pasted__transform20
+    100270: pasted__transform21
+    100272: pasted__transform22
+    100274: pasted__transform23
+    100276: pasted__transform24
+    100278: pasted__transform25
+    100280: pasted__transform26
+    100282: pasted__transform27
+    100284: pasted__transform28
+    100286: pasted__transform29
+    100288: pasted__transform3
+    100290: pasted__transform30
+    100292: pasted__transform31
+    100294: pasted__transform32
+    100296: pasted__transform33
+    100298: pasted__transform34
+    100300: pasted__transform35
+    100302: pasted__transform36
+    100304: pasted__transform37
+    100306: pasted__transform38
+    100308: pasted__transform39
+    100310: pasted__transform4
+    100312: pasted__transform40
+    100314: pasted__transform41
+    100316: pasted__transform42
+    100318: pasted__transform43
+    100320: pasted__transform44
+    100322: pasted__transform45
+    100324: pasted__transform46
+    100326: pasted__transform47
+    100328: pasted__transform48
+    100330: pasted__transform49
+    100332: pasted__transform5
+    100334: pasted__transform50
+    100336: pasted__transform51
+    100338: pasted__transform52
+    100340: pasted__transform53
+    100342: pasted__transform6
+    100344: pasted__transform7
+    100346: pasted__transform8
+    100348: pasted__transform9
+    100350: //RootNode
+    100352: polySurface7
+    100354: R_Arm
+    100356: R_Clavicle
+    100358: R_ClavicleNub
+    100360: R_Elbow
+    100362: R_Elbow_2
+    100364: R_EyeAim_1
+    100366: R_EyeAim_2
+    100368: R_EyelidLower_1
+    100370: R_EyelidLower_2
+    100372: R_EyelidUpper_1
+    100374: R_EyelidUpper_2
+    100376: R_Foot
+    100378: R_Hand
+    100380: R_IndexFinger_1
+    100382: R_IndexFinger_2
+    100384: R_IndexFinger_3
+    100386: R_IndexFinger_4
+    100388: R_Knee
+    100390: R_LatissimusDorsi_1
+    100392: R_LatissimusDorsi_2
+    100394: R_LowerArmTwist_1
+    100396: R_LowerArmTwist_2
+    100398: R_LowerArmTwist_3
+    100400: R_MiddleFinger_1
+    100402: R_MiddleFinger_2
+    100404: R_MiddleFinger_3
+    100406: R_MiddleFinger_4
+    100408: R_Pectoralis_1
+    100410: R_Pectoralis_2
+    100412: R_Pinky_1
+    100414: R_Pinky_2
+    100416: R_Pinky_3
+    100418: R_Pinky_4
+    100420: R_RingFinger_1
+    100422: R_RingFinger_2
+    100424: R_RingFinger_3
+    100426: R_RingFinger_4
+    100428: R_Sternocleidomastoid_1
+    100430: R_Thumb_1
+    100432: R_Thumb_2
+    100434: R_Thumb_3
+    100436: R_Thumb_4
+    100438: R_Toe
+    100440: R_ToeNub
+    100442: R_UpperArm
+    100444: R_UpperLeg
+    100446: Root
+    100448: Spine_1
+    100450: Spine_2
+    100452: Spine_3
+    100454: Spine_4
+    100456: Spine_5
+    100458: transform3
+    400000: Amulet_Joint_L
+    400002: Amulet_Joint_Middle
+    400004: Amulet_Joint_R
+    400006: AssCloth_Joint_1
+    400008: AssCloth_Joint_2
+    400010: AssCloth_Joint_3
+    400012: AssCloth_Joint_4
+    400014: AssCloth_Joint_5
+    400016: group
+    400018: Head
+    400020: L_Clavicle
+    400022: L_ClavicleNub
+    400024: L_Elbow
+    400026: L_Elbow_2
+    400028: L_EyeAim_1
+    400030: L_EyeAim_2
+    400032: L_EyelidLower_1
+    400034: L_EyelidLower_2
+    400036: L_EyelidUpper_1
+    400038: L_EyelidUpper_2
+    400040: L_Foot
+    400042: L_Hand
+    400044: L_IndexFinger_1
+    400046: L_IndexFinger_2
+    400048: L_IndexFinger_3
+    400050: L_IndexFinger_4
+    400052: L_Knee
+    400054: L_LatissimusDorsi_1
+    400056: L_LatissimusDorsi_2
+    400058: L_LowerArmTwist_1
+    400060: L_LowerArmTwist_2
+    400062: L_LowerArmTwist_3
+    400064: L_MiddleFinger_1
+    400066: L_MiddleFinger_2
+    400068: L_MiddleFinger_3
+    400070: L_MiddleFinger_4
+    400072: L_Pectoralis_1
+    400074: L_Pectoralis_2
+    400076: L_Pinky_1
+    400078: L_Pinky_2
+    400080: L_Pinky_3
+    400082: L_Pinky_4
+    400084: L_RingFinger_1
+    400086: L_RingFinger_2
+    400088: L_RingFinger_3
+    400090: L_RingFinger_4
+    400092: L_Sternocleidomastoid_1
+    400094: L_Thumb_1
+    400096: L_Thumb_2
+    400098: L_Thumb_3
+    400100: L_Thumb_4
+    400102: L_Toe
+    400104: L_ToeNub
+    400106: L_UpperArm
+    400108: L_UpperLeg1
+    400110: LoinCloth_Joint_1
+    400112: LoinCloth_Joint_2
+    400114: LoinCloth_Joint_3
+    400116: LoinCloth_Joint_4
+    400118: LoinCloth_Joint_5
+    400120: LoinCloth_Joint_6
+    400122: LoinCloth_Joint_7
+    400124: Neck_1
+    400126: Neck_2
+    400128: Neck_3
+    400130: pasted__pasted__polySurface18
+    400132: pasted__pasted__polySurface19
+    400134: pasted__polySurface1
+    400136: pasted__polySurface10
+    400138: pasted__polySurface11
+    400140: pasted__polySurface12
+    400142: pasted__polySurface13
+    400144: pasted__polySurface14
+    400146: pasted__polySurface15
+    400148: pasted__polySurface16
+    400150: pasted__polySurface17
+    400152: pasted__polySurface18
+    400154: pasted__polySurface19
+    400156: pasted__polySurface2
+    400158: pasted__polySurface20
+    400160: pasted__polySurface21
+    400162: pasted__polySurface22
+    400164: pasted__polySurface23
+    400166: pasted__polySurface24
+    400168: pasted__polySurface25
+    400170: pasted__polySurface26
+    400172: pasted__polySurface27
+    400174: pasted__polySurface28
+    400176: pasted__polySurface29
+    400178: pasted__polySurface3
+    400180: pasted__polySurface30
+    400182: pasted__polySurface31
+    400184: pasted__polySurface32
+    400186: pasted__polySurface33
+    400188: pasted__polySurface34
+    400190: pasted__polySurface35
+    400192: pasted__polySurface36
+    400194: pasted__polySurface37
+    400196: pasted__polySurface38
+    400198: pasted__polySurface39
+    400200: pasted__polySurface4
+    400202: pasted__polySurface40
+    400204: pasted__polySurface41
+    400206: pasted__polySurface42
+    400208: pasted__polySurface43
+    400210: pasted__polySurface44
+    400212: pasted__polySurface45
+    400214: pasted__polySurface46
+    400216: pasted__polySurface47
+    400218: pasted__polySurface48
+    400220: pasted__polySurface49
+    400222: pasted__polySurface5
+    400224: pasted__polySurface50
+    400226: pasted__polySurface51
+    400228: pasted__polySurface52
+    400230: pasted__polySurface53
+    400232: pasted__polySurface54
+    400234: pasted__polySurface55
+    400236: pasted__polySurface6
+    400238: pasted__polySurface7
+    400240: pasted__polySurface8
+    400242: pasted__polySurface9
+    400244: pasted__transform1
+    400246: pasted__transform10
+    400248: pasted__transform11
+    400250: pasted__transform12
+    400252: pasted__transform13
+    400254: pasted__transform14
+    400256: pasted__transform15
+    400258: pasted__transform16
+    400260: pasted__transform17
+    400262: pasted__transform18
+    400264: pasted__transform19
+    400266: pasted__transform2
+    400268: pasted__transform20
+    400270: pasted__transform21
+    400272: pasted__transform22
+    400274: pasted__transform23
+    400276: pasted__transform24
+    400278: pasted__transform25
+    400280: pasted__transform26
+    400282: pasted__transform27
+    400284: pasted__transform28
+    400286: pasted__transform29
+    400288: pasted__transform3
+    400290: pasted__transform30
+    400292: pasted__transform31
+    400294: pasted__transform32
+    400296: pasted__transform33
+    400298: pasted__transform34
+    400300: pasted__transform35
+    400302: pasted__transform36
+    400304: pasted__transform37
+    400306: pasted__transform38
+    400308: pasted__transform39
+    400310: pasted__transform4
+    400312: pasted__transform40
+    400314: pasted__transform41
+    400316: pasted__transform42
+    400318: pasted__transform43
+    400320: pasted__transform44
+    400322: pasted__transform45
+    400324: pasted__transform46
+    400326: pasted__transform47
+    400328: pasted__transform48
+    400330: pasted__transform49
+    400332: pasted__transform5
+    400334: pasted__transform50
+    400336: pasted__transform51
+    400338: pasted__transform52
+    400340: pasted__transform53
+    400342: pasted__transform6
+    400344: pasted__transform7
+    400346: pasted__transform8
+    400348: pasted__transform9
+    400350: //RootNode
+    400352: polySurface7
+    400354: R_Arm
+    400356: R_Clavicle
+    400358: R_ClavicleNub
+    400360: R_Elbow
+    400362: R_Elbow_2
+    400364: R_EyeAim_1
+    400366: R_EyeAim_2
+    400368: R_EyelidLower_1
+    400370: R_EyelidLower_2
+    400372: R_EyelidUpper_1
+    400374: R_EyelidUpper_2
+    400376: R_Foot
+    400378: R_Hand
+    400380: R_IndexFinger_1
+    400382: R_IndexFinger_2
+    400384: R_IndexFinger_3
+    400386: R_IndexFinger_4
+    400388: R_Knee
+    400390: R_LatissimusDorsi_1
+    400392: R_LatissimusDorsi_2
+    400394: R_LowerArmTwist_1
+    400396: R_LowerArmTwist_2
+    400398: R_LowerArmTwist_3
+    400400: R_MiddleFinger_1
+    400402: R_MiddleFinger_2
+    400404: R_MiddleFinger_3
+    400406: R_MiddleFinger_4
+    400408: R_Pectoralis_1
+    400410: R_Pectoralis_2
+    400412: R_Pinky_1
+    400414: R_Pinky_2
+    400416: R_Pinky_3
+    400418: R_Pinky_4
+    400420: R_RingFinger_1
+    400422: R_RingFinger_2
+    400424: R_RingFinger_3
+    400426: R_RingFinger_4
+    400428: R_Sternocleidomastoid_1
+    400430: R_Thumb_1
+    400432: R_Thumb_2
+    400434: R_Thumb_3
+    400436: R_Thumb_4
+    400438: R_Toe
+    400440: R_ToeNub
+    400442: R_UpperArm
+    400444: R_UpperLeg
+    400446: Root
+    400448: Spine_1
+    400450: Spine_2
+    400452: Spine_3
+    400454: Spine_4
+    400456: Spine_5
+    400458: transform3
+    2300000: pasted__polySurface55
+    3300000: pasted__polySurface55
+    4300000: pasted__pasted__polySurface18
+    4300002: pasted__pasted__polySurface19
+    4300004: polySurface7
+    4300006: pasted__polySurface7
+    4300008: pasted__polySurface55
+    7400000: Die
+    9500000: //RootNode
+    13700000: pasted__pasted__polySurface18
+    13700002: pasted__pasted__polySurface19
+    13700004: pasted__polySurface7
+    13700006: polySurface7
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Die
+      takeName: Take 001
+      firstFrame: 2
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group
+        weight: 1
+      - path: group/pasted__polySurface1
+        weight: 1
+      - path: group/pasted__polySurface1/pasted__transform53
+        weight: 1
+      - path: group/pasted__polySurface2
+        weight: 1
+      - path: group/pasted__polySurface2/pasted__transform52
+        weight: 1
+      - path: group/pasted__polySurface3
+        weight: 1
+      - path: group/pasted__polySurface3/pasted__transform51
+        weight: 1
+      - path: group/pasted__polySurface4
+        weight: 1
+      - path: group/pasted__polySurface4/pasted__transform50
+        weight: 1
+      - path: group/pasted__polySurface5
+        weight: 1
+      - path: group/pasted__polySurface5/pasted__transform45
+        weight: 1
+      - path: group/pasted__polySurface6
+        weight: 1
+      - path: group/pasted__polySurface6/pasted__transform42
+        weight: 1
+      - path: group/pasted__polySurface8
+        weight: 1
+      - path: group/pasted__polySurface8/pasted__transform44
+        weight: 1
+      - path: group/pasted__polySurface9
+        weight: 1
+      - path: group/pasted__polySurface9/pasted__transform43
+        weight: 1
+      - path: group/pasted__polySurface10
+        weight: 1
+      - path: group/pasted__polySurface10/pasted__transform41
+        weight: 1
+      - path: group/pasted__polySurface11
+        weight: 1
+      - path: group/pasted__polySurface11/pasted__transform30
+        weight: 1
+      - path: group/pasted__polySurface12
+        weight: 1
+      - path: group/pasted__polySurface12/pasted__transform36
+        weight: 1
+      - path: group/pasted__polySurface13
+        weight: 1
+      - path: group/pasted__polySurface13/pasted__transform28
+        weight: 1
+      - path: group/pasted__polySurface14
+        weight: 1
+      - path: group/pasted__polySurface14/pasted__transform29
+        weight: 1
+      - path: group/pasted__polySurface15
+        weight: 1
+      - path: group/pasted__polySurface15/pasted__transform31
+        weight: 1
+      - path: group/pasted__polySurface16
+        weight: 1
+      - path: group/pasted__polySurface16/pasted__transform38
+        weight: 1
+      - path: group/pasted__polySurface17
+        weight: 1
+      - path: group/pasted__polySurface17/pasted__transform32
+        weight: 1
+      - path: group/pasted__polySurface18
+        weight: 1
+      - path: group/pasted__polySurface18/pasted__transform37
+        weight: 1
+      - path: group/pasted__polySurface19
+        weight: 1
+      - path: group/pasted__polySurface19/pasted__transform27
+        weight: 1
+      - path: group/pasted__polySurface20
+        weight: 1
+      - path: group/pasted__polySurface20/pasted__transform26
+        weight: 1
+      - path: group/pasted__polySurface21
+        weight: 1
+      - path: group/pasted__polySurface21/pasted__transform39
+        weight: 1
+      - path: group/pasted__polySurface22
+        weight: 1
+      - path: group/pasted__polySurface22/pasted__transform25
+        weight: 1
+      - path: group/pasted__polySurface23
+        weight: 1
+      - path: group/pasted__polySurface23/pasted__transform40
+        weight: 1
+      - path: group/pasted__polySurface24
+        weight: 1
+      - path: group/pasted__polySurface24/pasted__transform24
+        weight: 1
+      - path: group/pasted__polySurface25
+        weight: 1
+      - path: group/pasted__polySurface25/pasted__transform23
+        weight: 1
+      - path: group/pasted__polySurface26
+        weight: 1
+      - path: group/pasted__polySurface26/pasted__transform20
+        weight: 1
+      - path: group/pasted__polySurface27
+        weight: 1
+      - path: group/pasted__polySurface27/pasted__transform22
+        weight: 1
+      - path: group/pasted__polySurface28
+        weight: 1
+      - path: group/pasted__polySurface28/pasted__transform21
+        weight: 1
+      - path: group/pasted__polySurface29
+        weight: 1
+      - path: group/pasted__polySurface29/pasted__transform35
+        weight: 1
+      - path: group/pasted__polySurface30
+        weight: 1
+      - path: group/pasted__polySurface30/pasted__transform19
+        weight: 1
+      - path: group/pasted__polySurface31
+        weight: 1
+      - path: group/pasted__polySurface31/pasted__transform34
+        weight: 1
+      - path: group/pasted__polySurface32
+        weight: 1
+      - path: group/pasted__polySurface32/pasted__transform18
+        weight: 1
+      - path: group/pasted__polySurface33
+        weight: 1
+      - path: group/pasted__polySurface33/pasted__transform33
+        weight: 1
+      - path: group/pasted__polySurface34
+        weight: 1
+      - path: group/pasted__polySurface34/pasted__transform11
+        weight: 1
+      - path: group/pasted__polySurface35
+        weight: 1
+      - path: group/pasted__polySurface35/pasted__transform17
+        weight: 1
+      - path: group/pasted__polySurface36
+        weight: 1
+      - path: group/pasted__polySurface36/pasted__transform10
+        weight: 1
+      - path: group/pasted__polySurface37
+        weight: 1
+      - path: group/pasted__polySurface37/pasted__transform16
+        weight: 1
+      - path: group/pasted__polySurface38
+        weight: 1
+      - path: group/pasted__polySurface38/pasted__transform15
+        weight: 1
+      - path: group/pasted__polySurface39
+        weight: 1
+      - path: group/pasted__polySurface39/pasted__transform9
+        weight: 1
+      - path: group/pasted__polySurface40
+        weight: 1
+      - path: group/pasted__polySurface40/pasted__transform14
+        weight: 1
+      - path: group/pasted__polySurface41
+        weight: 1
+      - path: group/pasted__polySurface41/pasted__transform13
+        weight: 1
+      - path: group/pasted__polySurface42
+        weight: 1
+      - path: group/pasted__polySurface42/pasted__transform12
+        weight: 1
+      - path: group/pasted__polySurface43
+        weight: 1
+      - path: group/pasted__polySurface43/pasted__transform8
+        weight: 1
+      - path: group/pasted__polySurface44
+        weight: 1
+      - path: group/pasted__polySurface44/pasted__transform4
+        weight: 1
+      - path: group/pasted__polySurface45
+        weight: 1
+      - path: group/pasted__polySurface45/pasted__transform5
+        weight: 1
+      - path: group/pasted__polySurface46
+        weight: 1
+      - path: group/pasted__polySurface46/pasted__transform7
+        weight: 1
+      - path: group/pasted__polySurface47
+        weight: 1
+      - path: group/pasted__polySurface47/pasted__transform6
+        weight: 1
+      - path: group/pasted__polySurface48
+        weight: 1
+      - path: group/pasted__polySurface48/pasted__transform48
+        weight: 1
+      - path: group/pasted__polySurface49
+        weight: 1
+      - path: group/pasted__polySurface49/pasted__transform47
+        weight: 1
+      - path: group/pasted__polySurface50
+        weight: 1
+      - path: group/pasted__polySurface50/pasted__transform46
+        weight: 1
+      - path: group/pasted__polySurface51
+        weight: 1
+      - path: group/pasted__polySurface51/pasted__transform2
+        weight: 1
+      - path: group/pasted__polySurface52
+        weight: 1
+      - path: group/pasted__polySurface52/pasted__transform1
+        weight: 1
+      - path: group/pasted__polySurface53
+        weight: 1
+      - path: group/pasted__polySurface53/pasted__transform3
+        weight: 1
+      - path: group/pasted__polySurface54
+        weight: 1
+      - path: group/pasted__polySurface54/pasted__transform49
+        weight: 1
+      - path: group/pasted__polySurface55
+        weight: 1
+      - path: L_Sternocleidomastoid_1
+        weight: 1
+      - path: pasted__pasted__polySurface18
+        weight: 1
+      - path: pasted__pasted__polySurface19
+        weight: 1
+      - path: pasted__polySurface7
+        weight: 1
+      - path: polySurface7
+        weight: 1
+      - path: R_Sternocleidomastoid_1
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/AssCloth_Joint_1
+        weight: 1
+      - path: Root/AssCloth_Joint_1/AssCloth_Joint_2
+        weight: 1
+      - path: Root/AssCloth_Joint_1/AssCloth_Joint_2/AssCloth_Joint_3
+        weight: 1
+      - path: Root/AssCloth_Joint_1/AssCloth_Joint_2/AssCloth_Joint_3/AssCloth_Joint_4
+        weight: 1
+      - path: Root/AssCloth_Joint_1/AssCloth_Joint_2/AssCloth_Joint_3/AssCloth_Joint_4/AssCloth_Joint_5
+        weight: 1
+      - path: Root/L_UpperLeg1
+        weight: 1
+      - path: Root/L_UpperLeg1/L_Knee
+        weight: 1
+      - path: Root/L_UpperLeg1/L_Knee/L_Foot
+        weight: 1
+      - path: Root/L_UpperLeg1/L_Knee/L_Foot/L_Toe
+        weight: 1
+      - path: Root/L_UpperLeg1/L_Knee/L_Foot/L_Toe/L_ToeNub
+        weight: 1
+      - path: Root/LoinCloth_Joint_1
+        weight: 1
+      - path: Root/LoinCloth_Joint_1/LoinCloth_Joint_2
+        weight: 1
+      - path: Root/LoinCloth_Joint_1/LoinCloth_Joint_2/LoinCloth_Joint_3
+        weight: 1
+      - path: Root/LoinCloth_Joint_1/LoinCloth_Joint_2/LoinCloth_Joint_3/LoinCloth_Joint_4
+        weight: 1
+      - path: Root/LoinCloth_Joint_1/LoinCloth_Joint_2/LoinCloth_Joint_3/LoinCloth_Joint_4/LoinCloth_Joint_5
+        weight: 1
+      - path: Root/LoinCloth_Joint_1/LoinCloth_Joint_2/LoinCloth_Joint_3/LoinCloth_Joint_4/LoinCloth_Joint_5/LoinCloth_Joint_6
+        weight: 1
+      - path: Root/LoinCloth_Joint_1/LoinCloth_Joint_2/LoinCloth_Joint_3/LoinCloth_Joint_4/LoinCloth_Joint_5/LoinCloth_Joint_6/LoinCloth_Joint_7
+        weight: 1
+      - path: Root/Spine_1
+        weight: 1
+      - path: Root/Spine_1/L_LatissimusDorsi_1
+        weight: 1
+      - path: Root/Spine_1/L_LatissimusDorsi_1/L_LatissimusDorsi_2
+        weight: 1
+      - path: Root/Spine_1/R_LatissimusDorsi_1
+        weight: 1
+      - path: Root/Spine_1/R_LatissimusDorsi_1/R_LatissimusDorsi_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Amulet_Joint_Middle
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Amulet_Joint_Middle/Amulet_Joint_L
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Amulet_Joint_Middle/Amulet_Joint_R
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/L_Pectoralis_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/L_Pectoralis_1/L_Pectoralis_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/R_Pectoralis_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/R_Pectoralis_1/R_Pectoralis_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_IndexFinger_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_IndexFinger_1/L_IndexFinger_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_IndexFinger_1/L_IndexFinger_2/L_IndexFinger_3
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_IndexFinger_1/L_IndexFinger_2/L_IndexFinger_3/L_IndexFinger_4
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_MiddleFinger_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_MiddleFinger_1/L_MiddleFinger_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_MiddleFinger_1/L_MiddleFinger_2/L_MiddleFinger_3
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_MiddleFinger_1/L_MiddleFinger_2/L_MiddleFinger_3/L_MiddleFinger_4
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_Pinky_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_Pinky_1/L_Pinky_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_Pinky_1/L_Pinky_2/L_Pinky_3
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_Pinky_1/L_Pinky_2/L_Pinky_3/L_Pinky_4
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_RingFinger_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_RingFinger_1/L_RingFinger_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_RingFinger_1/L_RingFinger_2/L_RingFinger_3
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_RingFinger_1/L_RingFinger_2/L_RingFinger_3/L_RingFinger_4
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_Thumb_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_Thumb_1/L_Thumb_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_Thumb_1/L_Thumb_2/L_Thumb_3
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Elbow/L_Elbow_2/L_LowerArmTwist_3/L_LowerArmTwist_2/L_LowerArmTwist_1/L_Hand/L_Thumb_1/L_Thumb_2/L_Thumb_3/L_Thumb_4
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1/Neck_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1/Neck_2/Neck_3
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1/Neck_2/Neck_3/Head
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1/Neck_2/Neck_3/L_EyeAim_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1/Neck_2/Neck_3/L_EyeAim_1/L_EyeAim_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1/Neck_2/Neck_3/L_EyelidLower_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1/Neck_2/Neck_3/L_EyelidLower_1/L_EyelidLower_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1/Neck_2/Neck_3/L_EyelidUpper_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1/Neck_2/Neck_3/L_EyelidUpper_1/L_EyelidUpper_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1/Neck_2/Neck_3/R_EyeAim_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1/Neck_2/Neck_3/R_EyeAim_1/R_EyeAim_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1/Neck_2/Neck_3/R_EyelidLower_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1/Neck_2/Neck_3/R_EyelidLower_1/R_EyelidLower_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1/Neck_2/Neck_3/R_EyelidUpper_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/Neck_1/Neck_2/Neck_3/R_EyelidUpper_1/R_EyelidUpper_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_IndexFinger_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_IndexFinger_1/R_IndexFinger_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_IndexFinger_1/R_IndexFinger_2/R_IndexFinger_3
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_IndexFinger_1/R_IndexFinger_2/R_IndexFinger_3/R_IndexFinger_4
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_MiddleFinger_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_MiddleFinger_1/R_MiddleFinger_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_MiddleFinger_1/R_MiddleFinger_2/R_MiddleFinger_3
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_MiddleFinger_1/R_MiddleFinger_2/R_MiddleFinger_3/R_MiddleFinger_4
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_Pinky_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_Pinky_1/R_Pinky_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_Pinky_1/R_Pinky_2/R_Pinky_3
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_Pinky_1/R_Pinky_2/R_Pinky_3/R_Pinky_4
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_RingFinger_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_RingFinger_1/R_RingFinger_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_RingFinger_1/R_RingFinger_2/R_RingFinger_3
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_RingFinger_1/R_RingFinger_2/R_RingFinger_3/R_RingFinger_4
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_Thumb_1
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_Thumb_1/R_Thumb_2
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_Thumb_1/R_Thumb_2/R_Thumb_3
+        weight: 1
+      - path: Root/Spine_1/Spine_2/Spine_3/Spine_4/Spine_5/R_Clavicle/R_ClavicleNub/R_Arm/R_UpperArm/R_Elbow/R_Elbow_2/R_LowerArmTwist_3/R_LowerArmTwist_2/R_LowerArmTwist_1/R_Hand/R_Thumb_1/R_Thumb_2/R_Thumb_3/R_Thumb_4
+        weight: 1
+      - path: Root/transform3
+        weight: 1
+      - path: Root/transform3/R_UpperLeg
+        weight: 1
+      - path: Root/transform3/R_UpperLeg/R_Knee
+        weight: 1
+      - path: Root/transform3/R_UpperLeg/R_Knee/R_Foot
+        weight: 1
+      - path: Root/transform3/R_UpperLeg/R_Knee/R_Foot/R_Toe
+        weight: 1
+      - path: Root/transform3/R_UpperLeg/R_Knee/R_Foot/R_Toe/R_ToeNub
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
