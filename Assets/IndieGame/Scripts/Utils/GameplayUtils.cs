@@ -45,6 +45,9 @@ public static class GameplayUtils
     public static void ResetProgress ()
     {
         PlayerPrefs.DeleteAll();
+        Player player = GameObject.FindObjectOfType<Player>();
+        player.ResetStoredHealth();
+        player.isReset = true;
     }
 
     /// <summary>

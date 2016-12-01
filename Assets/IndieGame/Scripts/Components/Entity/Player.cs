@@ -24,6 +24,8 @@ public class Player : Entity
 
     protected UserControls cachedUserControls;
 
+    public bool isReset;
+
     protected virtual void Awake ()
     {
         cachedUserControls = GetComponent<UserControls>();
@@ -44,6 +46,8 @@ public class Player : Entity
 
         //Apply this health to the player
         GetHealth().SetHealth(remainingHealth);
+
+        isReset = false;
     }
 
     protected virtual void OnDestroy ()
@@ -52,7 +56,7 @@ public class Player : Entity
         {
             ResetStoredHealth();
         }
-        else
+        else if(isReset == false)
         {
             //Store the current health of the player
             PlayerPrefs.SetFloat(name, GetHealth().GetCurrentHealth());
