@@ -8,8 +8,14 @@ playerprefs.SetInt("WindBoss", 1)
 
 if playerprefs.GetString("FirstDead", "") == "" then
 	playerprefs.SetString("FirstDead", "Wind")
+	conversation[[
+	Moaalii MoaaliiPortrait right : What is this?! I weaken!
+	]]
 elseif playerprefs.GetString("SecondDead", "") == "" then
 	playerprefs.SetString("SecondDead", "Wind")
+	conversation[[
+	Moaalii MoaaliiPortrait right : NO MORE! I won't let you do that again!
+	]]
 end
 
 function TeleportOut()
