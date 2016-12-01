@@ -17,14 +17,9 @@ Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.Ne
 Loading D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading D:\Projects\Unity\IndieGame\Inoha_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.024 seconds
+- Completed reload, in  0.101 seconds
 Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Projects\Unity\IndieGame\Inoha_Data\Managed\System.dll (this message is harmless)
-desktop: 1920x1080 60Hz; virtual: 3840x1080 at -1920,0
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-<RI> Initialized touch support.
-UnloadTime: 1.650088 ms
-Setting up 2 worker threads for Enlighten.
-  Thread -> id: 508 -> priority: 1 
-  Thread -> id: 1524 -> priority: 1 
