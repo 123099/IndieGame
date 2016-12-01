@@ -1,0 +1,5 @@
+conversation[[
+Information TabletPic right: Use left-click mouse button to use the Whirlwind attack.
+: Use the right-click mouse button to use the Ranged attack. Keep in mind that it has a cooldown.
+: Press "Q" to use your Dash ability to dodge incoming enemies and projectiles.
+]]
